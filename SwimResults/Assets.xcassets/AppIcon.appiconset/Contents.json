@@ -1,6 +1,7 @@
 {
   "images" : [
     {
+      "filename" : "logo_ios_app.png",
       "idiom" : "universal",
       "platform" : "ios",
       "size" : "1024x1024"
