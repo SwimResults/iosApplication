@@ -38,7 +38,7 @@ struct MainView: View {
                 Text("27. Internationaler Erzgebirgsschwimmcup 2024")
             }
             .tabItem {
-                Label("Veranstaltung", systemImage: "info")
+                Label("Veranstaltung", systemImage: "calendar")
             }
             
             
