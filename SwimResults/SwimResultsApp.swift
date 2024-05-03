@@ -11,7 +11,7 @@ import SwiftUI
 struct SwimResultsApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
     }
 }

@@ -9,7 +9,49 @@ import SwiftUI
 
 struct MainMeetingListView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            List {
+                Text("2024").font(.title).bold()
+                Section {
+                    
+                    Button {
+                        
+                    } label: {
+                        Label("Deutsche Meisterschaften im Finswimming 2024", systemImage: "calendar")
+                    }.foregroundColor(.primary)
+                    
+                    Button {
+                        
+                    } label: {
+                        Label("Bezirksmeisterschaften des BSV Südwestsachsen 2024", systemImage: "calendar")
+                    }.foregroundColor(.primary)
+                    
+                    Button {
+                        
+                    } label: {
+                        Label("27. Internationaler Erzgebirgsschwimmcup 2024", systemImage: "calendar")
+                    }.foregroundColor(.primary)
+                    
+                }
+                
+                Text("2023").font(.title).bold()
+                
+                Section {
+                    
+                    Button {
+                        
+                    } label: {
+                        Label("Erzgebirgsspiele Schwimmen Finale 2023", systemImage: "calendar")
+                    }.foregroundColor(.primary)
+                    
+                    Button {
+                        
+                    } label: {
+                        Label("26. Internationaler Erzgebirgsschwimmcup 2023", systemImage: "calendar")
+                    }.foregroundColor(.primary)
+                }
+            }
+        }
     }
 }
 

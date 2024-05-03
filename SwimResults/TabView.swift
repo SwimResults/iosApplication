@@ -8,8 +8,20 @@
 import SwiftUI
 
 struct TabView: View {
+    
+    @State var selection = 1
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selection) {
+            
+            VStack {
+                Text("Wettkampffolge und Ablaufplan")
+            }
+            .tabItem {
+                Label("Wettkämpfe", systemImage: "figure.pool.swim")
+            }
+            .navigationTitle("Wettkampffolge")
+        }
     }
 }
 
