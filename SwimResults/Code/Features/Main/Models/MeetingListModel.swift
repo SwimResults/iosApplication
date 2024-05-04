@@ -7,20 +7,7 @@
 
 import Foundation
 
-struct MainMeetingListModel: Codable, Hashable {
-    var
+struct MeetingListYearModel: Codable, Hashable {
+    var year: Int
+    var meetings: [MeetingModel]
 }
-
-struct MeetingList
-
-struct MeetingModel: Codable, Hashable {
-    
-    var meetId: String
-    var dateStart: Date
-    var dateEnd: Date
-    var iteration: Int?
-    var state: String
-    var series: MeetingSeriesModel
-    var unpublished: Bool?
-    var layout: MeetingLayoutModel?
-    var organizerId: String?

@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var selection = 1
+    @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
-        TabView(selection: $selection) {
+        TabView(selection: $viewModel.selection) {
             
             MainTabItemView(title: "Wettkampffolge") {
                 Text("Wettkampffolge und Ablaufplan")

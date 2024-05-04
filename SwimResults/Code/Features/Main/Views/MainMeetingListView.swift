@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct MainMeetingListView: View {
+    @StateObject private var viewModel = MainMeetingListViewModel()
+    
     var body: some View {
         VStack {
             List {
-                Text("2024").font(.title).bold()
+                
+                ForEach($viewModel.meetingYears.values, id: \.self) { meetingYear in
+                    
+                    Text(String(meetingYear.year)).font(.title).bold()
+                    
+                }
+                
                 Section {
                     
                     Button {

@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+final class MainViewModel: ObservableObject {
+    @Published var meeting: MeetingModel?
+    
+    @Published var selection = 1
+    
+    func getMeetingByMeetId(_ meetId: String) {
+        
+    }
+}

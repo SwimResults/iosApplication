@@ -20,6 +20,13 @@
 		719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB6272BE44EEB00810D37 /* SearchView.swift */; };
 		719BB62A2BE455B000810D37 /* MainMeetingListScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB6292BE455B000810D37 /* MainMeetingListScreenView.swift */; };
 		719BB62C2BE455BE00810D37 /* MainMeetingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB62B2BE455BE00810D37 /* MainMeetingListView.swift */; };
+		719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB62E2BE4F66D00810D37 /* ApiActions.swift */; };
+		719BB6322BE4F6BA00810D37 /* MeetingActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB6312BE4F6BA00810D37 /* MeetingActions.swift */; };
+		719BB6352BE4F6F300810D37 /* MeetingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB6342BE4F6F300810D37 /* MeetingModel.swift */; };
+		719BB6372BE4F77B00810D37 /* MainScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB6362BE4F77B00810D37 /* MainScreenView.swift */; };
+		719BB63A2BE4F7B500810D37 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB6392BE4F7B500810D37 /* MainViewModel.swift */; };
+		719BB63C2BE4FACE00810D37 /* MainMeetingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB63B2BE4FACE00810D37 /* MainMeetingListViewModel.swift */; };
+		719BB63F2BE4FBDC00810D37 /* MeetingListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719BB63E2BE4FBDC00810D37 /* MeetingListModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +63,13 @@
 		719BB6272BE44EEB00810D37 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		719BB6292BE455B000810D37 /* MainMeetingListScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMeetingListScreenView.swift; sourceTree = "<group>"; };
 		719BB62B2BE455BE00810D37 /* MainMeetingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMeetingListView.swift; sourceTree = "<group>"; };
+		719BB62E2BE4F66D00810D37 /* ApiActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiActions.swift; sourceTree = "<group>"; };
+		719BB6312BE4F6BA00810D37 /* MeetingActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingActions.swift; sourceTree = "<group>"; };
+		719BB6342BE4F6F300810D37 /* MeetingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingModel.swift; sourceTree = "<group>"; };
+		719BB6362BE4F77B00810D37 /* MainScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenView.swift; sourceTree = "<group>"; };
+		719BB6392BE4F7B500810D37 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		719BB63B2BE4FACE00810D37 /* MainMeetingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMeetingListViewModel.swift; sourceTree = "<group>"; };
+		719BB63E2BE4FBDC00810D37 /* MeetingListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingListModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,8 +157,8 @@
 		719BB60C2BE4320D00810D37 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				719BB61E2BE44ABF00810D37 /* Main */,
 				719BB61D2BE44AB500810D37 /* Common */,
+				719BB61E2BE44ABF00810D37 /* Main */,
 				719BB6152BE44A2700810D37 /* Live */,
 				719BB6142BE44A1D00810D37 /* Favorites */,
 				719BB6132BE44A1900810D37 /* Meeting */,
@@ -165,6 +179,7 @@
 		719BB60E2BE4321F00810D37 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				719BB62E2BE4F66D00810D37 /* ApiActions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -209,6 +224,8 @@
 		719BB6132BE44A1900810D37 /* Meeting */ = {
 			isa = PBXGroup;
 			children = (
+				719BB6302BE4F6AA00810D37 /* Actions */,
+				719BB6332BE4F6D400810D37 /* Models */,
 			);
 			path = Meeting;
 			sourceTree = "<group>";
@@ -266,6 +283,7 @@
 		719BB61D2BE44AB500810D37 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				719BB62D2BE4EC4E00810D37 /* Actions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -273,7 +291,9 @@
 		719BB61E2BE44ABF00810D37 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				719BB63D2BE4FBCD00810D37 /* Models */,
 				719BB61F2BE44AC300810D37 /* Screens */,
+				719BB6382BE4F7A300810D37 /* ViewModels */,
 				719BB6202BE44AD000810D37 /* Views */,
 			);
 			path = Main;
@@ -282,7 +302,7 @@
 		719BB61F2BE44AC300810D37 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				719BB6082BE4119000810D37 /* MainView.swift */,
+				719BB6362BE4F77B00810D37 /* MainScreenView.swift */,
 				719BB6292BE455B000810D37 /* MainMeetingListScreenView.swift */,
 			);
 			path = Screens;
@@ -291,6 +311,7 @@
 		719BB6202BE44AD000810D37 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				719BB6082BE4119000810D37 /* MainView.swift */,
 				719BB6212BE44AEA00810D37 /* MainTabItemView.swift */,
 				719BB62B2BE455BE00810D37 /* MainMeetingListView.swift */,
 			);
@@ -311,6 +332,46 @@
 				719BB6272BE44EEB00810D37 /* SearchView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		719BB62D2BE4EC4E00810D37 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		719BB6302BE4F6AA00810D37 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				719BB6312BE4F6BA00810D37 /* MeetingActions.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		719BB6332BE4F6D400810D37 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				719BB6342BE4F6F300810D37 /* MeetingModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		719BB6382BE4F7A300810D37 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				719BB6392BE4F7B500810D37 /* MainViewModel.swift */,
+				719BB63B2BE4FACE00810D37 /* MainMeetingListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		719BB63D2BE4FBCD00810D37 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				719BB63E2BE4FBDC00810D37 /* MeetingListModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -444,12 +505,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				719BB61C2BE44A8500810D37 /* EventScreenView.swift in Sources */,
+				719BB6322BE4F6BA00810D37 /* MeetingActions.swift in Sources */,
 				719BB62C2BE455BE00810D37 /* MainMeetingListView.swift in Sources */,
+				719BB6352BE4F6F300810D37 /* MeetingModel.swift in Sources */,
 				719BB62A2BE455B000810D37 /* MainMeetingListScreenView.swift in Sources */,
+				719BB63C2BE4FACE00810D37 /* MainMeetingListViewModel.swift in Sources */,
+				719BB63A2BE4F7B500810D37 /* MainViewModel.swift in Sources */,
 				719BB6092BE4119000810D37 /* MainView.swift in Sources */,
 				719BB6222BE44AEA00810D37 /* MainTabItemView.swift in Sources */,
+				719BB6372BE4F77B00810D37 /* MainScreenView.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
+				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
 				719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */,
+				719BB63F2BE4FBDC00810D37 /* MeetingListModel.swift in Sources */,
 				719BB6252BE44DCE00810D37 /* SearchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

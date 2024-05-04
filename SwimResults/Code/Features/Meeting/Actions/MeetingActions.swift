@@ -6,3 +6,21 @@
 //
 
 import Foundation
+
+let api: ApiActions = ApiActions(url: "https://api-dev.swimresults.de/meeting/v1/")
+
+func getMeetings() async throws -> [MeetingModel] {
+    do {
+        return try await api.get(path: "meeting")
+    } catch {
+        throw error
+    }
+}
+
+func getMeetingByMeetId(_ meetId: String) async throws -> MeetingModel {
+    do {
+        return try await api.get(path: "meeting/meet/" + meetId)
+    } catch {
+        throw error
+    }
+}
