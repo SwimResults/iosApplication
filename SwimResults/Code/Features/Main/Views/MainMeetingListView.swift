@@ -8,58 +8,41 @@
 import SwiftUI
 
 struct MainMeetingListView: View {
-    @StateObject private var viewModel = MainMeetingListViewModel()
+    @ObservedObject private var viewModel = MainMeetingListViewModel()
     
     var body: some View {
         VStack {
-            List {
+            ZStack {
                 
-                ForEach($viewModel.meetingYears.values, id: \.self) { meetingYear in
+                List {
                     
-                    Text(String(meetingYear.year)).font(.title).bold()
-                    
+                    ForEach(viewModel.meetingYearList, id: \.self) { meetingYear in
+                        
+                        Text(String(meetingYear.year)).font(.title).bold()
+                        
+                        Section {
+                            
+                            ForEach(meetingYear.meetings, id: \.self) { meeting in
+                                
+                                Button {
+                                    
+                                } label: {
+                                    Label(meeting.getFullName(), systemImage: "calendar")
+                                }.foregroundColor(.primary)
+                            }
+                            
+                        }
+                    }
                 }
                 
-                Section {
-                    
-                    Button {
-                        
-                    } label: {
-                        Label("Deutsche Meisterschaften im Finswimming 2024", systemImage: "calendar")
-                    }.foregroundColor(.primary)
-                    
-                    Button {
-                        
-                    } label: {
-                        Label("Bezirksmeisterschaften des BSV Südwestsachsen 2024", systemImage: "calendar")
-                    }.foregroundColor(.primary)
-                    
-                    Button {
-                        
-                    } label: {
-                        Label("27. Internationaler Erzgebirgsschwimmcup 2024", systemImage: "calendar")
-                    }.foregroundColor(.primary)
-                    
-                }
-                
-                Text("2023").font(.title).bold()
-                
-                Section {
-                    
-                    Button {
-                        
-                    } label: {
-                        Label("Erzgebirgsspiele Schwimmen Finale 2023", systemImage: "calendar")
-                    }.foregroundColor(.primary)
-                    
-                    Button {
-                        
-                    } label: {
-                        Label("26. Internationaler Erzgebirgsschwimmcup 2023", systemImage: "calendar")
-                    }.foregroundColor(.primary)
+                if viewModel.fetching {
+                        SpinnerView()
                 }
             }
         }
+        .onAppear(perform: {
+            viewModel.fetchMeetings()
+        })
     }
 }
 

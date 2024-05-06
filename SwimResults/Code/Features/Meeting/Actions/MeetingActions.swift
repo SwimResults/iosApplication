@@ -7,7 +7,7 @@
 
 import Foundation
 
-let api: ApiActions = ApiActions(url: "https://api-dev.swimresults.de/meeting/v1/")
+let api: ApiActions = ApiActions(url: "https://api.swimresults.de/meeting/v1/")
 
 func getMeetings() async throws -> [MeetingModel] {
     do {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		710FE18E2BE838F400829ACB /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FE18D2BE838F400829ACB /* SpinnerView.swift */; };
 		7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D26E2BE3D238000E45B4 /* SwimResultsApp.swift */; };
 		7183D2732BE3D23B000E45B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7183D2722BE3D23B000E45B4 /* Assets.xcassets */; };
 		7183D2762BE3D23B000E45B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7183D2752BE3D23B000E45B4 /* Preview Assets.xcassets */; };
@@ -47,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		710FE18D2BE838F400829ACB /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 		7183D26B2BE3D238000E45B4 /* SwimResults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimResults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7183D26E2BE3D238000E45B4 /* SwimResultsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimResultsApp.swift; sourceTree = "<group>"; };
 		7183D2722BE3D23B000E45B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +99,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		710FE18C2BE838E000829ACB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				710FE18D2BE838F400829ACB /* SpinnerView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		7183D2622BE3D238000E45B4 = {
 			isa = PBXGroup;
 			children = (
@@ -284,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				719BB62D2BE4EC4E00810D37 /* Actions */,
+				710FE18C2BE838E000829ACB /* Views */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -510,6 +521,7 @@
 				719BB6352BE4F6F300810D37 /* MeetingModel.swift in Sources */,
 				719BB62A2BE455B000810D37 /* MainMeetingListScreenView.swift in Sources */,
 				719BB63C2BE4FACE00810D37 /* MainMeetingListViewModel.swift in Sources */,
+				710FE18E2BE838F400829ACB /* SpinnerView.swift in Sources */,
 				719BB63A2BE4F7B500810D37 /* MainViewModel.swift in Sources */,
 				719BB6092BE4119000810D37 /* MainView.swift in Sources */,
 				719BB6222BE44AEA00810D37 /* MainTabItemView.swift in Sources */,
