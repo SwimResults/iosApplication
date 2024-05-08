@@ -11,24 +11,33 @@ struct MainTabItemView<Content: View>: View where Content : View {
     @State var title = "Seite"
     @State var showMeetingSelection = false
     
+    @EnvironmentObject var currentMeeting: CurrentMeeting
+    
     @ViewBuilder let content: Content
     
     var body: some View {
+            
         NavigationStack {
-            content
-                .navigationTitle(title)
-                .toolbar {
-                    Button(action: {showMeetingSelection = true}) {
-                        Image(systemName: "calendar.badge.checkmark")
-                            .symbolRenderingMode(.palette)
-                            .foregroundStyle(.green, .primary)
-                            .imageScale(.large)
-                    }
+            VStack {
+                if (currentMeeting.meeting == nil) {
+                    Text("Keine Veranstaltung ausgewählt!")
+                } else {
+                    content
                 }
+            }
+            .navigationTitle(title)
+            .toolbar {
+                Button(action: {showMeetingSelection = true}) {
+                    Image(systemName: "calendar.badge.checkmark")
+                        .symbolRenderingMode(.palette)
+                        .foregroundStyle(.green, .primary)
+                        .imageScale(.large)
+                }
+            }
         }
         .sheet(isPresented: $showMeetingSelection, content: {
             NavigationView {
-                MainMeetingListScreenView()
+                MainMeetingListView(isPresented: $showMeetingSelection)
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         HStack {

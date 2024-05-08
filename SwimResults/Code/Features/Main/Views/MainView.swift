@@ -14,7 +14,7 @@ struct MainView: View {
         TabView(selection: $viewModel.selection) {
             
             MainTabItemView(title: "Wettkampffolge") {
-                Text("Wettkampffolge und Ablaufplan")
+                EventScreenView()
             }
             .tabItem {
                 Label("Wettkämpfe", systemImage: "figure.pool.swim")

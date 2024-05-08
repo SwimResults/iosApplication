@@ -9,6 +9,9 @@ import SwiftUI
 
 struct MainMeetingListView: View {
     @ObservedObject private var viewModel = MainMeetingListViewModel()
+    @EnvironmentObject var currentMeeting: CurrentMeeting
+    
+    @Binding var isPresented: Bool
     
     var body: some View {
         VStack {
@@ -25,7 +28,8 @@ struct MainMeetingListView: View {
                             ForEach(meetingYear.meetings, id: \.self) { meeting in
                                 
                                 Button {
-                                    
+                                    currentMeeting.meeting = meeting
+                                    isPresented = false
                                 } label: {
                                     Label(meeting.getFullName(), systemImage: "calendar")
                                 }.foregroundColor(.primary)
@@ -47,5 +51,5 @@ struct MainMeetingListView: View {
 }
 
 #Preview {
-    MainMeetingListView()
+    MainMeetingListView(isPresented: .constant(true))
 }

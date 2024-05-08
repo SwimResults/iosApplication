@@ -7,11 +7,9 @@
 
 import Foundation
 
-let api: ApiActions = ApiActions(url: "https://api.swimresults.de/meeting/v1/")
-
 func getMeetings() async throws -> [MeetingModel] {
     do {
-        return try await api.get(path: "meeting")
+        return try await meetingService.get(path: "meeting")
     } catch {
         throw error
     }
@@ -19,7 +17,7 @@ func getMeetings() async throws -> [MeetingModel] {
 
 func getMeetingByMeetId(_ meetId: String) async throws -> MeetingModel {
     do {
-        return try await api.get(path: "meeting/meet/" + meetId)
+        return try await meetingService.get(path: "meeting/meet/" + meetId)
     } catch {
         throw error
     }

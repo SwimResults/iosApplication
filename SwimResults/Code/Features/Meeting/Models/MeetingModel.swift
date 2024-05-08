@@ -7,8 +7,17 @@
 
 import Foundation
 
-struct MeetingModel: Codable, Hashable {
+class CurrentMeeting: ObservableObject {
+    @Published var meeting: MeetingModel?
     
+    static func example() -> CurrentMeeting {
+        let currentMeeting = CurrentMeeting()
+        currentMeeting.meeting = MeetingModel(meetId: "IESC23", dateStart: Date(), dateEnd: Date(), state: "RUNNING", series: MeetingSeriesModel(nameFull: "Internationaler Erzgebirgsschwimmcup", nameMedium: "IESC", nameShort: "IESC"))
+        return currentMeeting
+    }
+}
+
+struct MeetingModel: Codable, Hashable {
     var meetId: String
     var dateStart: Date
     var dateEnd: Date

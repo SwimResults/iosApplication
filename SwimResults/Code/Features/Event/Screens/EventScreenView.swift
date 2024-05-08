@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EventScreenView: View {
     var body: some View {
-        Text("Wettkämpfe-Screen").font(.title)
+        EventListView()
     }
 }
 

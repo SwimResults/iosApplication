@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct MainScreenView: View {
+    @StateObject var currentMeeting: CurrentMeeting = CurrentMeeting();
+    
     var body: some View {
         MainView()
+            .environmentObject(currentMeeting)
     }
 }
 
