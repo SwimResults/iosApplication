@@ -23,7 +23,9 @@ struct EventModel: Codable, Hashable {
     //var ordering: Int?
     
     func getEventName() -> String {
-        return "\((self.relayDistance ?? String(self.distance)))m \(self.style?.name ?? "Schwimmen") (\(self.gender))"
+        let genderKey = String.LocalizationValue(stringLiteral: "COMMON.GENDER." + self.gender)
+        let styleKey = String.LocalizationValue(stringLiteral: "COMMON.STYLE." + (self.style?.name ?? "DEFAULT"))
+        return "\((self.relayDistance ?? String(self.distance)))m " + String(localized: styleKey) + " " + String(localized: genderKey)
     }
 }
 

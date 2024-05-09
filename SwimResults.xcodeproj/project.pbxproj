@@ -32,6 +32,9 @@
 		719E759F2BEB82AF00D40154 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E759E2BEB82AF00D40154 /* Services.swift */; };
 		719E75A12BEB831600D40154 /* EventListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E75A02BEB831600D40154 /* EventListView.swift */; };
 		719E75A32BEB832100D40154 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E75A22BEB832100D40154 /* EventListViewModel.swift */; };
+		719E75A52BECE4F200D40154 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 719E75A42BECE4F200D40154 /* Localizable.xcstrings */; };
+		719E75A92BECF20600D40154 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E75A82BECF20600D40154 /* MeetingView.swift */; };
+		719E75AC2BECF2A700D40154 /* MeetingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E75AB2BECF2A700D40154 /* MeetingScreenView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		719E759E2BEB82AF00D40154 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
 		719E75A02BEB831600D40154 /* EventListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListView.swift; sourceTree = "<group>"; };
 		719E75A22BEB832100D40154 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
+		719E75A42BECE4F200D40154 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		719E75A82BECF20600D40154 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
+		719E75AB2BECF2A700D40154 /* MeetingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingScreenView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				7183D2722BE3D23B000E45B4 /* Assets.xcassets */,
+				719E75A42BECE4F200D40154 /* Localizable.xcstrings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -245,6 +252,9 @@
 			children = (
 				719BB6302BE4F6AA00810D37 /* Actions */,
 				719BB6332BE4F6D400810D37 /* Models */,
+				719E75AA2BECF29400D40154 /* Screens */,
+				719E75A62BECF1E200D40154 /* ViewModels */,
+				719E75A72BECF1F200D40154 /* Views */,
 			);
 			path = Meeting;
 			sourceTree = "<group>";
@@ -397,6 +407,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		719E75A62BECF1E200D40154 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		719E75A72BECF1F200D40154 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				719E75A82BECF20600D40154 /* MeetingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		719E75AA2BECF29400D40154 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				719E75AB2BECF2A700D40154 /* MeetingScreenView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,11 +511,12 @@
 			};
 			buildConfigurationList = 7183D2662BE3D238000E45B4 /* Build configuration list for PBXProject "SwimResults" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 7183D2622BE3D238000E45B4;
 			productRefGroup = 7183D26C2BE3D238000E45B4 /* Products */;
@@ -503,6 +537,7 @@
 			files = (
 				7183D2762BE3D23B000E45B4 /* Preview Assets.xcassets in Resources */,
 				7183D2732BE3D23B000E45B4 /* Assets.xcassets in Resources */,
+				719E75A52BECE4F200D40154 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -547,6 +582,8 @@
 				719E75A32BEB832100D40154 /* EventListViewModel.swift in Sources */,
 				719E759B2BEB785100D40154 /* EventModel.swift in Sources */,
 				719BB6252BE44DCE00810D37 /* SearchScreenView.swift in Sources */,
+				719E75AC2BECF2A700D40154 /* MeetingScreenView.swift in Sources */,
+				719E75A92BECF20600D40154 /* MeetingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
