@@ -35,6 +35,11 @@
 		719E75A52BECE4F200D40154 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 719E75A42BECE4F200D40154 /* Localizable.xcstrings */; };
 		719E75A92BECF20600D40154 /* MeetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E75A82BECF20600D40154 /* MeetingView.swift */; };
 		719E75AC2BECF2A700D40154 /* MeetingScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719E75AB2BECF2A700D40154 /* MeetingScreenView.swift */; };
+		71D6A4CC2BEF85B200862DF7 /* StartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CB2BEF85B200862DF7 /* StartListView.swift */; };
+		71D6A4CE2BEF85BB00862DF7 /* StartListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CD2BEF85BB00862DF7 /* StartListViewModel.swift */; };
+		71D6A4D02BEF865400862DF7 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CF2BEF865400862DF7 /* EventView.swift */; };
+		71D6A4D22BEF865F00862DF7 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D12BEF865F00862DF7 /* EventViewModel.swift */; };
+		71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D32BEF879E00862DF7 /* Color.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +91,11 @@
 		719E75A42BECE4F200D40154 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		719E75A82BECF20600D40154 /* MeetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingView.swift; sourceTree = "<group>"; };
 		719E75AB2BECF2A700D40154 /* MeetingScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingScreenView.swift; sourceTree = "<group>"; };
+		71D6A4CB2BEF85B200862DF7 /* StartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListView.swift; sourceTree = "<group>"; };
+		71D6A4CD2BEF85BB00862DF7 /* StartListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListViewModel.swift; sourceTree = "<group>"; };
+		71D6A4CF2BEF865400862DF7 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		71D6A4D12BEF865F00862DF7 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
+		71D6A4D32BEF879E00862DF7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				710FE18D2BE838F400829ACB /* SpinnerView.swift */,
+				71D6A4CB2BEF85B200862DF7 /* StartListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,6 +217,7 @@
 			children = (
 				719BB62E2BE4F66D00810D37 /* ApiActions.swift */,
 				719E759E2BEB82AF00D40154 /* Services.swift */,
+				71D6A4D32BEF879E00862DF7 /* Color.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -301,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				719E75A02BEB831600D40154 /* EventListView.swift */,
+				71D6A4CF2BEF865400862DF7 /* EventView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -309,6 +322,7 @@
 			isa = PBXGroup;
 			children = (
 				719E75A22BEB832100D40154 /* EventListViewModel.swift */,
+				71D6A4D12BEF865F00862DF7 /* EventViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -317,6 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				719BB62D2BE4EC4E00810D37 /* Actions */,
+				71D6A4CA2BEF859D00862DF7 /* ViewModels */,
 				710FE18C2BE838E000829ACB /* Views */,
 			);
 			path = Common;
@@ -428,6 +443,14 @@
 				719E75AB2BECF2A700D40154 /* MeetingScreenView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		71D6A4CA2BEF859D00862DF7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				71D6A4CD2BEF85BB00862DF7 /* StartListViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,6 +586,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				719BB61C2BE44A8500810D37 /* EventScreenView.swift in Sources */,
+				71D6A4CC2BEF85B200862DF7 /* StartListView.swift in Sources */,
 				719BB6322BE4F6BA00810D37 /* MeetingActions.swift in Sources */,
 				719BB62C2BE455BE00810D37 /* MainMeetingListView.swift in Sources */,
 				719BB6352BE4F6F300810D37 /* MeetingModel.swift in Sources */,
@@ -570,18 +594,22 @@
 				710FE18E2BE838F400829ACB /* SpinnerView.swift in Sources */,
 				719E759D2BEB821200D40154 /* EventActions.swift in Sources */,
 				719E759F2BEB82AF00D40154 /* Services.swift in Sources */,
+				71D6A4D02BEF865400862DF7 /* EventView.swift in Sources */,
+				71D6A4CE2BEF85BB00862DF7 /* StartListViewModel.swift in Sources */,
 				719E75A12BEB831600D40154 /* EventListView.swift in Sources */,
 				719BB63A2BE4F7B500810D37 /* MainViewModel.swift in Sources */,
 				719BB6092BE4119000810D37 /* MainView.swift in Sources */,
 				719BB6222BE44AEA00810D37 /* MainTabItemView.swift in Sources */,
 				719BB6372BE4F77B00810D37 /* MainScreenView.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
+				71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */,
 				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
 				719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */,
 				719BB63F2BE4FBDC00810D37 /* MeetingListModel.swift in Sources */,
 				719E75A32BEB832100D40154 /* EventListViewModel.swift in Sources */,
 				719E759B2BEB785100D40154 /* EventModel.swift in Sources */,
 				719BB6252BE44DCE00810D37 /* SearchScreenView.swift in Sources */,
+				71D6A4D22BEF865F00862DF7 /* EventViewModel.swift in Sources */,
 				719E75AC2BECF2A700D40154 /* MeetingScreenView.swift in Sources */,
 				719E75A92BECF20600D40154 /* MeetingView.swift in Sources */,
 			);

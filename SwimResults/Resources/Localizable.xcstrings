@@ -153,6 +153,9 @@
     "Favoriten (Vereine und Sportler)" : {
 
     },
+    "Hello, World!" : {
+
+    },
     "Hier suchen!!" : {
 
     },
@@ -160,6 +163,9 @@
 
     },
     "Sportler-, Vereins- und Streckensuche" : {
+
+    },
+    "Status: " : {
 
     },
     "Suche" : {
@@ -173,6 +179,9 @@
       }
     },
     "Testing" : {
+
+    },
+    "Veranstalter: " : {
 
     },
     "Veranstaltung" : {

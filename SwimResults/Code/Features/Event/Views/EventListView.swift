@@ -13,7 +13,7 @@ struct EventListView: View {
     @ObservedObject private var viewModel = EventListViewModel()
     
     var body: some View {
-        VStack {
+        ZStack {
             List {
                 ForEach(viewModel.parts, id: \.self) { part in
                     
@@ -29,6 +29,10 @@ struct EventListView: View {
                         }
                     }
                 }
+            }
+            
+            if viewModel.fetching {
+                SpinnerView()
             }
         }
         .onAppear {
