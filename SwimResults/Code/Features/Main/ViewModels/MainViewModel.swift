@@ -7,12 +7,30 @@
 
 import Foundation
 
+@MainActor
 final class MainViewModel: ObservableObject {
-    @Published var meeting: MeetingModel?
+    @Published var currentMeeting: CurrentMeeting?
+    @Published var fetching = false
     
-    @Published var selection = 1
+    func setup(_ currentMeeting: CurrentMeeting) {
+        self.currentMeeting = currentMeeting
+    }
     
-    func getMeetingByMeetId(_ meetId: String) {
-        
+    func fetchMeeting(_ meetId: String, silent: Bool = false) async {
+        do {
+            if (!silent) {
+                fetching = true
+            }
+            let meeting = try await getMeetingByMeetId(meetId)
+            print("restored meeting " + meetId + " from AppStorage")
+            
+            currentMeeting?.meeting = meeting
+            
+        } catch {
+            
+        }
+        if (!silent) {
+            fetching = false
+        }
     }
 }

@@ -24,32 +24,59 @@ struct MeetingView: View {
                 endPoint: .bottomTrailing
             ).ignoresSafeArea()*/
             
-            VStack(spacing: 20) {
-                ZStack {
-                    Circle().fill(.white).frame(width: 150, height: 150)
-                    AsyncImage(url: URL(string: meeting?.layout?.logoUrl ?? "")) {
-                        image in image.image?.resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
-                    }.frame(width: 120, height: 120)
+            VStack {
+                List {
+                    
+                    Section(content: {
+                        
+                        Text(meeting?.getFullName() ?? "").bold().multilineTextAlignment(.center)
+                        
+                        LabeledContent {
+                            Text(meeting?.getStartDateString() ?? "")
+                        } label: {
+                            Label("Start", systemImage: "calendar")
+                        }
+                        
+                        LabeledContent {
+                            Text(meeting?.getEndDateString() ?? "")
+                        } label: {
+                            Label("Ende", systemImage: "calendar")
+                        }
+                        
+                        LabeledContent {
+                            Text(meeting?.state ?? "lade Status...")
+                        } label: {
+                            Label("Status", systemImage: "dot.radiowaves.right")
+                        }
+                        
+                        LabeledContent {
+                            Text("")
+                        } label: {
+                            Label("Veranstalter", systemImage: "person.2.fill")
+                        }
+                        
+                        LabeledContent {
+                            Text("")
+                        } label: {
+                            Label("Addresse", systemImage: "mappin.and.ellipse")
+                        }
+                    }, header: {
+                        HStack {
+                            Spacer()
+                            
+                            ZStack {
+                                Circle().fill(.white).frame(width: 150, height: 150)
+                                AsyncImage(url: URL(string: meeting?.layout?.logoUrl ?? "")) {
+                                    image in image.image?.resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
+                                }.frame(width: 120, height: 120)
+                            }
+                            
+                            Spacer()
+                        }
+                        .padding()
+                    })
                 }
-                GroupBox {
-                    Text(meeting?.getFullName() ?? "").bold().multilineTextAlignment(.center)
-                    Divider()
-                    Text("vom " + (meeting?.getStartDateString() ?? ""))
-                    Text("bis " + (meeting?.getEndDateString() ?? ""))
-                    Divider()
-                    HStack {
-                        Text("Status: ").bold()
-                        Text(meeting?.state ?? "lade Status...")
-                    }
-                    HStack {
-                        Text("Veranstalter: ").bold()
-                        //Text(team?.name ?? "-")
-                    }
-                }
-                .padding()
-                Spacer()
             }
-            .padding()
         }
     }
 }

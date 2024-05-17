@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class EventListViewModel: ObservableObject {
     @Published var parts: [MeetingPartModel] = []
     @Published var fetching = false
@@ -17,21 +18,21 @@ final class EventListViewModel: ObservableObject {
         self.currentMeeting = currentMeeting
       }
     
-    func fetchEventParts() {
+    func fetchEventParts() async {
         if (currentMeeting!.meeting == nil) {
             return
         }
         
         fetching = true
-        Task {
-            do {
-                parts = try await getEventsAsPartsByMeetId(currentMeeting!.meeting!.meetId)
-                print(parts)
-                fetching = false
-            } catch {
-                print(error)
-                fetching = false
-            }
+        do {
+            let parts = try await getEventsAsPartsByMeetId(currentMeeting!.meeting!.meetId)
+            
+            self.parts = parts
+            
+            fetching = false
+        } catch {
+            print(error)
+            fetching = false
         }
     }
 }

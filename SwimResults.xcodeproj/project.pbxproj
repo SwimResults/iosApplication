@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		710FE18E2BE838F400829ACB /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FE18D2BE838F400829ACB /* SpinnerView.swift */; };
+		711BD1DA2BF4DF81004FEA88 /* LogoShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BD1D92BF4DF81004FEA88 /* LogoShape.swift */; };
+		7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */; };
 		7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D26E2BE3D238000E45B4 /* SwimResultsApp.swift */; };
 		7183D2732BE3D23B000E45B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7183D2722BE3D23B000E45B4 /* Assets.xcassets */; };
 		7183D2762BE3D23B000E45B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7183D2752BE3D23B000E45B4 /* Preview Assets.xcassets */; };
@@ -40,6 +42,8 @@
 		71D6A4D02BEF865400862DF7 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CF2BEF865400862DF7 /* EventView.swift */; };
 		71D6A4D22BEF865F00862DF7 /* EventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D12BEF865F00862DF7 /* EventViewModel.swift */; };
 		71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D32BEF879E00862DF7 /* Color.swift */; };
+		71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */; };
+		71D6A4DC2BF014E500862DF7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4DB2BF014E500862DF7 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +65,8 @@
 
 /* Begin PBXFileReference section */
 		710FE18D2BE838F400829ACB /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		711BD1D92BF4DF81004FEA88 /* LogoShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoShape.swift; sourceTree = "<group>"; };
+		7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHelper.swift; sourceTree = "<group>"; };
 		7183D26B2BE3D238000E45B4 /* SwimResults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimResults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7183D26E2BE3D238000E45B4 /* SwimResultsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimResultsApp.swift; sourceTree = "<group>"; };
 		7183D2722BE3D23B000E45B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,6 +102,8 @@
 		71D6A4CF2BEF865400862DF7 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		71D6A4D12BEF865F00862DF7 /* EventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewModel.swift; sourceTree = "<group>"; };
 		71D6A4D32BEF879E00862DF7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
+		71D6A4DB2BF014E500862DF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +138,14 @@
 				71D6A4CB2BEF85B200862DF7 /* StartListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7180182B2BF7BE9F005D817A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		7183D2622BE3D238000E45B4 = {
@@ -193,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				719BB61D2BE44AB500810D37 /* Common */,
+				71D6A4D52BF014A900862DF7 /* Settings */,
 				719BB61E2BE44ABF00810D37 /* Main */,
 				719BB6152BE44A2700810D37 /* Live */,
 				719BB6142BE44A1D00810D37 /* Favorites */,
@@ -215,9 +232,11 @@
 		719BB60E2BE4321F00810D37 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7180182B2BF7BE9F005D817A /* Helpers */,
 				719BB62E2BE4F66D00810D37 /* ApiActions.swift */,
 				719E759E2BEB82AF00D40154 /* Services.swift */,
 				71D6A4D32BEF879E00862DF7 /* Color.swift */,
+				711BD1D92BF4DF81004FEA88 /* LogoShape.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -453,6 +472,39 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		71D6A4D52BF014A900862DF7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				71D6A4D82BF014C600862DF7 /* Screens */,
+				71D6A4D72BF014BE00862DF7 /* ViewModels */,
+				71D6A4D62BF014B600862DF7 /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		71D6A4D62BF014B600862DF7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71D6A4DB2BF014E500862DF7 /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71D6A4D72BF014BE00862DF7 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		71D6A4D82BF014C600862DF7 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -601,10 +653,14 @@
 				719BB6092BE4119000810D37 /* MainView.swift in Sources */,
 				719BB6222BE44AEA00810D37 /* MainTabItemView.swift in Sources */,
 				719BB6372BE4F77B00810D37 /* MainScreenView.swift in Sources */,
+				7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
 				71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */,
+				71D6A4DC2BF014E500862DF7 /* SettingsView.swift in Sources */,
 				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
+				71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */,
 				719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */,
+				711BD1DA2BF4DF81004FEA88 /* LogoShape.swift in Sources */,
 				719BB63F2BE4FBDC00810D37 /* MeetingListModel.swift in Sources */,
 				719E75A32BEB832100D40154 /* EventListViewModel.swift in Sources */,
 				719E759B2BEB785100D40154 /* EventModel.swift in Sources */,
@@ -770,8 +826,9 @@
 		7183D2902BE3D23B000E45B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Dark Shadowed";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
@@ -783,8 +840,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -801,8 +858,9 @@
 		7183D2912BE3D23B000E45B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Dark Shadowed";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
@@ -814,8 +872,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -38,15 +38,18 @@ struct MainMeetingListView: View {
                         }
                     }
                 }
+                .refreshable {
+                    await viewModel.fetchMeetings()
+                }
                 
                 if viewModel.fetching {
                         SpinnerView()
                 }
             }
         }
-        .onAppear(perform: {
-            viewModel.fetchMeetings()
-        })
+        .task {
+            await viewModel.fetchMeetings()
+        }
     }
 }
 

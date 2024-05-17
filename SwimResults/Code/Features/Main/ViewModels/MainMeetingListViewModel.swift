@@ -7,42 +7,38 @@
 
 import Foundation
 
+@MainActor
 final class MainMeetingListViewModel: ObservableObject {
     @Published var meetingYearList: [MeetingListYearModel] = []
     @Published var fetching = false
     
-    func fetchMeetings() {
+    func fetchMeetings() async {
         fetching = true
-        Task {
-            do {
-                var meetingYears = [Int: [MeetingModel]]()
-                
-                let meetings = try await getMeetings()
-                for meeting in meetings {
-                    let year = meeting.getYear()
-                    print(year)
-                    if (meetingYears[year] == nil) {
-                        meetingYears[year] = []
-                    }
-                    meetingYears[year]?.append(meeting)
+        do {
+            var meetingYears = [Int: [MeetingModel]]()
+            
+            let meetings = try await getMeetings()
+            for meeting in meetings {
+                let year = meeting.getYear()
+                if (meetingYears[year] == nil) {
+                    meetingYears[year] = []
                 }
-                
-                let meetingList = meetingYears
-                    .keys
-                    .sorted()
-                    .reversed()
-                    .map{MeetingListYearModel(year: $0, meetings: meetingYears[$0]!)}
-                
-                self.meetingYearList.removeAll()
-                self.meetingYearList.append(contentsOf: meetingList)
-                
-                print(meetingYearList)
-                
-                fetching = false
-            } catch {
-                print(error)
-                fetching = false
+                meetingYears[year]?.append(meeting)
             }
+            
+            let meetingList = meetingYears
+                .keys
+                .sorted()
+                .reversed()
+                .map{MeetingListYearModel(year: $0, meetings: meetingYears[$0]!)}
+            
+            self.meetingYearList.removeAll()
+            self.meetingYearList.append(contentsOf: meetingList)
+            
+            fetching = false
+        } catch {
+            print(error)
+            fetching = false
         }
     }
 }

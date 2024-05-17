@@ -17,9 +17,8 @@ struct EventListView: View {
             List {
                 ForEach(viewModel.parts, id: \.self) { part in
                     
-                    Text("Abschnitt " + String(part.number)).font(.title).bold()
                     
-                    Section {
+                    Section( content: {
                         ForEach(part.events, id: \.self) {meetingEvent in
                             HStack {
                                 Text("\(meetingEvent.number)")
@@ -27,17 +26,23 @@ struct EventListView: View {
                             }
                             
                         }
-                    }
+                    }, header: {
+                        Text("Abschnitt " + String(part.number))
+                    })
                 }
+            }
+            .listStyle(.sidebar)
+            .refreshable {
+                await viewModel.fetchEventParts()
             }
             
             if viewModel.fetching {
                 SpinnerView()
             }
         }
-        .onAppear {
+        .task {
             viewModel.setup(currentMeeting)
-            viewModel.fetchEventParts()
+            await viewModel.fetchEventParts()
         }
     }
 }

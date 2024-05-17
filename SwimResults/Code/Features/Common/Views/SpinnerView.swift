@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct SpinnerView: View {
+    var text: String = "";
     var body: some View {
-        ProgressView()
-            .scaleEffect(1.5)
+        VStack {
+            ProgressView()
+                .scaleEffect(1.5)
+            
+            if (text != "") {
+                Text(text)
+            }
+        }
+    }
+    
+    init(_ text: String = "") {
+        self.text = text
     }
 }
 

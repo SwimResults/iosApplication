@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainTabItemView<Content: View>: View where Content : View {
+    var needsMeeting: Bool = true
+    
     @State var title = "Seite"
     @State var showMeetingSelection = false
     
@@ -19,10 +21,43 @@ struct MainTabItemView<Content: View>: View where Content : View {
             
         NavigationStack {
             VStack {
-                if (currentMeeting.meeting == nil) {
-                    Text("Keine Veranstaltung ausgewählt!")
+                if (needsMeeting && currentMeeting.meeting == nil) {
+                    VStack {
+                        Image(systemName: "calendar.badge.exclamationmark")
+                            .foregroundStyle(.red, .gray)
+                            .font(.system(size: 60))
+                        Text("Keine Veranstaltung ausgewählt!")
+                        Button(action: {showMeetingSelection = true}) {
+                            HStack {
+                                Image(systemName: "calendar")
+                                    .imageScale(.large)
+                                Text("Veranstaltung auswählen")
+                            }
+                        }
+                            .buttonStyle(.borderedProminent)
+                            .padding()
+                    }
                 } else {
                     content
+                        .padding(.bottom, 70)
+                        
+                        /*.safeAreaInset(edge: .bottom) {
+                            ZStack {
+                                Color(U)
+                                VStack {
+                                    Divider()
+                                    Spacer()
+                                    HStack {
+                                        Circle()
+                                            .frame(width: 12, height: 12)
+                                            .foregroundStyle(.red)
+                                        Text("Live")
+                                    }
+                                }
+                            }
+                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
+                            .backgroundStyle(.gray)
+                        }*/
                 }
             }
             .navigationTitle(title)
@@ -34,8 +69,9 @@ struct MainTabItemView<Content: View>: View where Content : View {
                         .imageScale(.large)
                 }
             }
+            .toolbarBackground(.visible, for: .tabBar)
         }
-        .sheet(isPresented: $showMeetingSelection, content: {
+        .fullScreenCover(isPresented: $showMeetingSelection, content: {
             NavigationView {
                 MainMeetingListView(isPresented: $showMeetingSelection)
                 .toolbar {
@@ -48,6 +84,7 @@ struct MainTabItemView<Content: View>: View where Content : View {
                         Button(action: {showMeetingSelection = false}) {
                             Image(systemName: "xmark.circle.fill")
                                 .symbolRenderingMode(.hierarchical)
+                                .font(.title2)
                         }
                     }
                 }
@@ -58,7 +95,9 @@ struct MainTabItemView<Content: View>: View where Content : View {
 }
 
 #Preview {
-    MainTabItemView(title: "Test Seite") {
+    /*MainTabItemView(title: "Test Seite") {
         Text("Testing")
-    }
+    }.environmentObject(CurrentMeeting())*/
+    
+    MainView().environmentObject(CurrentMeeting.example())
 }
