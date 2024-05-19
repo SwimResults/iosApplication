@@ -7,10 +7,16 @@
 
 import Foundation
 
+enum SheetMode {
+    case none, live, meetingSelection
+}
+
 @MainActor
 final class MainViewModel: ObservableObject {
     @Published var currentMeeting: CurrentMeeting?
     @Published var fetching = false
+    
+    @Published var sheetMode: SheetMode = .none
     
     func setup(_ currentMeeting: CurrentMeeting) {
         self.currentMeeting = currentMeeting

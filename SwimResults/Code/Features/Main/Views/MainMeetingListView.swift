@@ -11,8 +11,8 @@ struct MainMeetingListView: View {
     @ObservedObject private var viewModel = MainMeetingListViewModel()
     @EnvironmentObject var currentMeeting: CurrentMeeting
     
-    @Binding var isPresented: Bool
-    
+    @Binding var sheetMode: SheetMode
+
     var body: some View {
         VStack {
             ZStack {
@@ -29,7 +29,7 @@ struct MainMeetingListView: View {
                                 
                                 Button {
                                     currentMeeting.meeting = meeting
-                                    isPresented = false
+                                    sheetMode = .none
                                 } label: {
                                     Label(meeting.getFullName(), systemImage: "calendar")
                                 }.foregroundColor(.primary)
@@ -54,5 +54,5 @@ struct MainMeetingListView: View {
 }
 
 #Preview {
-    MainMeetingListView(isPresented: .constant(true))
+    MainMeetingListView(sheetMode: .constant(SheetMode.meetingSelection))
 }

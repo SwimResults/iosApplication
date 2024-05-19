@@ -7,12 +7,46 @@
 
 import SwiftUI
 
+struct Sheetly: View {
+    @State private var showingFirst = true
+    @State private var showingThird = false
+
+    var body: some View {
+        VStack {
+            Button("Show First Sheet") {
+                showingFirst = true
+            }
+            Button("Show Full Screen Cover") {
+                showingThird = true
+            }
+            Spacer()
+        }
+        .sheet(isPresented: $showingFirst) {
+            Button("Show Full Screen Cover") {
+                showingFirst = false
+                showingThird = true
+            }
+            .presentationDetents([.medium, .large])
+            .presentationBackgroundInteraction(.enabled)
+        }
+        .fullScreenCover(isPresented: $showingThird) {
+            VStack {
+                Text("Full Screen Cover")
+                Button(action: {showingThird = false; showingFirst = true}) {
+                    Text("Close")
+                }
+            }
+        }
+    }
+}
+
 struct SpinnerView: View {
     var text: String = "";
     var body: some View {
         VStack {
             ProgressView()
                 .scaleEffect(1.5)
+                .padding()
             
             if (text != "") {
                 Text(text)
@@ -26,5 +60,6 @@ struct SpinnerView: View {
 }
 
 #Preview {
-    SpinnerView()
+    //SpinnerView("Läuft doch")
+    Sheetly()
 }

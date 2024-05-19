@@ -19,6 +19,9 @@
     "Bewerten" : {
 
     },
+    "Close" : {
+
+    },
     "COMMON.GENDER.FEMALE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -180,6 +183,9 @@
     "Favoriten (Vereine und Sportler)" : {
 
     },
+    "Full Screen Cover" : {
+
+    },
     "Hello, World!" : {
 
     },
@@ -198,7 +204,10 @@
     "Live" : {
 
     },
-    "Masha" : {
+    "Show First Sheet" : {
+
+    },
+    "Show Full Screen Cover" : {
 
     },
     "Sportler-, Vereins- und Streckensuche" : {
@@ -227,7 +236,6 @@
 
     },
     "Veranstaltung" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {

@@ -12,7 +12,7 @@ class CurrentMeeting: ObservableObject {
     
     static func example() -> CurrentMeeting {
         let currentMeeting = CurrentMeeting()
-        currentMeeting.meeting = MeetingModel(meetId: "IESC23", dateStart: Date(), dateEnd: Date(), state: "RUNNING", series: MeetingSeriesModel(nameFull: "Internationaler Erzgebirgsschwimmcup", nameMedium: "IESC", nameShort: "IESC"))
+        currentMeeting.meeting = MeetingModel(meetId: "IESC23", dateStart: Date(), dateEnd: Date(), iteration: 143, state: "RUNNING", series: MeetingSeriesModel(nameFull: "Internationaler Erzgebirgsschwimmcup", nameMedium: "IESC", nameShort: "IESC"))
         return currentMeeting
     }
 }

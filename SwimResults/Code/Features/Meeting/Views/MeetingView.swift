@@ -29,8 +29,6 @@ struct MeetingView: View {
                     
                     Section(content: {
                         
-                        Text(meeting?.getFullName() ?? "").bold().multilineTextAlignment(.center)
-                        
                         LabeledContent {
                             Text(meeting?.getStartDateString() ?? "")
                         } label: {
@@ -61,17 +59,26 @@ struct MeetingView: View {
                             Label("Addresse", systemImage: "mappin.and.ellipse")
                         }
                     }, header: {
-                        HStack {
-                            Spacer()
-                            
-                            ZStack {
-                                Circle().fill(.white).frame(width: 150, height: 150)
-                                AsyncImage(url: URL(string: meeting?.layout?.logoUrl ?? "")) {
-                                    image in image.image?.resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
-                                }.frame(width: 120, height: 120)
+                        VStack {
+                            HStack {
+                                Spacer()
+                                
+                                ZStack {
+                                    Circle().fill(.white).frame(width: 150, height: 150)
+                                    AsyncImage(url: URL(string: meeting?.layout?.logoUrl ?? "")) {
+                                        image in image.image?.resizable().aspectRatio(contentMode: .fit).clipShape(Circle())
+                                    }.frame(width: 120, height: 120)
+                                }
+                                
+                                Spacer()
                             }
+                            .padding()
                             
-                            Spacer()
+                            
+                            Text(meeting?.getFullName() ?? "")
+                                .multilineTextAlignment(.center)
+                                .font(.headline)
+                                .foregroundStyle(.foreground)
                         }
                         .padding()
                     })

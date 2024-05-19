@@ -11,7 +11,7 @@ struct MainTabItemView<Content: View>: View where Content : View {
     var needsMeeting: Bool = true
     
     @State var title = "Seite"
-    @State var showMeetingSelection = false
+    @Binding var sheetMode: SheetMode
     
     @EnvironmentObject var currentMeeting: CurrentMeeting
     
@@ -27,7 +27,7 @@ struct MainTabItemView<Content: View>: View where Content : View {
                             .foregroundStyle(.red, .gray)
                             .font(.system(size: 60))
                         Text("Keine Veranstaltung ausgewählt!")
-                        Button(action: {showMeetingSelection = true}) {
+                        Button(action: {sheetMode = .meetingSelection}) {
                             HStack {
                                 Image(systemName: "calendar")
                                     .imageScale(.large)
@@ -38,31 +38,38 @@ struct MainTabItemView<Content: View>: View where Content : View {
                             .padding()
                     }
                 } else {
-                    content
-                        .padding(.bottom, 70)
-                        
-                        /*.safeAreaInset(edge: .bottom) {
-                            ZStack {
-                                Color(U)
-                                VStack {
-                                    Divider()
-                                    Spacer()
-                                    HStack {
-                                        Circle()
-                                            .frame(width: 12, height: 12)
-                                            .foregroundStyle(.red)
-                                        Text("Live")
+                    if (currentMeeting.meeting?.state == "RUNNING") {
+                        content
+                            .safeAreaInset(edge: .bottom) {
+                                Button(action: {sheetMode = .live}) {
+                                    ZStack {
+                                        Color.clear
+                                            .background(Material.bar)
+                                        VStack {
+                                            Divider()
+                                            Spacer()
+                                            HStack {
+                                                Circle()
+                                                    .frame(width: 12, height: 12)
+                                                    .foregroundStyle(.red)
+                                                Text("Live")
+                                            }
+                                            Spacer()
+                                        }
                                     }
+                                    .frame(height: 60)
                                 }
                             }
-                            .frame(height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/)
-                            .backgroundStyle(.gray)
-                        }*/
+                    } else {
+                        content
+                    }
+                        
+                        
                 }
             }
             .navigationTitle(title)
             .toolbar {
-                Button(action: {showMeetingSelection = true}) {
+                Button(action: {sheetMode = .meetingSelection}) {
                     Image(systemName: "calendar.badge.checkmark")
                         .symbolRenderingMode(.palette)
                         .foregroundStyle(.green, .primary)
@@ -71,26 +78,7 @@ struct MainTabItemView<Content: View>: View where Content : View {
             }
             .toolbarBackground(.visible, for: .tabBar)
         }
-        .fullScreenCover(isPresented: $showMeetingSelection, content: {
-            NavigationView {
-                MainMeetingListView(isPresented: $showMeetingSelection)
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        HStack {
-                            Text("Veranstaltung auswählen").font(.headline)
-                        }
-                    }
-                    ToolbarItem(placement: .confirmationAction) {
-                        Button(action: {showMeetingSelection = false}) {
-                            Image(systemName: "xmark.circle.fill")
-                                .symbolRenderingMode(.hierarchical)
-                                .font(.title2)
-                        }
-                    }
-                }
-            }
-            
-        })
+        
     }
 }
 
