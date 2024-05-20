@@ -14,30 +14,38 @@ struct EventListView: View {
     
     var body: some View {
         ZStack {
-            List {
-                ForEach(viewModel.parts, id: \.self) { part in
-                    
-                    
-                    Section( content: {
-                        ForEach(part.events, id: \.self) {meetingEvent in
-                            HStack {
-                                Text("\(meetingEvent.number)")
-                                Text(meetingEvent.getEventName())
-                            }
-                            
-                        }
-                    }, header: {
-                        Text("Abschnitt " + String(part.number))
-                    })
-                }
-            }
-            .listStyle(.sidebar)
-            .refreshable {
-                await viewModel.fetchEventParts()
-            }
-            
             if viewModel.fetching {
                 SpinnerView()
+            } else {
+                if (viewModel.parts.count > 0) {
+                    List {
+                        ForEach(viewModel.parts, id: \.self) { part in
+                            
+                            
+                            Section( content: {
+                                ForEach(part.events, id: \.self) {meetingEvent in
+                                    HStack {
+                                        Text("\(meetingEvent.number)")
+                                        Text(meetingEvent.getEventName())
+                                    }
+                                    
+                                }
+                            }, header: {
+                                Text("Abschnitt " + String(part.number))
+                            })
+                        }
+                    }
+                    .listStyle(.sidebar)
+                    .refreshable {
+                        await viewModel.fetchEventParts()
+                    }
+                } else {
+                    ContentUnavailableView {
+                        Label("Keine Wettkämpfe", systemImage: "calendar")
+                    } description: {
+                        Text("Für diese Veranstaltung wurden keine Wettkämpfe gefunden.")
+                    }
+                }
             }
         }
         .task {

@@ -23,19 +23,26 @@ struct MainTabItemView<Content: View>: View where Content : View {
             VStack {
                 if (needsMeeting && currentMeeting.meeting == nil) {
                     VStack {
-                        Image(systemName: "calendar.badge.exclamationmark")
-                            .foregroundStyle(.red, .gray)
-                            .font(.system(size: 60))
-                        Text("Keine Veranstaltung ausgewählt!")
-                        Button(action: {sheetMode = .meetingSelection}) {
-                            HStack {
-                                Image(systemName: "calendar")
-                                    .imageScale(.large)
-                                Text("Veranstaltung auswählen")
+                        ContentUnavailableView {
+                            Label {
+                                Text("Keine Veranstaltung ausgewählt!")
+                            } icon: {
+                                Image(systemName: "calendar.badge.exclamationmark")
+                                    .foregroundStyle(.red, .gray)
                             }
-                        }
-                            .buttonStyle(.borderedProminent)
+                        } description: {
+                            Text("Wähle eine Veranstaltung aus, um ihre Wettkämpfe und weitere Daten anzuzeigen.")
+                            Button(action: {sheetMode = .meetingSelection}) {
+                                HStack {
+                                    Image(systemName: "calendar")
+                                        .imageScale(.large)
+                                    Text("Veranstaltung auswählen")
+                                }
+                            }
                             .padding()
+                            
+                        }
+                        
                     }
                 } else {
                     if (currentMeeting.meeting?.state == "RUNNING") {
@@ -87,5 +94,6 @@ struct MainTabItemView<Content: View>: View where Content : View {
         Text("Testing")
     }.environmentObject(CurrentMeeting())*/
     
-    MainView().environmentObject(CurrentMeeting.example())
+    //MainView().environmentObject(CurrentMeeting.example())
+    MainView().environmentObject(CurrentMeeting())
 }

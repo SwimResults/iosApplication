@@ -186,6 +186,9 @@
     "Full Screen Cover" : {
 
     },
+    "Für diese Veranstaltung wurden keine Wettkämpfe gefunden." : {
+
+    },
     "Hello, World!" : {
 
     },
@@ -195,7 +198,13 @@
     "Impressum" : {
 
     },
+    "keine" : {
+
+    },
     "Keine Veranstaltung ausgewählt!" : {
+
+    },
+    "Keine Wettkämpfe" : {
 
     },
     "Kontakt" : {
@@ -254,6 +263,9 @@
           }
         }
       }
+    },
+    "Wähle eine Veranstaltung aus, um ihre Wettkämpfe und weitere Daten anzuzeigen." : {
+
     },
     "Webseite" : {
 

@@ -114,6 +114,11 @@ struct MainView: View {
                                 .font(.title2)
                         }
                     }
+                    ToolbarItem(placement: .cancellationAction) {
+                        Button(action: {viewModel.sheetMode = .none; currentMeeting.meeting = nil}) {
+                            Text("keine")
+                        }
+                    }
                 }
             }
         })
