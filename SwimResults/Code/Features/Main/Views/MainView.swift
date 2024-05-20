@@ -98,7 +98,9 @@ struct MainView: View {
                 await viewModel.fetchMeeting(savedMeetingId)
             }
         }
-        .sheet(isPresented: .constant(viewModel.sheetMode == SheetMode.meetingSelection), content: {
+        .sheet(isPresented: .constant(viewModel.sheetMode == SheetMode.meetingSelection), onDismiss: {
+            viewModel.sheetMode = .none
+        }, content: {
             NavigationView {
                 MainMeetingListView(sheetMode: $viewModel.sheetMode)
                 .toolbar {
@@ -122,7 +124,9 @@ struct MainView: View {
                 }
             }
         })
-        .sheet(isPresented: .constant(viewModel.sheetMode == SheetMode.live), content: {
+        .sheet(isPresented: .constant(viewModel.sheetMode == SheetMode.live), onDismiss: {
+            viewModel.sheetMode = .none
+        }, content: {
             NavigationView {
                 VStack {
                     Divider()

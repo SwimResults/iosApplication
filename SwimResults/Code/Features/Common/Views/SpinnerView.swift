@@ -42,14 +42,21 @@ struct Sheetly: View {
 
 struct SpinnerView: View {
     var text: String = "";
+    var inline: Bool = false;
     var body: some View {
         VStack {
+            if (!inline) {
+                Spacer()
+            }
             ProgressView()
                 .scaleEffect(1.5)
                 .padding()
             
             if (text != "") {
                 Text(text)
+            }
+            if (!inline) {
+                Spacer()
             }
         }
     }
