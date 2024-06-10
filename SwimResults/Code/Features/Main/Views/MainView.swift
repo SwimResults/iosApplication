@@ -128,17 +128,7 @@ struct MainView: View {
             viewModel.sheetMode = .none
         }, content: {
             NavigationView {
-                VStack {
-                    Divider()
-                    Spacer()
-                    HStack {
-                        Circle()
-                            .frame(width: 12, height: 12)
-                            .foregroundStyle(.red)
-                        Text("Live")
-                    }
-                    Spacer()
-                }
+                LiveView()
                 .toolbar {
                     ToolbarItem(placement: .principal) {
                         HStack {

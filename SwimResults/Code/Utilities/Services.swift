@@ -8,3 +8,4 @@
 import Foundation
 
 let meetingService: ApiActions = ApiActions(url: "https://api.swimresults.de/meeting/v1/")
+let startService: ApiActions = ApiActions(url: "https://api.swimresults.de/start/v1/")

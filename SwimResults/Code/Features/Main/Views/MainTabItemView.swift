@@ -55,12 +55,7 @@ struct MainTabItemView<Content: View>: View where Content : View {
                                         VStack {
                                             Divider()
                                             Spacer()
-                                            HStack {
-                                                Circle()
-                                                    .frame(width: 12, height: 12)
-                                                    .foregroundStyle(.red)
-                                                Text("Live")
-                                            }
+                                            LiveBarView()
                                             Spacer()
                                         }
                                     }

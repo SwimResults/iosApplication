@@ -9,5 +9,11 @@ import Foundation
 
 struct HeatModel: Codable, Hashable {
     var _id: String
-    var dateStart: Date
+    var meeting: String
+    var event: Int?
+    var number: Int?
+    var startEstimation: Date?
+    var startDelayEstimation: Date?
+    var startAt: Date?
+    var finishedAt: Date?
 }
