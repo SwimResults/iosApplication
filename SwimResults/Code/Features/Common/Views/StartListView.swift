@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct StartListView: View {
+    @ObservedObject private var viewModel = StartListViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ZStack {
+            if viewModel.fetching {
+                SpinnerView()
+            } else {
+                
+            }
+        }
     }
 }
 
