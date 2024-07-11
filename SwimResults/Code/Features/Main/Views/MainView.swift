@@ -23,35 +23,35 @@ struct MainView: View {
                 VStack {
                     TabView {
                         
-                        MainTabItemView(title: "Wettkampffolge", sheetMode: $viewModel.sheetMode) {
+                        MainTabItemView(title: Text("Wettkampffolge"), sheetMode: $viewModel.sheetMode) {
                             EventScreenView()
                         }
                         .tabItem {
                             Label("Wettkämpfe", systemImage: "figure.pool.swim")
                         }
                         
-                        MainTabItemView(title: "Meine Favoriten", sheetMode: $viewModel.sheetMode) {
+                        MainTabItemView(title: Text("Meine Favoriten"), sheetMode: $viewModel.sheetMode) {
                             Text("Favoriten (Vereine und Sportler)")
                         }
                         .tabItem {
                             Label("Favoriten", systemImage: "star")
                         }
                         
-                        MainTabItemView(title: "Suche", sheetMode: $viewModel.sheetMode) {
+                        MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode) {
                             SearchScreenView()
                         }
                         .tabItem {
                             Label("Suche", systemImage: "magnifyingglass.circle.fill")
                         }
                         
-                        MainTabItemView(title: "Veranstaltung", sheetMode: $viewModel.sheetMode) {
+                        MainTabItemView(title: Text("Veranstaltung"), sheetMode: $viewModel.sheetMode) {
                             MeetingScreenView()
                         }
                         .tabItem {
                             Label("Veranstaltung", systemImage: "calendar")
                         }
                         
-                        MainTabItemView(needsMeeting: false, title: "Einstellungen", sheetMode: $viewModel.sheetMode) {
+                        MainTabItemView(needsMeeting: false, title: Text("Einstellungen"), sheetMode: $viewModel.sheetMode) {
                             SettingsScreenView()
                         }
                         .tabItem {

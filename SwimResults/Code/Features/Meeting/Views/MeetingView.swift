@@ -56,7 +56,7 @@ struct MeetingView: View {
                         LabeledContent {
                             Text("")
                         } label: {
-                            Label("Addresse", systemImage: "mappin.and.ellipse")
+                            Label("Adresse", systemImage: "mappin.and.ellipse")
                         }
                     }, header: {
                         VStack {

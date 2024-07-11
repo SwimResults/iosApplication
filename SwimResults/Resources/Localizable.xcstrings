@@ -7,20 +7,75 @@
     "%lld" : {
 
     },
-    "Addresse" : {
-
+    "10 Läufe" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "10 Heats"
+          }
+        }
+      }
+    },
+    "Abschnitt %lld" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Part %lld"
+          }
+        }
+      }
+    },
+    "Adresse" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Address"
+          }
+        }
+      }
     },
     "App" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App"
+          }
+        }
+      }
     },
     "App Icon" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Icon"
+          }
+        }
+      }
     },
     "Bewerten" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate"
+          }
+        }
+      }
     },
     "Close" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Close"
+          }
+        }
+      }
     },
     "COMMON.GENDER.FEMALE" : {
       "extractionState" : "manual",
@@ -73,6 +128,23 @@
         }
       }
     },
+    "COMMON.STYLE.APNOE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apnoe"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apnea"
+          }
+        }
+      }
+    },
     "COMMON.STYLE.BACKSTROKE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -86,6 +158,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Backstroke"
+          }
+        }
+      }
+    },
+    "COMMON.STYLE.BIFIN" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BiFin"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BiFin"
           }
         }
       }
@@ -124,6 +213,40 @@
         }
       }
     },
+    "COMMON.STYLE.DISTANCE_DIVING" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Streckentauchen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Immersion"
+          }
+        }
+      }
+    },
+    "COMMON.STYLE.FINSWIMMING" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Flossenschwimmen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Surface"
+          }
+        }
+      }
+    },
     "COMMON.STYLE.FREESTYLE" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -158,17 +281,62 @@
         }
       }
     },
+    "COMMON.STYLE.SB" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SB"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SB"
+          }
+        }
+      }
+    },
     "Einstellungen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Settings"
+          }
+        }
+      }
     },
     "Ende" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "End"
+          }
+        }
+      }
     },
     "Entwickler" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Developer"
+          }
+        }
+      }
     },
     "Erscheinungsbild" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Appearance"
+          }
+        }
+      }
     },
     "Favoriten" : {
       "localizations" : {
@@ -187,31 +355,114 @@
 
     },
     "Für diese Veranstaltung wurden keine Wettkämpfe gefunden." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No events could be found for this meeting."
+          }
+        }
+      }
     },
     "Hello, World!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hello, World!"
+          }
+        }
+      }
     },
     "Hier suchen!!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Search here!!"
+          }
+        }
+      }
     },
     "Impressum" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Imprint"
+          }
+        }
+      }
     },
     "keine" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "none"
+          }
+        }
+      }
     },
     "Keine Veranstaltung ausgewählt!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No meeting selected!"
+          }
+        }
+      }
     },
     "Keine Wettkämpfe" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Events"
+          }
+        }
+      }
     },
     "Kontakt" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact"
+          }
+        }
+      }
     },
     "Live" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Live"
+          }
+        }
+      }
+    },
+    "Meine Favoriten" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "My Favorits"
+          }
+        }
+      }
+    },
+    "Seite" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Page"
+          }
+        }
+      }
     },
     "Show First Sheet" : {
 
@@ -223,10 +474,24 @@
 
     },
     "Start" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Start"
+          }
+        }
+      }
     },
     "Status" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "State"
+          }
+        }
+      }
     },
     "Suche" : {
       "localizations" : {
@@ -239,10 +504,24 @@
       }
     },
     "Teilen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Share"
+          }
+        }
+      }
     },
     "Veranstalter" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organiser"
+          }
+        }
+      }
     },
     "Veranstaltung" : {
       "localizations" : {
@@ -265,9 +544,26 @@
       }
     },
     "Wähle eine Veranstaltung aus, um ihre Wettkämpfe und weitere Daten anzuzeigen." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Select a meeting in order to display its events and other data."
+          }
+        }
+      }
     },
     "Webseite" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Website"
+          }
+        }
+      }
+    },
+    "Wettkampf %lld" : {
 
     },
     "Wettkämpfe" : {
@@ -276,6 +572,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Events"
+          }
+        }
+      }
+    },
+    "Wettkampffolge" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schedule"
           }
         }
       }

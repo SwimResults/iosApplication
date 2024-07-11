@@ -24,14 +24,35 @@ struct EventListView: View {
                             
                             Section( content: {
                                 ForEach(part.events, id: \.self) {meetingEvent in
-                                    HStack {
-                                        Text("\(meetingEvent.number)")
-                                        Text(meetingEvent.getEventName())
+                                    NavigationLink(destination: EventView(meetingEvent: meetingEvent)) {
+                                        HStack {
+                                            Text("\(meetingEvent.number)")
+                                                .frame(width: 30, height: 30)
+                                                .background(
+                                                    RoundedRectangle(cornerRadius: 15, style: .continuous).fill(Color.blue)
+                                                )
+                                                .foregroundStyle(.white)
+                                                .font(.caption)
+                                                .fontWeight(.bold)
+                                            VStack {
+                                                HStack {
+                                                    Text(meetingEvent.getEventName())
+                                                    Spacer()
+                                                }
+                                                HStack {
+                                                    Text("10 Läufe")
+                                                        .font(.caption)
+                                                    Spacer()
+                                                }
+                                                
+                                            }
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                        }
                                     }
                                     
                                 }
                             }, header: {
-                                Text("Abschnitt " + String(part.number))
+                                Text("Abschnitt \(part.number)")
                             })
                         }
                     }

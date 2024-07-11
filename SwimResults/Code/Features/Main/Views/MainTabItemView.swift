@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabItemView<Content: View>: View where Content : View {
     var needsMeeting: Bool = true
     
-    @State var title = "Seite"
+    @State var title: Text = Text("Seite")
     @Binding var sheetMode: SheetMode
     
     @EnvironmentObject var currentMeeting: CurrentMeeting
