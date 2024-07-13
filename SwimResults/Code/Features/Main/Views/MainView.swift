@@ -30,11 +30,11 @@ struct MainView: View {
                             Label("Wettkämpfe", systemImage: "figure.pool.swim")
                         }
                         
-                        MainTabItemView(title: Text("Meine Favoriten"), sheetMode: $viewModel.sheetMode) {
-                            Text("Favoriten (Vereine und Sportler)")
+                        MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode) {
+                            UserScreenView()
                         }
                         .tabItem {
-                            Label("Favoriten", systemImage: "star")
+                            Label("Meins", systemImage: "person")
                         }
                         
                         MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode) {
