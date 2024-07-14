@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		710FE18E2BE838F400829ACB /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710FE18D2BE838F400829ACB /* SpinnerView.swift */; };
+		7115AB732C43D09100DE045E /* AthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115AB722C43D09100DE045E /* AthleteView.swift */; };
+		7115AB752C43D0E800DE045E /* AthleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115AB742C43D0E800DE045E /* AthleteViewModel.swift */; };
 		711BD1DA2BF4DF81004FEA88 /* LogoShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BD1D92BF4DF81004FEA88 /* LogoShape.swift */; };
 		712044AB2C1B2CE700818D2B /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712044AA2C1B2CE700818D2B /* ResultModel.swift */; };
 		712044AD2C1B2DD600818D2B /* DisqualificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712044AC2C1B2DD500818D2B /* DisqualificationModel.swift */; };
@@ -54,6 +56,10 @@
 		71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D32BEF879E00862DF7 /* Color.swift */; };
 		71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */; };
 		71D6A4DC2BF014E500862DF7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4DB2BF014E500862DF7 /* SettingsView.swift */; };
+		71F669982C432BC60018073A /* AthleteActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F669972C432BC60018073A /* AthleteActions.swift */; };
+		71F6699A2C432BD30018073A /* AthleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F669992C432BD30018073A /* AthleteModel.swift */; };
+		71F6699C2C432BD90018073A /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6699B2C432BD90018073A /* TeamModel.swift */; };
+		71F6699F2C432DD90018073A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6699E2C432DD90018073A /* SearchViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,8 @@
 
 /* Begin PBXFileReference section */
 		710FE18D2BE838F400829ACB /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		7115AB722C43D09100DE045E /* AthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteView.swift; sourceTree = "<group>"; };
+		7115AB742C43D0E800DE045E /* AthleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteViewModel.swift; sourceTree = "<group>"; };
 		711BD1D92BF4DF81004FEA88 /* LogoShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoShape.swift; sourceTree = "<group>"; };
 		712044AA2C1B2CE700818D2B /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		712044AC2C1B2DD500818D2B /* DisqualificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisqualificationModel.swift; sourceTree = "<group>"; };
@@ -124,6 +132,11 @@
 		71D6A4D32BEF879E00862DF7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		71D6A4DB2BF014E500862DF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		71F669962C4293110018073A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		71F669972C432BC60018073A /* AthleteActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteActions.swift; sourceTree = "<group>"; };
+		71F669992C432BD30018073A /* AthleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteModel.swift; sourceTree = "<group>"; };
+		71F6699B2C432BD90018073A /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		71F6699E2C432DD90018073A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +171,55 @@
 				71D6A4CB2BEF85B200862DF7 /* StartListView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		7115AB6C2C43D04A00DE045E /* Athlete */ = {
+			isa = PBXGroup;
+			children = (
+				7115AB702C43D06A00DE045E /* Actions */,
+				7115AB6F2C43D06500DE045E /* Models */,
+				7115AB712C43D06E00DE045E /* Screens */,
+				7115AB6E2C43D05F00DE045E /* ViewModels */,
+				7115AB6D2C43D05900DE045E /* Views */,
+			);
+			path = Athlete;
+			sourceTree = "<group>";
+		};
+		7115AB6D2C43D05900DE045E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7115AB722C43D09100DE045E /* AthleteView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		7115AB6E2C43D05F00DE045E /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				7115AB742C43D0E800DE045E /* AthleteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		7115AB6F2C43D06500DE045E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7115AB702C43D06A00DE045E /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		7115AB712C43D06E00DE045E /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 		712FF5C62C14BBCE008CE2C0 /* ViewModels */ = {
@@ -245,6 +307,7 @@
 		7183D26D2BE3D238000E45B4 /* SwimResults */ = {
 			isa = PBXGroup;
 			children = (
+				71F669962C4293110018073A /* Info.plist */,
 				719BB60F2BE4498500810D37 /* Code */,
 				719BB60D2BE4321600810D37 /* Resources */,
 				719BB6102BE4499F00810D37 /* Config */,
@@ -286,6 +349,8 @@
 				7186576D2C0161FF00556C6F /* HeatModel.swift */,
 				712044AA2C1B2CE700818D2B /* ResultModel.swift */,
 				712044AC2C1B2DD500818D2B /* DisqualificationModel.swift */,
+				71F669992C432BD30018073A /* AthleteModel.swift */,
+				71F6699B2C432BD90018073A /* TeamModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -293,6 +358,7 @@
 		719BB60C2BE4320D00810D37 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				7115AB6C2C43D04A00DE045E /* Athlete */,
 				719BB61D2BE44AB500810D37 /* Common */,
 				71D6A4D52BF014A900862DF7 /* Settings */,
 				719BB61E2BE44ABF00810D37 /* Main */,
@@ -358,6 +424,7 @@
 			isa = PBXGroup;
 			children = (
 				719BB6232BE44DC000810D37 /* Screens */,
+				71F6699D2C432DC40018073A /* ViewModels */,
 				719BB6262BE44ED600810D37 /* Views */,
 			);
 			path = Search;
@@ -498,6 +565,7 @@
 			isa = PBXGroup;
 			children = (
 				712FF5C92C14BEDA008CE2C0 /* HeatActions.swift */,
+				71F669972C432BC60018073A /* AthleteActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -597,6 +665,14 @@
 				71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		71F6699D2C432DC40018073A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				71F6699E2C432DD90018073A /* SearchViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -737,9 +813,11 @@
 				719BB62C2BE455BE00810D37 /* MainMeetingListView.swift in Sources */,
 				719BB6352BE4F6F300810D37 /* MeetingModel.swift in Sources */,
 				719BB63C2BE4FACE00810D37 /* MainMeetingListViewModel.swift in Sources */,
+				71F6699F2C432DD90018073A /* SearchViewModel.swift in Sources */,
 				712FF5C82C14BBDF008CE2C0 /* LiveBarViewModel.swift in Sources */,
 				710FE18E2BE838F400829ACB /* SpinnerView.swift in Sources */,
 				7186576C2C0161F800556C6F /* StartModel.swift in Sources */,
+				71F669982C432BC60018073A /* AthleteActions.swift in Sources */,
 				719E759D2BEB821200D40154 /* EventActions.swift in Sources */,
 				719E759F2BEB82AF00D40154 /* Services.swift in Sources */,
 				71D6A4D02BEF865400862DF7 /* EventView.swift in Sources */,
@@ -750,8 +828,10 @@
 				712044AD2C1B2DD600818D2B /* DisqualificationModel.swift in Sources */,
 				7186576E2C0161FF00556C6F /* HeatModel.swift in Sources */,
 				719BB6092BE4119000810D37 /* MainView.swift in Sources */,
+				71F6699A2C432BD30018073A /* AthleteModel.swift in Sources */,
 				719BB6222BE44AEA00810D37 /* MainTabItemView.swift in Sources */,
 				719BB6372BE4F77B00810D37 /* MainScreenView.swift in Sources */,
+				7115AB732C43D09100DE045E /* AthleteView.swift in Sources */,
 				7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
 				71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */,
@@ -759,6 +839,7 @@
 				713816C72BFA97A800E56214 /* LiveView.swift in Sources */,
 				7133FA482C425C3100EF9403 /* UserScreenView.swift in Sources */,
 				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
+				71F6699C2C432BD90018073A /* TeamModel.swift in Sources */,
 				71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */,
 				719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */,
 				711BD1DA2BF4DF81004FEA88 /* LogoShape.swift in Sources */,
@@ -767,6 +848,7 @@
 				719E759B2BEB785100D40154 /* EventModel.swift in Sources */,
 				712FF5C52C14BA95008CE2C0 /* LiveBarView.swift in Sources */,
 				712044AB2C1B2CE700818D2B /* ResultModel.swift in Sources */,
+				7115AB752C43D0E800DE045E /* AthleteViewModel.swift in Sources */,
 				719BB6252BE44DCE00810D37 /* SearchScreenView.swift in Sources */,
 				71D6A4D22BEF865F00862DF7 /* EventViewModel.swift in Sources */,
 				719E75AC2BECF2A700D40154 /* MeetingScreenView.swift in Sources */,
@@ -939,11 +1021,13 @@
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwimResults/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SwimResults;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -972,11 +1056,13 @@
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SwimResults/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = SwimResults;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.sports";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;

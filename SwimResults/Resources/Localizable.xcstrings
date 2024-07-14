@@ -339,6 +339,7 @@
       }
     },
     "Favoriten" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -347,9 +348,6 @@
           }
         }
       }
-    },
-    "Favoriten (Vereine und Sportler)" : {
-
     },
     "Full Screen Cover" : {
 
@@ -364,6 +362,9 @@
         }
       }
     },
+    "Geschlecht" : {
+
+    },
     "Hello, World!" : {
       "localizations" : {
         "en" : {
@@ -375,6 +376,7 @@
       }
     },
     "Hier suchen!!" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -393,6 +395,9 @@
           }
         }
       }
+    },
+    "Jahrgang" : {
+
     },
     "keine" : {
       "localizations" : {
@@ -434,6 +439,9 @@
         }
       }
     },
+    "Land" : {
+
+    },
     "Live" : {
       "localizations" : {
         "en" : {
@@ -445,6 +453,7 @@
       }
     },
     "Meine Favoriten" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -453,6 +462,15 @@
           }
         }
       }
+    },
+    "Meine Seite" : {
+
+    },
+    "Meins" : {
+
+    },
+    "Messages" : {
+
     },
     "Seite" : {
       "localizations" : {
@@ -468,9 +486,6 @@
 
     },
     "Show Full Screen Cover" : {
-
-    },
-    "Sportler-, Vereins- und Streckensuche" : {
 
     },
     "Start" : {
@@ -542,6 +557,9 @@
           }
         }
       }
+    },
+    "Verein" : {
+
     },
     "Wähle eine Veranstaltung aus, um ihre Wettkämpfe und weitere Daten anzuzeigen." : {
       "localizations" : {
