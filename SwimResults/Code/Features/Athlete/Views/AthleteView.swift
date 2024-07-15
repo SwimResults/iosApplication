@@ -37,7 +37,7 @@ struct AthleteView: View {
                         LabeledContent {
                             Text(athlete.team?.name ?? "-")
                         } label: {
-                            Label("Verein", systemImage: "person.3.sequence.fill")
+                            Label("Verein", systemImage: "person.2.fill")
                         }
                         
                         LabeledContent {
