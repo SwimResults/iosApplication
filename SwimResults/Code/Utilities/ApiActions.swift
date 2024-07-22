@@ -25,9 +25,25 @@ struct ApiActions {
             let decoder = JSONDecoder()
             
             decoder.keyDecodingStrategy = .convertFromSnakeCase
-            decoder.dateDecodingStrategy = .iso8601
+            
+            let formatter = ISO8601DateFormatter()
+            formatter.formatOptions = [.withFullDate]
+
+            decoder.dateDecodingStrategy = .custom({ decoder in
+                let container = try decoder.singleValueContainer()
+                let dateString = try container.decode(String.self)
+                
+                if let date = formatter.date(from: dateString) {
+                    return date
+                }
+                
+                print("Cannot decode date string \(dateString)")
+                throw DecodingError.dataCorruptedError(in: container, debugDescription: "Cannot decode date string \(dateString)")
+            })
+            
             return try decoder.decode(T.self, from: data)
-        } catch {
+        } catch let jsonError as NSError {
+            print("JSON decode failed: \(jsonError.localizedDescription)")
             throw ServiceError.invalidJSON
         }
     }

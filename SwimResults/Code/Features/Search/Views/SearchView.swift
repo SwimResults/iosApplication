@@ -75,7 +75,7 @@ struct SearchView: View {
         VStack {
             List {
                 ForEach(viewModel.filteredAthletes, id: \.self) { athlete in
-                    NavigationLink(destination: AthleteView(athlete: athlete)) {
+                    NavigationLink(destination: AthleteView(athleteId: athlete._id, athleteName: athlete.name)) {
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(athlete.name)

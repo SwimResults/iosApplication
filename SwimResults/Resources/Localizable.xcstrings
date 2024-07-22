@@ -57,6 +57,9 @@
         }
       }
     },
+    "Bahn" : {
+
+    },
     "Bewerten" : {
       "localizations" : {
         "en" : {
@@ -298,6 +301,9 @@
         }
       }
     },
+    "Der Sportler wurde nicht gefunden." : {
+
+    },
     "Einstellungen" : {
       "localizations" : {
         "en" : {
@@ -337,6 +343,9 @@
           }
         }
       }
+    },
+    "Es ist ein Fehler aufgetreten. Der Start konnte nicht gefunden werden." : {
+
     },
     "Favoriten" : {
       "extractionState" : "stale",
@@ -399,6 +408,12 @@
     "Jahrgang" : {
 
     },
+    "Kein Sportler" : {
+
+    },
+    "Kein Start" : {
+
+    },
     "keine" : {
       "localizations" : {
         "en" : {
@@ -440,6 +455,9 @@
       }
     },
     "Land" : {
+
+    },
+    "Lauf" : {
 
     },
     "Live" : {
@@ -561,6 +579,16 @@
     "Verein" : {
 
     },
+    "W: %@, L: %@, B: %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "W: %1$@, L: %2$@, B: %3$@"
+          }
+        }
+      }
+    },
     "Wähle eine Veranstaltung aus, um ihre Wettkämpfe und weitere Daten anzuzeigen." : {
       "localizations" : {
         "en" : {
@@ -580,6 +608,9 @@
           }
         }
       }
+    },
+    "Wettkampf" : {
+
     },
     "Wettkampf %lld" : {
 

@@ -15,7 +15,6 @@ struct StartModel: Codable, Hashable {
     var lane: Int?
     var isRelay: Bool? // TODO: Check if bool values can be non-undefined (omit ?)
     var athlete: String?
-    var athleteMeetingId: Int?
     var athleteName: String?
     var athleteAlias: String?
     var athleteYear: Int?
@@ -24,7 +23,7 @@ struct StartModel: Codable, Hashable {
     var rank: Int?
     var points: Int?
     var certified: Bool?
-    var results: [ResultModel]
+    //var results: [ResultModel]
     var disqualification: DisqualificationModel?
     var addedAt: Date?
     var updatedAt: Date?

@@ -14,3 +14,11 @@ func getAthletesByMeeting(meetId: String) async throws -> [AthleteModel] {
         throw error
     }
 }
+
+func getAthleteById(_ id: String) async throws -> AthleteModel {
+    do {
+        return try await athleteService.get(path: "athlete/" + id)
+    } catch {
+        throw error
+    }
+}

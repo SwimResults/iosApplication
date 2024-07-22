@@ -10,41 +10,63 @@ import SwiftUI
 struct AthleteView: View {
     @EnvironmentObject var currentMeeting: CurrentMeeting
     
-    @ObservedObject private var viewModel = EventViewModel()
-    var athlete: AthleteModel;
+    @ObservedObject private var viewModel = AthleteViewModel()
+    var athleteId: String;
+    var athleteName: String;
     
     var body: some View {
-        ZStack {
-            
-            if viewModel.fetching {
-                SpinnerView()
+        VStack {
+            if (viewModel.athlete == nil && !viewModel.fetching) {
+                ContentUnavailableView {
+                    Label("Kein Sportler", systemImage: "calendar")
+                } description: {
+                    Text("Der Sportler wurde nicht gefunden.")
+                }
             } else {
-                VStack {
-                    List {
+                List {
+                    
+                    Section {
                         
                         LabeledContent {
-                            Text((athlete.year != nil) ? String(athlete.year!) : "-")
+                            Text((viewModel.athlete?.year != nil) ? String((viewModel.athlete?.year)!) : "-")
                         } label: {
                             Label("Jahrgang", systemImage: "calendar")
                         }
                         
                         LabeledContent {
-                            Text(athlete.getGender())
+                            Text(viewModel.athlete?.getGender() ?? "-")
                         } label: {
                             Label("Geschlecht", systemImage: "figure.dress.line.vertical.figure")
                         }
                         
                         LabeledContent {
-                            Text(athlete.team?.name ?? "-")
+                            Text(viewModel.athlete?.team?.name ?? "-")
                         } label: {
                             Label("Verein", systemImage: "person.2.fill")
                         }
                         
                         LabeledContent {
-                            Text(athlete.team?.country ?? "-")
+                            Text(viewModel.athlete?.team?.country ?? "-")
                         } label: {
                             Label("Land", systemImage: "flag.fill")
                         }
+                    }
+                    
+                    Section {
+                        ForEach(viewModel.starts, id: \.self) {start in
+                            NavigationLink(destination: StartView(startId: start._id)) {
+                                Text("W: \(String(start.event ?? 0)), L: \(String(start.heat?.number ?? 0)), B: \(String(start.lane ?? 0))")
+                            }
+                        }
+                    }
+                }
+                .refreshable {
+                    await viewModel.fetchAthlete()
+                    await viewModel.fetchStarts()
+                }
+                .overlay {
+                    if (viewModel.fetching && viewModel.athlete == nil) || (viewModel.fetchingStarts && viewModel.starts == []) {
+                        SpinnerView()
                     }
                 }
             }
@@ -52,13 +74,18 @@ struct AthleteView: View {
         .onAppear {
             viewModel.setup(currentMeeting)
         }
-        .navigationTitle(athlete.name)
+        .task {
+            viewModel.athleteId = athleteId
+            await viewModel.fetchAthlete()
+            await viewModel.fetchStarts()
+        }
+        .navigationTitle(athleteName)
     }
 }
 
 #Preview {
     NavigationStack {
-        AthleteView(athlete: AthleteModel(_id: "", name: "Konrad Weiß", gender: "MALE", team: TeamModel(_id: "", name: "ST Erzgebirge")))
+        AthleteView(athleteId: "64f09784ee541495c132ee10", athleteName: "Luca Heidenreich")
             .environmentObject(CurrentMeeting.example())
     }
 }

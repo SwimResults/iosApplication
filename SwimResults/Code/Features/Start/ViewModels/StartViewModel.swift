@@ -14,10 +14,6 @@ final class StartViewModel: ObservableObject {
     
     public var startId: String?
     
-    init(startId: String) {
-        self.startId = startId
-    }
-    
     func fetchStart() async {
         if (startId == nil) {
             return
