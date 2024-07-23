@@ -12,6 +12,7 @@
 		71135CF42C4F0BB200D1DF29 /* StartViewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71135CF32C4F0BB200D1DF29 /* StartViewScreen.swift */; };
 		71135CF62C4F0BB800D1DF29 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71135CF52C4F0BB800D1DF29 /* StartView.swift */; };
 		71135CF82C4F0BC000D1DF29 /* StartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71135CF72C4F0BC000D1DF29 /* StartViewModel.swift */; };
+		71135CFA2C4FC4A200D1DF29 /* AdvancedSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71135CF92C4FC4A200D1DF29 /* AdvancedSettingsView.swift */; };
 		7115AB732C43D09100DE045E /* AthleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115AB722C43D09100DE045E /* AthleteView.swift */; };
 		7115AB752C43D0E800DE045E /* AthleteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7115AB742C43D0E800DE045E /* AthleteViewModel.swift */; };
 		711BD1DA2BF4DF81004FEA88 /* LogoShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BD1D92BF4DF81004FEA88 /* LogoShape.swift */; };
@@ -89,6 +90,7 @@
 		71135CF32C4F0BB200D1DF29 /* StartViewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewScreen.swift; sourceTree = "<group>"; };
 		71135CF52C4F0BB800D1DF29 /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
 		71135CF72C4F0BC000D1DF29 /* StartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewModel.swift; sourceTree = "<group>"; };
+		71135CF92C4FC4A200D1DF29 /* AdvancedSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedSettingsView.swift; sourceTree = "<group>"; };
 		7115AB722C43D09100DE045E /* AthleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteView.swift; sourceTree = "<group>"; };
 		7115AB742C43D0E800DE045E /* AthleteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteViewModel.swift; sourceTree = "<group>"; };
 		711BD1D92BF4DF81004FEA88 /* LogoShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoShape.swift; sourceTree = "<group>"; };
@@ -708,6 +710,7 @@
 			isa = PBXGroup;
 			children = (
 				71D6A4DB2BF014E500862DF7 /* SettingsView.swift */,
+				71135CF92C4FC4A200D1DF29 /* AdvancedSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -918,6 +921,7 @@
 				719E75AC2BECF2A700D40154 /* MeetingScreenView.swift in Sources */,
 				712FF5CA2C14BEDA008CE2C0 /* HeatActions.swift in Sources */,
 				719E75A92BECF20600D40154 /* MeetingView.swift in Sources */,
+				71135CFA2C4FC4A200D1DF29 /* AdvancedSettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -304,6 +304,9 @@
     "Der Sportler wurde nicht gefunden." : {
 
     },
+    "Dev Server verwenden" : {
+
+    },
     "Einstellungen" : {
       "localizations" : {
         "en" : {
@@ -343,6 +346,9 @@
           }
         }
       }
+    },
+    "Erweiterte Einstellungen" : {
+
     },
     "Es ist ein Fehler aufgetreten. Der Start konnte nicht gefunden werden." : {
 

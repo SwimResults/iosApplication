@@ -14,6 +14,11 @@ struct SettingsView: View {
                 Section(header: Text("Einstellungen")) {
                     Label("Erscheinungsbild", systemImage: "paintbrush")
                     Label("App Icon", systemImage: "app.dashed")
+                    NavigationLink {
+                        AdvancedSettingsView()
+                    } label: {
+                        Label("Erweiterte Einstellungen", systemImage: "gear")
+                    }
                 }
                 
                 Section(header: Text("Entwickler")) {
@@ -33,5 +38,7 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SettingsView()
+    NavigationStack {
+        SettingsView()
+    }
 }

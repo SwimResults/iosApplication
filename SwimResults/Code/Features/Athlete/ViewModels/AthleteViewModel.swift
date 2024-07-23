@@ -7,6 +7,7 @@
 
 import Foundation
 
+@MainActor
 final class AthleteViewModel: ObservableObject {
     @Published var fetching = false
     @Published var fetchingStarts = false

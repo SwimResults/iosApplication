@@ -24,6 +24,14 @@ struct StartView: View {
                 List {
                     if (viewModel.start != nil) {
                         
+                        if (viewModel.meetingEvent != nil) {
+                            NavigationLink(
+                                destination: EventView(meetingEvent: viewModel.meetingEvent!)
+                            ) {
+                                Text(viewModel.meetingEvent?.getEventName() ?? "-")
+                            }
+                        }
+                        
                         LabeledContent {
                             Text(String(viewModel.start?.event ?? 0))
                         } label: {

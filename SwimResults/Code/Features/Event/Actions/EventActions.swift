@@ -14,3 +14,19 @@ func getEventsAsPartsByMeetId(_ meeting: String) async throws -> [MeetingPartMod
         throw error
     }
 }
+
+func getEventsByMeeting(_ meetingId: String) async throws -> [EventModel] {
+    do {
+        return try await meetingService.get(path: "event/meet/" + meetingId)
+    } catch {
+        throw error
+    }
+}
+
+func getEventByMeetingAndNumber(_ meetingId: String, _ number: Int) async throws -> EventModel {
+    do {
+        return try await meetingService.get(path: "event/meet/" + meetingId + "/event/" + String(number))
+    } catch {
+        throw error
+    }
+}
