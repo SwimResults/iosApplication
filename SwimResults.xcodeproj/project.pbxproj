@@ -65,6 +65,8 @@
 		71F6699A2C432BD30018073A /* AthleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F669992C432BD30018073A /* AthleteModel.swift */; };
 		71F6699C2C432BD90018073A /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6699B2C432BD90018073A /* TeamModel.swift */; };
 		71F6699F2C432DD90018073A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6699E2C432DD90018073A /* SearchViewModel.swift */; };
+		71F8647F2C52881200E51CDF /* StartListEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8647E2C52881200E51CDF /* StartListEntryView.swift */; };
+		71F864812C52888D00E51CDF /* StartListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F864802C52888C00E51CDF /* StartListConfig.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,6 +149,8 @@
 		71F669992C432BD30018073A /* AthleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteModel.swift; sourceTree = "<group>"; };
 		71F6699B2C432BD90018073A /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
 		71F6699E2C432DD90018073A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		71F8647E2C52881200E51CDF /* StartListEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListEntryView.swift; sourceTree = "<group>"; };
+		71F864802C52888C00E51CDF /* StartListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListConfig.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				71D6A4CB2BEF85B200862DF7 /* StartListView.swift */,
+				71F8647E2C52881200E51CDF /* StartListEntryView.swift */,
 				71135CF52C4F0BB800D1DF29 /* StartView.swift */,
 			);
 			path = Views;
@@ -223,6 +228,7 @@
 		71135CEF2C4F0AED00D1DF29 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				71F864802C52888C00E51CDF /* StartListConfig.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -900,6 +906,8 @@
 				7115AB732C43D09100DE045E /* AthleteView.swift in Sources */,
 				7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
+				71F864812C52888D00E51CDF /* StartListConfig.swift in Sources */,
+				71F8647F2C52881200E51CDF /* StartListEntryView.swift in Sources */,
 				71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */,
 				71D6A4DC2BF014E500862DF7 /* SettingsView.swift in Sources */,
 				713816C72BFA97A800E56214 /* LiveView.swift in Sources */,

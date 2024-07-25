@@ -54,9 +54,7 @@ struct AthleteView: View {
                     
                     Section {
                         ForEach(viewModel.starts, id: \.self) {start in
-                            NavigationLink(destination: StartView(startId: start._id)) {
-                                Text("W: \(String(start.event ?? 0)), L: \(String(start.heat?.number ?? 0)), B: \(String(start.lane ?? 0))")
-                            }
+                            StartListEntryView(start: start)
                         }
                     }
                 }

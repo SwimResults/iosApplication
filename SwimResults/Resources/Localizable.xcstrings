@@ -307,6 +307,12 @@
     "Dev Server verwenden" : {
 
     },
+    "Die Starts konnten nicht geladen werden." : {
+
+    },
+    "Disqualifikation" : {
+
+    },
     "Einstellungen" : {
       "localizations" : {
         "en" : {
@@ -337,6 +343,9 @@
         }
       }
     },
+    "Ergebnis" : {
+
+    },
     "Erscheinungsbild" : {
       "localizations" : {
         "en" : {
@@ -351,6 +360,9 @@
 
     },
     "Es ist ein Fehler aufgetreten. Der Start konnte nicht gefunden werden." : {
+
+    },
+    "Es wurden keine Starts gefunden." : {
 
     },
     "Favoriten" : {
@@ -430,6 +442,9 @@
         }
       }
     },
+    "Keine Starts" : {
+
+    },
     "Keine Veranstaltung ausgewählt!" : {
       "localizations" : {
         "en" : {
@@ -466,6 +481,9 @@
     "Lauf" : {
 
     },
+    "Lauf 2" : {
+
+    },
     "Live" : {
       "localizations" : {
         "en" : {
@@ -493,7 +511,13 @@
     "Meins" : {
 
     },
-    "Messages" : {
+    "Meldung" : {
+
+    },
+    "Nicht am Start!" : {
+
+    },
+    "Platz" : {
 
     },
     "Seite" : {
@@ -510,6 +534,9 @@
 
     },
     "Show Full Screen Cover" : {
+
+    },
+    "Sportler" : {
 
     },
     "Start" : {
@@ -614,9 +641,6 @@
           }
         }
       }
-    },
-    "Wettkampf" : {
-
     },
     "Wettkampf %lld" : {
 

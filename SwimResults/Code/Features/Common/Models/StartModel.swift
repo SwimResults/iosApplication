@@ -23,8 +23,12 @@ struct StartModel: Codable, Hashable {
     var rank: Int?
     var points: Int?
     var certified: Bool?
-    //var results: [ResultModel]
+    var results: [ResultModel]
     var disqualification: DisqualificationModel?
     var addedAt: Date?
     var updatedAt: Date?
+    
+    func hasDisqualification() -> Bool {
+        return (disqualification != nil && Int(disqualification!._id) != 0)
+    }
 }

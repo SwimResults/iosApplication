@@ -8,7 +8,7 @@
 import Foundation
 
 struct ResultModel: Codable, Hashable {
-    var time: String?
+    var time: Int?
     var resultType: String?
     var lapMeters: Int?
     var addedAt: Date?
