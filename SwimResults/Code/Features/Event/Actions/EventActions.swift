@@ -30,3 +30,11 @@ func getEventByMeetingAndNumber(_ meetingId: String, _ number: Int) async throws
         throw error
     }
 }
+
+func getHeatsByMeetingForEventList(_ meetingId: String) async throws -> EventListInfoModel {
+    do {
+        return try await startService.get(path: "heat/meet/" + meetingId + "/event_list")
+    } catch {
+        throw error
+    }
+}

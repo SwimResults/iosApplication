@@ -13,19 +13,16 @@ struct EventView: View {
     @ObservedObject private var viewModel = EventViewModel()
     var meetingEvent: EventModel;
     
+    var config: StartListConfig = StartListConfig(showAthlete: true, laneAsIcon: true)
+    
     var body: some View {
         List {
-            Section{} header: {
-                Text(meetingEvent.getEventName())
-                    .font(.title)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.primary)
-            }
-            
-            if (viewModel.starts != nil) {
-                Section("Lauf 2") {
-                    ForEach(viewModel.starts!, id: \.self) {start in
-                        StartListEntryView(start: start)
+            if (viewModel.heats != nil) {
+                ForEach(Array(viewModel.heats!.keys).sorted(by: <), id: \.self) {heatNumber in
+                    Section("Lauf \(heatNumber)") {
+                        ForEach(viewModel.heats![heatNumber]!, id: \.self) {start in
+                            StartListEntryView(start: start, config: config)
+                        }
                     }
                 }
             }
@@ -46,6 +43,14 @@ struct EventView: View {
             }
         }
         .navigationTitle(Text("Wettkampf \(meetingEvent.number)"))
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                VStack {
+                    Text(meetingEvent.getEventName())
+                        .font(.headline)
+                }
+            }
+        }
     }
 }
 

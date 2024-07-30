@@ -14,11 +14,33 @@ struct StartListEntryView: View {
     var body: some View {
         NavigationLink(destination: StartView(startId: start._id)) {
             VStack(alignment: .leading) {
-                Text("W: \(String(start.event ?? 0)), L: \(String(start.heat?.number ?? 0)), B: \(String(start.lane ?? 0))")
-                    .bold()
-                Text(start.athleteName ?? "")
-                Text(start.athleteTeamName ?? "")
-                    .font(.caption)
+                
+                if (config.laneAsIcon) {
+                    HStack(alignment: .center) {
+                        Text("\(start.lane ?? 0)")
+                            .frame(width: 30, height: 30)
+                            .background(
+                                RoundedRectangle(cornerRadius: 6, style: .continuous).fill(Color.blue)
+                            )
+                            .foregroundStyle(.white)
+                            .fontWeight(.bold)
+                            .padding([.trailing], 5)
+                        VStack(alignment: .leading) {
+                            if (config.showEvent) {
+                                Text("W: \(String(start.event ?? 0)), L: \(String(start.heat?.number ?? 0))")
+                                    .bold()
+                            }
+                            
+                            if (config.showAthlete) {
+                                Text(start.athleteName ?? "")
+                                    .bold()
+                                Text(start.athleteTeamName ?? "")
+                                    .font(.caption)
+                            }
+                        }
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                }
             }
             
         }
@@ -54,6 +76,28 @@ struct StartListEntryView: View {
                     disqualification: DisqualificationModel(
                         _id: "0"
                     )
+                ),
+                config: StartListConfig(
+                    showAthlete: true,
+                    showEvent: false,
+                    showStyle: false,
+                    showHeat: false,
+                    showLane: false,
+                    showTimes: false,
+                    showRegistrationTime: false,
+                    showResults: false,
+                    showResultTime: false,
+                    showLapTimes: false,
+                    showLapTimesPopup: false,
+                    showDisqualification: false,
+                    showReactionTime: false,
+                    showMostSignificantTime: false,
+                    laneAsIcon: true,
+                    showIcon: false,
+                    flatStyle: false,
+                    allLanes: false,
+                    rankStylesIcon: false,
+                    widgetSize: false
                 )
             )
         }

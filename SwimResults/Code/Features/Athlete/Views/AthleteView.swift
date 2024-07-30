@@ -14,6 +14,8 @@ struct AthleteView: View {
     var athleteId: String;
     var athleteName: String;
     
+    var config: StartListConfig = StartListConfig(showEvent: true, laneAsIcon: true)
+    
     var body: some View {
         VStack {
             if (viewModel.athlete == nil && !viewModel.fetching) {
@@ -54,7 +56,7 @@ struct AthleteView: View {
                     
                     Section {
                         ForEach(viewModel.starts, id: \.self) {start in
-                            StartListEntryView(start: start)
+                            StartListEntryView(start: start, config: config)
                         }
                     }
                 }

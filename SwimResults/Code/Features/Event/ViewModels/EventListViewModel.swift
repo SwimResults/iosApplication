@@ -10,6 +10,7 @@ import Foundation
 @MainActor
 final class EventListViewModel: ObservableObject {
     @Published var parts: [MeetingPartModel] = []
+    @Published var heatInfo: [Int: EventListInfoEventModel] = [Int: EventListInfoEventModel]()
     @Published var fetching = false
     
     var currentMeeting: CurrentMeeting?
@@ -33,6 +34,20 @@ final class EventListViewModel: ObservableObject {
         } catch {
             print(error)
             fetching = false
+        }
+    }
+    
+    func fetchHeatInfo() async {
+        do {
+            let info = try await getHeatsByMeetingForEventList(currentMeeting!.meeting!.meetId)
+            
+            heatInfo.removeAll()
+            for eventInfo in info.events {
+                heatInfo[eventInfo.eventNumber] = eventInfo
+            }
+            
+        } catch {
+            print(error)
         }
     }
 }

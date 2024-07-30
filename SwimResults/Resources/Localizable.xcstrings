@@ -481,7 +481,7 @@
     "Lauf" : {
 
     },
-    "Lauf 2" : {
+    "Lauf %lld" : {
 
     },
     "Live" : {
@@ -611,6 +611,16 @@
     },
     "Verein" : {
 
+    },
+    "W: %@, L: %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "W: %1$@, L: %2$@"
+          }
+        }
+      }
     },
     "W: %@, L: %@, B: %@" : {
       "localizations" : {

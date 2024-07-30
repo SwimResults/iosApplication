@@ -35,15 +35,16 @@ struct EventListView: View {
                                             .foregroundStyle(.white)
                                             .font(.caption)
                                             .fontWeight(.bold)
-                                        VStack {
-                                            HStack {
-                                                Text(meetingEvent.getEventName())
-                                                Spacer()
-                                            }
-                                            HStack {
-                                                Text("10 Läufe")
-                                                    .font(.caption)
-                                                Spacer()
+                                        VStack (alignment: .leading) {
+                                            Text(meetingEvent.getEventName())
+                                            if (viewModel.heatInfo[meetingEvent.number] != nil) {
+                                                if (viewModel.heatInfo[meetingEvent.number]!.amount == 1) {
+                                                    Text("1 Lauf")
+                                                        .font(.caption)
+                                                } else {
+                                                    Text("\(viewModel.heatInfo[meetingEvent.number]!.amount) Läufe")
+                                                        .font(.caption)
+                                                }
                                             }
                                             
                                         }
@@ -59,6 +60,7 @@ struct EventListView: View {
                 }
                 .refreshable {
                     await viewModel.fetchEventParts()
+                    await viewModel.fetchHeatInfo()
                 }
                 .listStyle(.sidebar)
                 .overlay {
@@ -71,6 +73,7 @@ struct EventListView: View {
         .task {
             viewModel.setup(currentMeeting)
             await viewModel.fetchEventParts()
+            await viewModel.fetchHeatInfo()
         }
     }
 }

@@ -11,7 +11,7 @@ final class EventViewModel: ObservableObject {
     @Published var fetching = false
     @Published var fetchingStarts = false
     
-    @Published var starts: [StartModel]?
+    @Published var heats: [Int: [StartModel]]?
     
     var currentMeeting: CurrentMeeting?
     var meetingEvent: EventModel?
@@ -29,7 +29,16 @@ final class EventViewModel: ObservableObject {
         do {
             let starts = try await getStartsByMeetingAndEvent(currentMeeting!.meeting!.meetId, meetingEvent!.number)
             
-            self.starts = starts
+            heats = [Int: [StartModel]]()
+            
+            for start in starts {
+                if (start.heat == nil || start.heat!.number == nil) { continue }
+                if heats![start.heat!.number!] != nil {
+                    heats![start.heat!.number!]!.append(start)
+                } else {
+                    heats![start.heat!.number!] = [start]
+                }
+            }
             
             fetchingStarts = false
         } catch {

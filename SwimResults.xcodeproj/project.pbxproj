@@ -67,6 +67,7 @@
 		71F6699F2C432DD90018073A /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6699E2C432DD90018073A /* SearchViewModel.swift */; };
 		71F8647F2C52881200E51CDF /* StartListEntryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F8647E2C52881200E51CDF /* StartListEntryView.swift */; };
 		71F864812C52888D00E51CDF /* StartListConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F864802C52888C00E51CDF /* StartListConfig.swift */; };
+		71F864832C559F1D00E51CDF /* EventListInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F864822C559F1D00E51CDF /* EventListInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +152,7 @@
 		71F6699E2C432DD90018073A /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		71F8647E2C52881200E51CDF /* StartListEntryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListEntryView.swift; sourceTree = "<group>"; };
 		71F864802C52888C00E51CDF /* StartListConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListConfig.swift; sourceTree = "<group>"; };
+		71F864822C559F1D00E51CDF /* EventListInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				719E759A2BEB785100D40154 /* EventModel.swift */,
+				71F864822C559F1D00E51CDF /* EventListInfoModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -902,6 +905,7 @@
 				719BB6092BE4119000810D37 /* MainView.swift in Sources */,
 				71F6699A2C432BD30018073A /* AthleteModel.swift in Sources */,
 				719BB6222BE44AEA00810D37 /* MainTabItemView.swift in Sources */,
+				71F864832C559F1D00E51CDF /* EventListInfoModel.swift in Sources */,
 				719BB6372BE4F77B00810D37 /* MainScreenView.swift in Sources */,
 				7115AB732C43D09100DE045E /* AthleteView.swift in Sources */,
 				7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */,
