@@ -7,7 +7,14 @@
     "%lld" : {
 
     },
+    "%lld Läufe" : {
+
+    },
+    "1 Lauf" : {
+
+    },
     "10 Läufe" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
