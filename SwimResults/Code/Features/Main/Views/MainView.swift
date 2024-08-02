@@ -17,49 +17,45 @@ struct MainView: View {
     
     var body: some View {
         VStack {
-            if (viewModel.fetching) {
-                SpinnerView("Lade Veranstaltung...")
-            } else {
-                VStack {
-                    TabView {
-                        
-                        MainTabItemView(title: Text("Wettkampffolge"), sheetMode: $viewModel.sheetMode) {
-                            EventScreenView()
-                        }
-                        .tabItem {
-                            Label("Wettkämpfe", systemImage: "figure.pool.swim")
-                        }
-                        
-                        MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode) {
-                            UserScreenView()
-                        }
-                        .tabItem {
-                            Label("Meins", systemImage: "person")
-                        }
-                        
-                        MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode) {
-                            SearchScreenView()
-                        }
-                        .tabItem {
-                            Label("Suche", systemImage: "magnifyingglass.circle.fill")
-                        }
-                        
-                        MainTabItemView(title: Text("Veranstaltung"), sheetMode: $viewModel.sheetMode) {
-                            MeetingScreenView()
-                        }
-                        .tabItem {
-                            Label("Veranstaltung", systemImage: "calendar")
-                        }
-                        
-                        MainTabItemView(needsMeeting: false, title: Text("Einstellungen"), sheetMode: $viewModel.sheetMode) {
-                            SettingsScreenView()
-                        }
-                        .tabItem {
-                            Label("Einstellungen", systemImage: "gear")
-                        }
-                        
-                        
+            VStack {
+                TabView {
+                    
+                    MainTabItemView(title: Text("Wettkampffolge"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                        EventScreenView()
                     }
+                    .tabItem {
+                        Label("Wettkämpfe", systemImage: "figure.pool.swim")
+                    }
+                    
+                    MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                        UserScreenView()
+                    }
+                    .tabItem {
+                        Label("Meins", systemImage: "person")
+                    }
+                    
+                    MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                        SearchScreenView()
+                    }
+                    .tabItem {
+                        Label("Suche", systemImage: "magnifyingglass.circle.fill")
+                    }
+                    
+                    MainTabItemView(title: Text("Veranstaltung"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                        MeetingScreenView()
+                    }
+                    .tabItem {
+                        Label("Veranstaltung", systemImage: "calendar")
+                    }
+                    
+                    MainTabItemView(needsMeeting: false, title: Text("Einstellungen"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                        SettingsScreenView()
+                    }
+                    .tabItem {
+                        Label("Einstellungen", systemImage: "gear")
+                    }
+                    
+                    
                 }
             }
         }

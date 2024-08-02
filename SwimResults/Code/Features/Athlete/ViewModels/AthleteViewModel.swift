@@ -25,6 +25,7 @@ final class AthleteViewModel: ObservableObject {
     
     
     func fetchAthlete() async {
+        print("fetching athlete...")
         if (athleteId == nil) {
             return
         }
@@ -43,6 +44,7 @@ final class AthleteViewModel: ObservableObject {
     }
     
     func fetchStarts() async {
+        print("fetching starts...")
         if (currentMeeting?.meeting?.meetId == nil) {
             return
         }

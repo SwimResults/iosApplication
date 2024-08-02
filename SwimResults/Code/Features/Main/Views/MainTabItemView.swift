@@ -12,6 +12,7 @@ struct MainTabItemView<Content: View>: View where Content : View {
     
     @State var title: Text = Text("Seite")
     @Binding var sheetMode: SheetMode
+    @Binding var fetching: Bool
     
     @EnvironmentObject var currentMeeting: CurrentMeeting
     
@@ -21,7 +22,9 @@ struct MainTabItemView<Content: View>: View where Content : View {
             
         NavigationStack {
             VStack {
-                if (needsMeeting && currentMeeting.meeting == nil) {
+                if (fetching) {
+                    SpinnerView("Lade Veranstaltung...")
+                } else if (needsMeeting && currentMeeting.meeting == nil) {
                     VStack {
                         ContentUnavailableView {
                             Label {
