@@ -37,10 +37,10 @@ class StartListConfig {
     
     
     // USED
+    var showAthlete: Bool = false
     
     
     // FROM WebApplication (https://github.com/SwimResults/WebApplication)
-    var showAthlete: Bool = false
     var showEvent: Bool = false;
     var showStyle: Bool = false;
     var showHeat: Bool = false;
