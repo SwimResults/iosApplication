@@ -15,6 +15,13 @@ func getStartById(_ id: String) async throws -> StartModel {
     }
 }
 
+func getStartsByAthlete(_ athleteId: String) async throws -> [StartModel] {
+    do {
+        return try await startService.get(path: "start/athlete/" + athleteId)
+    } catch {
+        throw error
+    }
+}
 
 func getStartsByMeetingAndAthlete(_ meeting: String, _ athleteId: String) async throws -> [StartModel] {
     do {
