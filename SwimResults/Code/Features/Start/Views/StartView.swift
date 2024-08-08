@@ -64,7 +64,7 @@ struct StartView: View {
                                 Label("Bahn", systemImage: "\(viewModel.start?.lane ?? 0).lane")
                             }
                             
-                            if (viewModel.start!.hasResultType(resType: .registration)) {
+                            if (viewModel.start!.hasResultType(.registration)) {
                                 LabeledContent {
                                     Text(String(0))
                                 } label: {
