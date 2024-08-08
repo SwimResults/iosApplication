@@ -7,6 +7,14 @@
 
 import Foundation
 
+enum ResultType: String {
+    case registration = "registration"
+    case livetiming = "livetiming_result"
+    case reaction = "reaction"
+    case result_list = "result_list"
+    case lap = "lap"
+}
+
 struct StartModel: Codable, Hashable {
     var _id: String
     var meeting: String
@@ -30,5 +38,21 @@ struct StartModel: Codable, Hashable {
     
     func hasDisqualification() -> Bool {
         return (disqualification != nil && Int(disqualification!._id) != 0)
+    }
+    
+    func getResultMillis(resType: ResultType) -> Int {
+        if (!hasResultType(resType)) {
+            return 0
+        }
+        return 1
+    }
+    
+    func hasResultType(_ resType: ResultType) -> Bool {
+        for result in results {
+            if (result.resultType == resType.rawValue) {
+                return true
+            }
+        }
+        return false
     }
 }
