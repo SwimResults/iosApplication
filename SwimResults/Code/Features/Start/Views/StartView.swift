@@ -66,7 +66,7 @@ struct StartView: View {
                             
                             if (viewModel.start!.hasResultType(.registration)) {
                                 LabeledContent {
-                                    Text(String(0))
+                                    Text(viewModel.start!.getResultString(.registration) ?? "+")
                                 } label: {
                                     Label("Meldezeit", systemImage: "stopwatch.fill")
                                 }
@@ -104,11 +104,28 @@ struct StartView: View {
                                 Text("Platz")
                             }
                             
-                            ForEach(viewModel.start!.results, id: \.self) { result in
+                            ForEach(viewModel.start!.getLaps(), id: \.self) { result in
                                 LabeledContent {
-                                    Text(String(result.time ?? 0))
+                                    Text(result.getTimeString())
                                 } label: {
-                                    Text(result.resultType ?? "-")
+                                    Text("Zwischenzeit \(result.lapMeters!)m")
+                                }
+                            }
+                            
+                            if (!viewModel.start!.hasResultType(.result_list)) {
+                                LabeledContent {
+                                    Text(viewModel.start!.getResultString(.livetiming) ?? "-")
+                                        .bold()
+                                } label: {
+                                    Text("Ergebnis (vorl.)")
+                                }
+                            } else {
+                                LabeledContent {
+                                    Text(viewModel.start!.getResultString(.result_list) ?? "-")
+                                        .bold()
+                                        .foregroundStyle(.primary)
+                                } label: {
+                                    Text("Ergebnis")
                                 }
                             }
                             
@@ -129,8 +146,6 @@ struct StartView: View {
                                 }
                             }
                         }
-                        
-                        Text(viewModel.start?.addedAt?.ISO8601Format() ?? "-")
                     }
                 }
                 .refreshable {

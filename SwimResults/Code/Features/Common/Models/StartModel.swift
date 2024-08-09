@@ -40,11 +40,24 @@ struct StartModel: Codable, Hashable {
         return (disqualification != nil && Int(disqualification!._id) != 0)
     }
     
-    func getResultMillis(resType: ResultType) -> Int {
-        if (!hasResultType(resType)) {
-            return 0
+    func getResult(_ resType: ResultType) -> ResultModel? {
+        var time: ResultModel?
+        var latest: Date?
+        for result in results {
+            if (result.resultType == resType.rawValue && result.addedAt != nil) {
+                if (latest == nil || latest! < result.addedAt!) {
+                    time = result
+                    latest = result.addedAt!
+                }
+            }
         }
-        return 1
+        
+        return time
+    }
+    
+    func getResultString(_ resType: ResultType) -> String? {
+        let result = getResult(resType)
+        return result?.getTimeString()
     }
     
     func hasResultType(_ resType: ResultType) -> Bool {
@@ -54,5 +67,20 @@ struct StartModel: Codable, Hashable {
             }
         }
         return false
+    }
+    
+    func getLaps() -> [ResultModel] {
+        var laps: [Int:ResultModel] = [Int: ResultModel]()
+        for result in results {
+            if (result.resultType == ResultType.lap.rawValue && result.addedAt != nil && result.lapMeters != nil) {
+                if (laps[result.lapMeters!] == nil || laps[result.lapMeters!]!.addedAt! < result.addedAt!) {
+                    laps[result.lapMeters!] = result
+                }
+            }
+        }
+        
+        return laps.values.sorted {
+            $0.lapMeters! < $1.lapMeters!
+        }
     }
 }
