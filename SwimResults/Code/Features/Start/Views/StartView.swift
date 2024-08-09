@@ -28,7 +28,7 @@ struct StartView: View {
                             
                             if (viewModel.meetingEvent != nil) {
                                 NavigationLink(
-                                    destination: EventView(meetingEvent: viewModel.meetingEvent!)
+                                    destination: EventView(meetingId: viewModel.meetingEvent!.meeting, eventNumber: viewModel.meetingEvent!.number)
                                 ) {
                                     HStack {
                                         Text("\(viewModel.meetingEvent!.number)")

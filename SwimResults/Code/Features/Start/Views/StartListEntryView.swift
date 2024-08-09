@@ -32,10 +32,21 @@ struct StartListEntryView: View {
                             }
                             
                             if (config.showAthlete) {
-                                Text(start.athleteName ?? "")
-                                    .bold()
-                                Text(start.athleteTeamName ?? "")
+                                HStack {
+                                    Text(start.athleteName ?? "")
+                                        .bold()
+                                    if (start.athleteYear != nil) {
+                                        Text(String(start.athleteYear!))
+                                            .font(.caption)
+                                            .foregroundStyle(.gray)
+                                    }
+                                }
+                                if (start.athleteTeamName != nil) {
+                                    HStack {
+                                        Text(start.athleteTeamName!)
+                                    }
                                     .font(.caption)
+                                }
                             }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)

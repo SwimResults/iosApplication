@@ -11,23 +11,38 @@ final class EventViewModel: ObservableObject {
     @Published var fetching = false
     @Published var fetchingStarts = false
     
+    @Published var meetingEvent: EventModel?;
     @Published var heats: [Int: [StartModel]]?
     
-    var currentMeeting: CurrentMeeting?
-    var meetingEvent: EventModel?
+    public var eventNumber: Int?
+    public var meetingId: String?
     
-    func setup(_ currentMeeting: CurrentMeeting) {
-        self.currentMeeting = currentMeeting
+    func fetchEvent() async {
+        if (meetingId == nil || eventNumber == nil) {
+            return
+        }
+        
+        fetching = true
+        do {
+            let event = try await getEventByMeetingAndNumber(meetingId!, eventNumber!)
+            
+            meetingEvent = event
+            
+            fetching = false
+        } catch {
+            print(error)
+            fetching = false
+        }
     }
     
     func fetchStarts() async {
-        if (currentMeeting?.meeting?.meetId == nil || meetingEvent == nil) {
+        if (meetingId == nil || eventNumber == nil) {
             return
         }
         
         fetchingStarts = true
         do {
-            let starts = try await getStartsByMeetingAndEvent(currentMeeting!.meeting!.meetId, meetingEvent!.number)
+            let starts = try await getStartsByMeetingAndEvent(meetingId!, eventNumber!)
             
             heats = [Int: [StartModel]]()
             

@@ -25,7 +25,7 @@ struct EventListView: View {
                     ForEach(viewModel.parts, id: \.self) { part in
                         Section( content: {
                             ForEach(part.events, id: \.self) {meetingEvent in
-                                NavigationLink(destination: EventView(meetingEvent: meetingEvent)) {
+                                NavigationLink(destination: EventView(meetingId: meetingEvent.meeting, eventNumber: meetingEvent.number)) {
                                     HStack {
                                         Text("\(meetingEvent.number)")
                                             .frame(width: 30, height: 30)

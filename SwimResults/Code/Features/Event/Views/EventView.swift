@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct EventView: View {
-    @EnvironmentObject var currentMeeting: CurrentMeeting
-    
     @ObservedObject private var viewModel = EventViewModel()
-    var meetingEvent: EventModel;
+    public var meetingId: String
+    public var eventNumber: Int
     
     var config: StartListConfig = StartListConfig(showAthlete: true, laneAsIcon: true)
     
@@ -30,11 +29,13 @@ struct EventView: View {
         }
         .listStyle(.sidebar)
         .refreshable {
+            await viewModel.fetchEvent()
             await viewModel.fetchStarts()
         }
         .task {
-            viewModel.setup(currentMeeting)
-            viewModel.meetingEvent = meetingEvent
+            viewModel.eventNumber = eventNumber
+            viewModel.meetingId = meetingId
+            await viewModel.fetchEvent()
             await viewModel.fetchStarts()
         }
         .overlay {
@@ -42,12 +43,14 @@ struct EventView: View {
                 SpinnerView()
             }
         }
-        .navigationTitle(Text("Wettkampf \(meetingEvent.number)"))
+        .navigationTitle(Text("Wettkampf \(eventNumber)"))
         .toolbar {
-            ToolbarItem(placement: .principal) {
-                VStack {
-                    Text(meetingEvent.getEventName())
-                        .font(.headline)
+            if (viewModel.meetingEvent != nil) {
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text(viewModel.meetingEvent!.getEventName())
+                            .font(.headline)
+                    }
                 }
             }
         }
@@ -56,6 +59,6 @@ struct EventView: View {
 
 #Preview {
     NavigationStack {
-        EventView(meetingEvent: EventModel(_id: "", number: 10, distance: 50, meeting: "IESC23", gender: "MALE", style: StyleModel(_id: "", name: "BUTTERFLY", aliases: []))).environmentObject(CurrentMeeting.example())
+        EventView(meetingId: "IESC23", eventNumber: 10)
     }
 }
