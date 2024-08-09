@@ -100,8 +100,18 @@ struct StartView: View {
                             
                             LabeledContent {
                                 Text(viewModel.start?.rank != nil ? String(viewModel.start!.rank!) : "-")
+                                    .bold()
+                                    .foregroundStyle(.primary)
                             } label: {
                                 Text("Platz")
+                            }
+                            
+                            if (viewModel.start!.hasResultType(.reaction)) {
+                                LabeledContent {
+                                    Text(viewModel.start!.getResultString(.reaction) ?? "-")
+                                } label: {
+                                    Text("Reaktion")
+                                }
                             }
                             
                             ForEach(viewModel.start!.getLaps(), id: \.self) { result in
@@ -118,6 +128,7 @@ struct StartView: View {
                                         .bold()
                                 } label: {
                                     Text("Ergebnis (vorl.)")
+                                        .bold()
                                 }
                             } else {
                                 LabeledContent {
@@ -126,6 +137,7 @@ struct StartView: View {
                                         .foregroundStyle(.primary)
                                 } label: {
                                     Text("Ergebnis")
+                                        .bold()
                                 }
                             }
                             
@@ -152,7 +164,7 @@ struct StartView: View {
                     await viewModel.fetchStart()
                 }
                 .overlay {
-                    if viewModel.fetching {
+                    if viewModel.fetching && viewModel.start == nil {
                         SpinnerView()
                     }
                 }

@@ -27,17 +27,29 @@ struct ResultModel: Codable, Hashable {
         let tinyseconds = (time1 / 10) - allSeconds * 100
         
         var output = ""
-        if (hours > 0) {
-            output += String(hours)
-            output += ":"
-            output += String(format: "%02d", minutes)
+        
+        if (resultType == ResultType.reaction.rawValue) {
+            if (time! < 0) {
+                output += "-"
+            } else {
+                output += "+"
+            }
+            output += String(seconds)
+            output += ","
+            output += String(format: "%02d", tinyseconds)
         } else {
-            output += String(minutes)
+            if (hours > 0) {
+                output += String(hours)
+                output += ":"
+                output += String(format: "%02d", minutes)
+            } else {
+                output += String(minutes)
+            }
+            output += ":"
+            output += String(format: "%02d", seconds)
+            output += ","
+            output += String(format: "%02d", tinyseconds)
         }
-        output += ":"
-        output += String(format: "%02d", seconds)
-        output += ","
-        output += String(format: "%02d", tinyseconds)
         
         return output
     }

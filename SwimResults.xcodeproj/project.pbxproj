@@ -203,9 +203,9 @@
 		71135CEC2C4F0ADF00D1DF29 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				71D6A4CB2BEF85B200862DF7 /* StartListView.swift */,
 				71F8647E2C52881200E51CDF /* StartListEntryView.swift */,
 				71135CF52C4F0BB800D1DF29 /* StartView.swift */,
+				71D6A4CB2BEF85B200862DF7 /* StartListView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -432,9 +432,9 @@
 				71D6A4D52BF014A900862DF7 /* Settings */,
 				719BB61E2BE44ABF00810D37 /* Main */,
 				719BB6152BE44A2700810D37 /* Live */,
+				719BB6132BE44A1900810D37 /* Meeting */,
 				71135CEB2C4F0ACD00D1DF29 /* Start */,
 				719BB6142BE44A1D00810D37 /* User */,
-				719BB6132BE44A1900810D37 /* Meeting */,
 				719BB6122BE44A1400810D37 /* Search */,
 				719BB6112BE44A0F00810D37 /* Event */,
 			);

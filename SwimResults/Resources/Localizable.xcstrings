@@ -533,6 +533,9 @@
     "Platz" : {
 
     },
+    "Reaktion" : {
+
+    },
     "Seite" : {
       "localizations" : {
         "en" : {
@@ -688,6 +691,9 @@
           }
         }
       }
+    },
+    "Zwischenzeit %lldm" : {
+
     }
   },
   "version" : "1.0"
