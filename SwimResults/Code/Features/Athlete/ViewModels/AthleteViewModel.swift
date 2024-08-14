@@ -45,13 +45,13 @@ final class AthleteViewModel: ObservableObject {
     
     func fetchStarts() async {
         print("fetching starts...")
-        if (currentMeeting?.meeting?.meetId == nil) {
+        if (currentMeeting?.meetingId == nil) {
             return
         }
         
         fetchingStarts = true
         do {
-            let starts = try await getStartsByMeetingAndAthlete(currentMeeting!.meeting!.meetId, athleteId!)
+            let starts = try await getStartsByMeetingAndAthlete(currentMeeting!.meetingId!, athleteId!)
             
             self.starts = starts
             

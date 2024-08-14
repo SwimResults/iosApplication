@@ -21,13 +21,13 @@ final class SearchViewModel: ObservableObject {
       }
     
     func fetchAthletes() async {
-        if (currentMeeting!.meeting == nil) {
+        if (currentMeeting!.meetingId == nil) {
             return
         }
         
         fetching = true
         do {
-            let athletes = try await getAthletesByMeeting(meetId: currentMeeting!.meeting!.meetId)
+            let athletes = try await getAthletesByMeeting(meetId: currentMeeting!.meetingId!)
             
             self.athletes = athletes
             

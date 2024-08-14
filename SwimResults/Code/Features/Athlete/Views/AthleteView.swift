@@ -10,7 +10,7 @@ import SwiftUI
 struct AthleteView: View {
     @EnvironmentObject var currentMeeting: CurrentMeeting
     
-    @ObservedObject private var viewModel = AthleteViewModel()
+    @StateObject private var viewModel = AthleteViewModel()
     var athleteId: String;
     var athleteName: String;
     

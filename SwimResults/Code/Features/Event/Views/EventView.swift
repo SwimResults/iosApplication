@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EventView: View {
-    @ObservedObject private var viewModel = EventViewModel()
+    @StateObject private var viewModel = EventViewModel()
     public var meetingId: String
     public var eventNumber: Int
     
@@ -39,7 +39,7 @@ struct EventView: View {
             await viewModel.fetchStarts()
         }
         .overlay {
-            if viewModel.fetching {
+            if viewModel.fetchingStarts && ((viewModel.heats != nil && viewModel.heats!.count <= 0) || viewModel.heats == nil) {
                 SpinnerView()
             }
         }

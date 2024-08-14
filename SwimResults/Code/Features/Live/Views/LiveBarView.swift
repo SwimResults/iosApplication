@@ -31,7 +31,7 @@ struct LiveBarView: View {
             viewModel.setup(currentMeeting)
         }
         .task {
-            await viewModel.fetchCurrentHeat(currentMeeting.meeting!.meetId)
+            await viewModel.fetchCurrentHeat(currentMeeting.meetingId!)
         }
     }
 }

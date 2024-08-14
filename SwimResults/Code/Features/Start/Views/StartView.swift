@@ -10,7 +10,7 @@ import SwiftUI
 struct StartView: View {
     public var startId: String
     
-    @ObservedObject private var viewModel = StartViewModel()
+    @StateObject private var viewModel = StartViewModel()
     
     var body: some View {
         VStack {

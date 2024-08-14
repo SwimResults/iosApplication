@@ -16,17 +16,18 @@ final class EventListViewModel: ObservableObject {
     var currentMeeting: CurrentMeeting?
     
     func setup(_ currentMeeting: CurrentMeeting) {
+        print("setup currentMeeting in EventListViewModel")
         self.currentMeeting = currentMeeting
       }
     
     func fetchEventParts() async {
-        if (currentMeeting!.meeting == nil) {
+        if (currentMeeting!.meetingId == nil) {
             return
         }
         
         fetching = true
         do {
-            let parts = try await getEventsAsPartsByMeetId(currentMeeting!.meeting!.meetId)
+            let parts = try await getEventsAsPartsByMeetId(currentMeeting!.meetingId!)
             
             self.parts = parts
             
@@ -38,8 +39,12 @@ final class EventListViewModel: ObservableObject {
     }
     
     func fetchHeatInfo() async {
+        if (currentMeeting!.meetingId == nil) {
+            return
+        }
+        
         do {
-            let info = try await getHeatsByMeetingForEventList(currentMeeting!.meeting!.meetId)
+            let info = try await getHeatsByMeetingForEventList(currentMeeting!.meetingId!)
             
             heatInfo.removeAll()
             for eventInfo in info.events {

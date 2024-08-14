@@ -32,6 +32,10 @@ final class MainViewModel: ObservableObject {
             
             currentMeeting?.meeting = meeting
             
+            if (currentMeeting?.meetingId != meeting.meetId) {
+                currentMeeting?.meetingId = meeting.meetId
+            }
+            
         } catch {
             
         }

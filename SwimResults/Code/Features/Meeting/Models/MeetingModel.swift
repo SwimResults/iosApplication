@@ -9,10 +9,12 @@ import Foundation
 
 class CurrentMeeting: ObservableObject {
     @Published var meeting: MeetingModel?
+    @Published var meetingId: String?
     
     static func example() -> CurrentMeeting {
         let currentMeeting = CurrentMeeting()
         currentMeeting.meeting = MeetingModel(meetId: "IESC23", dateStart: Date(), dateEnd: Date(), iteration: 143, state: "RUNNING", series: MeetingSeriesModel(nameFull: "Internationaler Erzgebirgsschwimmcup", nameMedium: "IESC", nameShort: "IESC"))
+        currentMeeting.meetingId = "IESC23"
         return currentMeeting
     }
 }
