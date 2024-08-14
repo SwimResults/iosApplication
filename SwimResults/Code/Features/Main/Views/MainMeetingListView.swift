@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainMeetingListView: View {
-    @ObservedObject private var viewModel = MainMeetingListViewModel()
+    @StateObject private var viewModel = MainMeetingListViewModel()
     @EnvironmentObject var currentMeeting: CurrentMeeting
     
     @Binding var sheetMode: SheetMode
@@ -21,8 +21,6 @@ struct MainMeetingListView: View {
                     
                     ForEach(viewModel.meetingYearList, id: \.self) { meetingYear in
                         
-                        Text(String(meetingYear.year)).font(.title).bold()
-                        
                         Section {
                             
                             ForEach(meetingYear.meetings, id: \.self) { meeting in
@@ -31,10 +29,22 @@ struct MainMeetingListView: View {
                                     currentMeeting.meeting = meeting
                                     sheetMode = .none
                                 } label: {
-                                    Label(meeting.getFullName(), systemImage: "calendar")
+                                    Label {
+                                        VStack(alignment: .leading) {
+                                            Text(meeting.getFullName())
+                                                .bold()
+                                            Text(meeting.dateStart.ISO8601Format())
+                                                .font(.caption)
+                                        }
+                                    } icon: {
+                                        Image(systemName: "calendar")
+                                            .foregroundStyle(.blue)
+                                    }
                                 }.foregroundColor(.primary)
                             }
                             
+                        } header: {
+                            Text(String(meetingYear.year))
                         }
                     }
                 }
