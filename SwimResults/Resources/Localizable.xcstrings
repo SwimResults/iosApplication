@@ -605,7 +605,14 @@
       }
     },
     "Karte" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Map"
+          }
+        }
+      }
     },
     "Kein Sportler" : {
       "localizations" : {
@@ -726,6 +733,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Live"
+          }
+        }
+      }
+    },
+    "Mannschaft" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Team"
           }
         }
       }
@@ -1130,7 +1147,14 @@
       }
     },
     "Wettkampfstätte" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Event Location"
+          }
+        }
+      }
     },
     "Wk %@" : {
       "localizations" : {

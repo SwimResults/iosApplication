@@ -74,14 +74,19 @@ struct StartView: View {
                             
                         }
                         
-                        Section("Sportler") {
+                        Section(viewModel.meetingEvent?.relayDistance != nil ? "Mannschaft" : "Sportler") {
                             
-                            NavigationLink(
-                                destination: AthleteView(athleteId: (viewModel.start?.athlete)!, athleteName: viewModel.start?.athleteName ?? "Sportler")) {
-                                    
-                                    Text(viewModel.start?.athleteName ?? "-")
-                                        .bold()
-                                }
+                            if (viewModel.meetingEvent?.relayDistance != nil) {
+                                Text(viewModel.start?.athleteName ?? "Mannschaft")
+                                    .bold()
+                            } else {
+                                NavigationLink(
+                                    destination: AthleteView(athleteId: (viewModel.start?.athlete)!, athleteName: viewModel.start?.athleteName ?? "Sportler")) {
+                                        
+                                        Text(viewModel.start?.athleteName ?? "-")
+                                            .bold()
+                                    }
+                            }
                             
                             LabeledContent {
                                 Text(String(viewModel.start?.athleteYear ?? 0))
