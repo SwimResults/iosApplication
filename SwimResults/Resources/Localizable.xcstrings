@@ -27,6 +27,9 @@
         }
       }
     },
+    "Abbrechen" : {
+
+    },
     "Abschnitt %lld" : {
       "localizations" : {
         "en" : {
@@ -56,6 +59,9 @@
           }
         }
       }
+    },
+    "App Bewerten" : {
+
     },
     "App Icon" : {
       "localizations" : {
@@ -321,10 +327,16 @@
         }
       }
     },
+    "current: %@" : {
+
+    },
     "Der Sportler wurde nicht gefunden." : {
 
     },
     "Dev Server verwenden" : {
+
+    },
+    "Die App ist momentan noch nicht im Store verfügbar." : {
 
     },
     "Die Starts konnten nicht geladen werden." : {
@@ -386,6 +398,9 @@
 
     },
     "Es wurden keine Starts gefunden." : {
+
+    },
+    "Farbschema" : {
 
     },
     "Favoriten" : {
@@ -530,12 +545,6 @@
           }
         }
       }
-    },
-    "Meine Seite" : {
-
-    },
-    "Meins" : {
-
     },
     "Meldezeit" : {
 

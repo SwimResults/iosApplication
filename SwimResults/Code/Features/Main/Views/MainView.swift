@@ -10,6 +10,7 @@ import SwiftUI
 struct MainView: View {
     @StateObject private var viewModel = MainViewModel()
     @AppStorage("CURRENT_MEETING_ID") var savedMeetingId: String = "";
+    @AppStorage("CURRENT_THEME") private var currentTheme: Theme = .systemDefault
     @EnvironmentObject var currentMeeting: CurrentMeeting;
     
     // TODO: increase interval
@@ -27,12 +28,12 @@ struct MainView: View {
                         Label("Wettkämpfe", systemImage: "figure.pool.swim")
                     }
                     
-                    MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
-                        UserScreenView()
-                    }
-                    .tabItem {
-                        Label("Meins", systemImage: "person")
-                    }
+                    //MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                    //    UserScreenView()
+                    //}
+                    //.tabItem {
+                    //    Label("Meins", systemImage: "person")
+                    //}
                     
                     MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
                         SearchScreenView()
@@ -141,6 +142,7 @@ struct MainView: View {
                 }
             }
         })
+        .preferredColorScheme(currentTheme.colorScheme)
     }
 }
 
