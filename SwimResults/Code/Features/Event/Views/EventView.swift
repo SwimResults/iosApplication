@@ -12,7 +12,7 @@ struct EventView: View {
     public var meetingId: String
     public var eventNumber: Int
     
-    var config: StartListConfig = StartListConfig(showAthlete: true, laneAsIcon: true)
+    var config: StartListConfig = StartListConfig(showAthlete: true, laneAsIcon: true, showIcon: true)
     
     var body: some View {
         List {

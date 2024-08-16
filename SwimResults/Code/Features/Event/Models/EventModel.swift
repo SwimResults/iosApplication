@@ -22,10 +22,14 @@ struct EventModel: Codable, Hashable {
     //var noStartList: Bool?
     //var ordering: Int?
     
-    func getEventName() -> String {
+    func getEventName(skipGender: Bool = false) -> String {
         let genderKey = String.LocalizationValue(stringLiteral: "COMMON.GENDER." + self.gender)
         let styleKey = String.LocalizationValue(stringLiteral: "COMMON.STYLE." + (self.style?.name ?? "DEFAULT"))
-        return "\((self.relayDistance ?? String(self.distance)))m " + String(localized: styleKey) + " " + String(localized: genderKey)
+        var out = "\((self.relayDistance ?? String(self.distance)))m " + String(localized: styleKey)
+        if (!skipGender) {
+            out += " " + String(localized: genderKey)
+        }
+        return out
     }
 }
 

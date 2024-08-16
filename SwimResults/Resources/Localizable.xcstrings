@@ -10,6 +10,9 @@
     "%lld Läufe" : {
 
     },
+    "%lld." : {
+
+    },
     "1 Lauf" : {
 
     },
@@ -73,6 +76,9 @@
           }
         }
       }
+    },
+    "Bahn: %lld" : {
+
     },
     "Bewerten" : {
       "localizations" : {
@@ -501,6 +507,9 @@
     "Lauf %lld" : {
 
     },
+    "Lauf: %lld" : {
+
+    },
     "Live" : {
       "localizations" : {
         "en" : {
@@ -635,16 +644,6 @@
     "Verein" : {
 
     },
-    "W: %@, L: %@" : {
-      "localizations" : {
-        "de" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "W: %1$@, L: %2$@"
-          }
-        }
-      }
-    },
     "W: %@, L: %@, B: %@" : {
       "localizations" : {
         "de" : {
@@ -698,6 +697,9 @@
           }
         }
       }
+    },
+    "Wk %@" : {
+
     },
     "Zwischenzeit %lldm" : {
 

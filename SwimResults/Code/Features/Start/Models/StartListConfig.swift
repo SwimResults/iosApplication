@@ -11,7 +11,7 @@ class StartListConfig {
     
     public init() {}
     
-    public init(showAthlete: Bool = false, showEvent: Bool = false, showStyle: Bool = true, showHeat: Bool = true, showLane: Bool = true, showTimes: Bool = true, showRegistrationTime: Bool = true, showResults: Bool = true, showResultTime: Bool = true, showLapTimes: Bool = false, showLapTimesPopup: Bool = false, showDisqualification: Bool = true, showReactionTime: Bool = true, showMostSignificantTime: Bool = false, laneAsIcon: Bool = false, showIcon: Bool = true, flatStyle: Bool = false, allLanes: Bool = false, rankStylesIcon: Bool = true, widgetSize: Bool = false) {
+    public init(showAthlete: Bool = false, showEvent: Bool = false, showStyle: Bool = false, showHeat: Bool = false, showLane: Bool = false, showTimes: Bool = false, showRegistrationTime: Bool = false, showResults: Bool = false, showResultTime: Bool = false, showLapTimes: Bool = false, showLapTimesPopup: Bool = false, showDisqualification: Bool = false, showReactionTime: Bool = false, showMostSignificantTime: Bool = false, laneAsIcon: Bool = false, showIcon: Bool = false, flatStyle: Bool = false, allLanes: Bool = false, rankStylesIcon: Bool = false, widgetSize: Bool = false) {
         self.showAthlete = showAthlete
         self.showEvent = showEvent
         self.showStyle = showStyle
@@ -38,13 +38,16 @@ class StartListConfig {
     
     // USED
     var showAthlete: Bool = false
-    
-    
-    // FROM WebApplication (https://github.com/SwimResults/WebApplication)
     var showEvent: Bool = false;
     var showStyle: Bool = false;
     var showHeat: Bool = false;
     var showLane: Bool = false;
+    var showIcon: Bool = false;
+    var laneAsIcon: Bool = false;
+    var rankStylesIcon: Bool = false;
+    
+    
+    // FROM WebApplication (https://github.com/SwimResults/WebApplication)
     var showTimes: Bool = false;
     var showRegistrationTime: Bool = false;
     var showResults: Bool = false;
@@ -54,10 +57,7 @@ class StartListConfig {
     var showDisqualification: Bool = false;
     var showReactionTime: Bool = false;
     var showMostSignificantTime: Bool = false; // show either registration; reaction; lap; livetiming result OR result list result time
-    var laneAsIcon: Bool = false;
-    var showIcon: Bool = false;
     var flatStyle: Bool = false;
     var allLanes: Bool = false;
-    var rankStylesIcon: Bool = false;
     var widgetSize: Bool = false;
 }

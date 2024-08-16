@@ -14,7 +14,7 @@ struct AthleteView: View {
     var athleteId: String;
     var athleteName: String;
     
-    var config: StartListConfig = StartListConfig(showEvent: true, laneAsIcon: true)
+    var config: StartListConfig = StartListConfig(showEvent: true, showStyle: true, showHeat: true, showLane: true, showIcon: true, rankStylesIcon: true)
     
     var body: some View {
         VStack {
