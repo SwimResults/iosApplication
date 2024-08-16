@@ -4,6 +4,16 @@
     "" : {
 
     },
+    "%@ bis %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ bis %2$@"
+          }
+        }
+      }
+    },
     "%lld" : {
 
     },
