@@ -9,7 +9,7 @@ import Foundation
 
 struct HeatModel: Codable, Hashable {
     var _id: String
-    var meeting: String
+    var meeting: String?
     var event: Int?
     var number: Int?
     var startEstimation: Date?

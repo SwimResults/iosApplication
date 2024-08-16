@@ -37,6 +37,7 @@ struct AppearanceSettingsView: View {
                 }
             }
         }
+        .navigationTitle("Erscheinungsbild")
     }
 }
 

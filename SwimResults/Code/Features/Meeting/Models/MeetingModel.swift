@@ -29,6 +29,7 @@ struct MeetingModel: Codable, Hashable {
     var unpublished: Bool?
     var layout: MeetingLayoutModel?
     var organizerId: String?
+    var location: LocationModel?
     
     func getYear() -> Int {
         let dateFormatter = DateFormatter()
@@ -76,6 +77,11 @@ struct MeetingModel: Codable, Hashable {
             return startS
         }
         return "\(startS) bis \(endS)"
+    }
+    
+    func getStateString() -> String {
+        let stateString = String.LocalizationValue(stringLiteral: "MEETING.STATE." + self.state)
+        return String(localized: stateString)
     }
 }
 

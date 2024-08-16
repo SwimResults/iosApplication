@@ -1,20 +1,48 @@
 {
   "sourceLanguage" : "de",
   "strings" : {
-    "" : {
-
+    "%@ %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "%1$@ %2$@"
+          }
+        }
+      }
     },
     "%lld" : {
 
     },
     "%lld Läufe" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld Heats"
+          }
+        }
+      }
     },
     "%lld." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%lld."
+          }
+        }
+      }
     },
     "1 Lauf" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 Heat"
+          }
+        }
+      }
     },
     "10 Läufe" : {
       "extractionState" : "stale",
@@ -28,7 +56,14 @@
       }
     },
     "Abbrechen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancel"
+          }
+        }
+      }
     },
     "Abschnitt %lld" : {
       "localizations" : {
@@ -61,7 +96,14 @@
       }
     },
     "App Bewerten" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rate App"
+          }
+        }
+      }
     },
     "App Icon" : {
       "localizations" : {
@@ -69,6 +111,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "App Icon"
+          }
+        }
+      }
+    },
+    "Ausrichter" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Organiser"
           }
         }
       }
@@ -84,7 +136,14 @@
       }
     },
     "Bahn: %lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lane: %lld"
+          }
+        }
+      }
     },
     "Bewerten" : {
       "localizations" : {
@@ -327,23 +386,55 @@
         }
       }
     },
-    "current: %@" : {
-
-    },
     "Der Sportler wurde nicht gefunden." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Athlete could not be found."
+          }
+        }
+      }
     },
     "Dev Server verwenden" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Use Dev Server"
+          }
+        }
+      }
     },
     "Die App ist momentan noch nicht im Store verfügbar." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The app is not available in the store at the moment."
+          }
+        }
+      }
     },
     "Die Starts konnten nicht geladen werden." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unable to load starts."
+          }
+        }
+      }
     },
     "Disqualifikation" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disqualification"
+          }
+        }
+      }
     },
     "Einstellungen" : {
       "localizations" : {
@@ -376,10 +467,24 @@
       }
     },
     "Ergebnis" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Result"
+          }
+        }
+      }
     },
     "Ergebnis (vorl.)" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Result (prelim.)"
+          }
+        }
+      }
     },
     "Erscheinungsbild" : {
       "localizations" : {
@@ -392,16 +497,44 @@
       }
     },
     "Erweiterte Einstellungen" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Advanced Settings"
+          }
+        }
+      }
     },
     "Es ist ein Fehler aufgetreten. Der Start konnte nicht gefunden werden." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred. The start could not be found."
+          }
+        }
+      }
     },
     "Es wurden keine Starts gefunden." : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No starts have been found."
+          }
+        }
+      }
     },
     "Farbschema" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Theme"
+          }
+        }
+      }
     },
     "Favoriten" : {
       "extractionState" : "stale",
@@ -462,13 +595,37 @@
       }
     },
     "Jahrgang" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Year"
+          }
+        }
+      }
+    },
+    "Karte" : {
 
     },
     "Kein Sportler" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Athlete"
+          }
+        }
+      }
     },
     "Kein Start" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Start"
+          }
+        }
+      }
     },
     "keine" : {
       "localizations" : {
@@ -481,7 +638,14 @@
       }
     },
     "Keine Starts" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Starts"
+          }
+        }
+      }
     },
     "Keine Veranstaltung ausgewählt!" : {
       "localizations" : {
@@ -503,6 +667,9 @@
         }
       }
     },
+    "Key" : {
+      "extractionState" : "manual"
+    },
     "Kontakt" : {
       "localizations" : {
         "en" : {
@@ -514,16 +681,44 @@
       }
     },
     "Land" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Country"
+          }
+        }
+      }
     },
     "Lauf" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat"
+          }
+        }
+      }
     },
     "Lauf %lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat %lld"
+          }
+        }
+      }
     },
     "Lauf: %lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heat: %lld"
+          }
+        }
+      }
     },
     "Live" : {
       "localizations" : {
@@ -531,6 +726,176 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Live"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.ANNOUNCED" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Angekündigt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Announced"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.ARCHIVED" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archiviert"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archived"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.BREAK" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Break"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.FINAL" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finale"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Finals"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.HIDDEN" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versteckt"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hidden"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.OPENING" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eröffnung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opening"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.OVER" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Abgeschlossen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Over"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.PAUSE" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pause"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Break"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.PREPARATION" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vorbereitung"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Preparation"
+          }
+        }
+      }
+    },
+    "MEETING.STATE.RUNNING" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Läuft"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Running"
           }
         }
       }
@@ -547,19 +912,54 @@
       }
     },
     "Meldezeit" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registration Time"
+          }
+        }
+      }
     },
     "Meldung" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Registration"
+          }
+        }
+      }
     },
     "Nicht am Start!" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Did not start!"
+          }
+        }
+      }
     },
     "Platz" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rank"
+          }
+        }
+      }
     },
     "Reaktion" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Reaction"
+          }
+        }
+      }
     },
     "Seite" : {
       "localizations" : {
@@ -578,7 +978,14 @@
 
     },
     "Sportler" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Athlete"
+          }
+        }
+      }
     },
     "Start" : {
       "localizations" : {
@@ -621,6 +1028,7 @@
       }
     },
     "Veranstalter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -651,7 +1059,14 @@
       }
     },
     "Verein" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Team"
+          }
+        }
+      }
     },
     "W: %@, L: %@, B: %@" : {
       "localizations" : {
@@ -684,7 +1099,14 @@
       }
     },
     "Wettkampf %lld" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Event %lld"
+          }
+        }
+      }
     },
     "Wettkämpfe" : {
       "localizations" : {
@@ -707,11 +1129,28 @@
         }
       }
     },
-    "Wk %@" : {
+    "Wettkampfstätte" : {
 
     },
+    "Wk %@" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ev %@"
+          }
+        }
+      }
+    },
     "Zwischenzeit %lldm" : {
-
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lap %lldm"
+          }
+        }
+      }
     }
   },
   "version" : "1.0"

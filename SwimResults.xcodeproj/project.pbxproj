@@ -58,6 +58,11 @@
 		71B1F05F2C6F4C75007856AD /* AppIconSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F05E2C6F4C75007856AD /* AppIconSettingsView.swift */; };
 		71B1F0612C6F5F9C007856AD /* UIApplicationIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F0602C6F5F9C007856AD /* UIApplicationIcon.swift */; };
 		71B1F0652C6F8169007856AD /* AppearanceSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F0642C6F8169007856AD /* AppearanceSettingsView.swift */; };
+		71B1F0672C6F8A69007856AD /* MeetingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F0662C6F8A69007856AD /* MeetingViewModel.swift */; };
+		71B1F0692C6F8BAB007856AD /* TeamActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F0682C6F8BAB007856AD /* TeamActions.swift */; };
+		71B1F06B2C6F8EFB007856AD /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F06A2C6F8EFB007856AD /* LocationModel.swift */; };
+		71B1F06E2C6F9034007856AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B1F06D2C6F9034007856AD /* CoreLocation.framework */; };
+		71B1F0702C6FB378007856AD /* MeetingLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F06F2C6FB378007856AD /* MeetingLocationMapView.swift */; };
 		71D6A4CC2BEF85B200862DF7 /* StartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CB2BEF85B200862DF7 /* StartListView.swift */; };
 		71D6A4CE2BEF85BB00862DF7 /* StartListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CD2BEF85BB00862DF7 /* StartListViewModel.swift */; };
 		71D6A4D02BEF865400862DF7 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CF2BEF865400862DF7 /* EventView.swift */; };
@@ -146,6 +151,11 @@
 		71B1F05E2C6F4C75007856AD /* AppIconSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettingsView.swift; sourceTree = "<group>"; };
 		71B1F0602C6F5F9C007856AD /* UIApplicationIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationIcon.swift; sourceTree = "<group>"; };
 		71B1F0642C6F8169007856AD /* AppearanceSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceSettingsView.swift; sourceTree = "<group>"; };
+		71B1F0662C6F8A69007856AD /* MeetingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingViewModel.swift; sourceTree = "<group>"; };
+		71B1F0682C6F8BAB007856AD /* TeamActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamActions.swift; sourceTree = "<group>"; };
+		71B1F06A2C6F8EFB007856AD /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
+		71B1F06D2C6F9034007856AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		71B1F06F2C6FB378007856AD /* MeetingLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingLocationMapView.swift; sourceTree = "<group>"; };
 		71D6A4CB2BEF85B200862DF7 /* StartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListView.swift; sourceTree = "<group>"; };
 		71D6A4CD2BEF85BB00862DF7 /* StartListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListViewModel.swift; sourceTree = "<group>"; };
 		71D6A4CF2BEF865400862DF7 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -168,6 +178,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71B1F06E2C6F9034007856AD /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +380,7 @@
 				7183D27E2BE3D23B000E45B4 /* SwimResultsTests */,
 				7183D2882BE3D23B000E45B4 /* SwimResultsUITests */,
 				7183D26C2BE3D238000E45B4 /* Products */,
+				71B1F06C2C6F9034007856AD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -429,6 +441,7 @@
 				712044AC2C1B2DD500818D2B /* DisqualificationModel.swift */,
 				71F669992C432BD30018073A /* AthleteModel.swift */,
 				71F6699B2C432BD90018073A /* TeamModel.swift */,
+				71B1F06A2C6F8EFB007856AD /* LocationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -648,6 +661,7 @@
 				712FF5C92C14BEDA008CE2C0 /* HeatActions.swift */,
 				71F669972C432BC60018073A /* AthleteActions.swift */,
 				71135CF12C4F0B5200D1DF29 /* StartActions.swift */,
+				71B1F0682C6F8BAB007856AD /* TeamActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -688,6 +702,7 @@
 		719E75A62BECF1E200D40154 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				71B1F0662C6F8A69007856AD /* MeetingViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -696,6 +711,7 @@
 			isa = PBXGroup;
 			children = (
 				719E75A82BECF20600D40154 /* MeetingView.swift */,
+				71B1F06F2C6FB378007856AD /* MeetingLocationMapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -706,6 +722,14 @@
 				719E75AB2BECF2A700D40154 /* MeetingScreenView.swift */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		71B1F06C2C6F9034007856AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				71B1F06D2C6F9034007856AD /* CoreLocation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		71D6A4CA2BEF859D00862DF7 /* ViewModels */ = {
@@ -912,11 +936,13 @@
 				71B1F05D2C6EC346007856AD /* StartListEntryViewModel.swift in Sources */,
 				71D6A4D02BEF865400862DF7 /* EventView.swift in Sources */,
 				71D6A4CE2BEF85BB00862DF7 /* StartListViewModel.swift in Sources */,
+				71B1F0692C6F8BAB007856AD /* TeamActions.swift in Sources */,
 				7133FA4A2C425C3C00EF9403 /* UserView.swift in Sources */,
 				719E75A12BEB831600D40154 /* EventListView.swift in Sources */,
 				719BB63A2BE4F7B500810D37 /* MainViewModel.swift in Sources */,
 				712044AD2C1B2DD600818D2B /* DisqualificationModel.swift in Sources */,
 				71B1F05F2C6F4C75007856AD /* AppIconSettingsView.swift in Sources */,
+				71B1F0672C6F8A69007856AD /* MeetingViewModel.swift in Sources */,
 				7186576E2C0161FF00556C6F /* HeatModel.swift in Sources */,
 				719BB6092BE4119000810D37 /* MainView.swift in Sources */,
 				71F6699A2C432BD30018073A /* AthleteModel.swift in Sources */,
@@ -926,6 +952,7 @@
 				7115AB732C43D09100DE045E /* AthleteView.swift in Sources */,
 				7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
+				71B1F0702C6FB378007856AD /* MeetingLocationMapView.swift in Sources */,
 				71F864812C52888D00E51CDF /* StartListConfig.swift in Sources */,
 				71F8647F2C52881200E51CDF /* StartListEntryView.swift in Sources */,
 				71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */,
@@ -937,6 +964,7 @@
 				71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */,
 				719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */,
 				711BD1DA2BF4DF81004FEA88 /* LogoShape.swift in Sources */,
+				71B1F06B2C6F8EFB007856AD /* LocationModel.swift in Sources */,
 				719BB63F2BE4FBDC00810D37 /* MeetingListModel.swift in Sources */,
 				719E75A32BEB832100D40154 /* EventListViewModel.swift in Sources */,
 				719E759B2BEB785100D40154 /* EventModel.swift in Sources */,
@@ -1112,7 +1140,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
@@ -1131,7 +1159,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = de.logilutions.SwimResults;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1147,7 +1175,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
@@ -1166,7 +1194,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = de.logilutions.SwimResults;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
