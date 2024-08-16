@@ -68,6 +68,15 @@ struct MeetingModel: Codable, Hashable {
         dateFormatter.dateFormat = "dd.MM.yyyy"
         return dateFormatter.string(from: dateEnd)
     }
+    
+    func getDateFromToString() -> String {
+        let startS = getStartDateString()
+        let endS = getEndDateString()
+        if (startS == endS) {
+            return startS
+        }
+        return "\(startS) bis \(endS)"
+    }
 }
 
 struct MeetingSeriesModel: Codable, Hashable {

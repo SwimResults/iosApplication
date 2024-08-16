@@ -33,7 +33,7 @@ struct MainMeetingListView: View {
                                         VStack(alignment: .leading) {
                                             Text(meeting.getFullName())
                                                 .bold()
-                                            Text("\(meeting.getStartDateString()) bis \(meeting.getEndDateString())")
+                                            Text(meeting.getDateFromToString())
                                                 .font(.caption)
                                         }
                                     } icon: {
