@@ -145,6 +145,9 @@
         }
       }
     },
+    "Benachrichtigungen" : {
+
+    },
     "Bewerten" : {
       "localizations" : {
         "en" : {
@@ -977,6 +980,9 @@
           }
         }
       }
+    },
+    "Request Notification Access" : {
+
     },
     "Seite" : {
       "localizations" : {

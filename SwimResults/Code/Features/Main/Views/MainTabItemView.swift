@@ -14,6 +14,8 @@ struct MainTabItemView<Content: View>: View where Content : View {
     @Binding var sheetMode: SheetMode
     @Binding var fetching: Bool
     
+    @Binding var showNavigation: Bool
+    
     @EnvironmentObject var currentMeeting: CurrentMeeting
     
     @ViewBuilder let content: Content

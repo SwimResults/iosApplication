@@ -9,7 +9,7 @@ import SwiftUI
 import StoreKit
 
 struct SettingsView: View {
-    @Environment(\.requestReview) var requestReview
+    //@Environment(\.requestReview) var requestReview
     @State private var showingAlert: Bool = false
     
     var body: some View {
@@ -27,6 +27,12 @@ struct SettingsView: View {
                         AppIconSettingsView()
                     } label: {
                         Label("App Icon", systemImage: "app.dashed")
+                    }
+                    
+                    NavigationLink {
+                        NotificationSettingsView()
+                    } label: {
+                        Label("Benachrichtigungen", systemImage: "bell.badge.fill")
                     }
                     
                     NavigationLink {
@@ -66,7 +72,7 @@ struct SettingsView: View {
                         })
                     
                     Button {
-                        requestReview()
+                        //requestReview()
                     } label: {
                         Label("Bewerten", systemImage: "star")
                     }.buttonStyle(.plain)

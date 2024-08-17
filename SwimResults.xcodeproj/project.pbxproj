@@ -25,6 +25,9 @@
 		7133FA4A2C425C3C00EF9403 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7133FA492C425C3C00EF9403 /* UserView.swift */; };
 		713816C72BFA97A800E56214 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713816C62BFA97A800E56214 /* LiveView.swift */; };
 		7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */; };
+		7183AC442C70F38500926A95 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183AC432C70F38500926A95 /* NotificationSettingsView.swift */; };
+		7183AC462C70F9DE00926A95 /* testNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = 7183AC452C70F9DE00926A95 /* testNotification.apns */; };
+		7183AC492C70FDE000926A95 /* CustomAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183AC482C70FDE000926A95 /* CustomAppDelegate.swift */; };
 		7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183D26E2BE3D238000E45B4 /* SwimResultsApp.swift */; };
 		7183D2732BE3D23B000E45B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7183D2722BE3D23B000E45B4 /* Assets.xcassets */; };
 		7183D2762BE3D23B000E45B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7183D2752BE3D23B000E45B4 /* Preview Assets.xcassets */; };
@@ -115,6 +118,10 @@
 		7133FA492C425C3C00EF9403 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		713816C62BFA97A800E56214 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHelper.swift; sourceTree = "<group>"; };
+		7183AC432C70F38500926A95 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		7183AC452C70F9DE00926A95 /* testNotification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = testNotification.apns; sourceTree = "<group>"; };
+		7183AC472C70FD6B00926A95 /* SwimResults.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwimResults.entitlements; sourceTree = "<group>"; };
+		7183AC482C70FDE000926A95 /* CustomAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAppDelegate.swift; sourceTree = "<group>"; };
 		7183D26B2BE3D238000E45B4 /* SwimResults.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwimResults.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7183D26E2BE3D238000E45B4 /* SwimResultsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwimResultsApp.swift; sourceTree = "<group>"; };
 		7183D2722BE3D23B000E45B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -397,6 +404,7 @@
 		7183D26D2BE3D238000E45B4 /* SwimResults */ = {
 			isa = PBXGroup;
 			children = (
+				7183AC472C70FD6B00926A95 /* SwimResults.entitlements */,
 				71F669962C4293110018073A /* Info.plist */,
 				719BB60F2BE4498500810D37 /* Code */,
 				719BB60D2BE4321600810D37 /* Resources */,
@@ -468,6 +476,7 @@
 			children = (
 				7183D2722BE3D23B000E45B4 /* Assets.xcassets */,
 				719E75A42BECE4F200D40154 /* Localizable.xcstrings */,
+				7183AC452C70F9DE00926A95 /* testNotification.apns */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -481,6 +490,7 @@
 				71D6A4D32BEF879E00862DF7 /* Color.swift */,
 				711BD1D92BF4DF81004FEA88 /* LogoShape.swift */,
 				71B1F0602C6F5F9C007856AD /* UIApplicationIcon.swift */,
+				7183AC482C70FDE000926A95 /* CustomAppDelegate.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -756,6 +766,7 @@
 				71135CF92C4FC4A200D1DF29 /* AdvancedSettingsView.swift */,
 				71B1F05E2C6F4C75007856AD /* AppIconSettingsView.swift */,
 				71B1F0642C6F8169007856AD /* AppearanceSettingsView.swift */,
+				7183AC432C70F38500926A95 /* NotificationSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -888,6 +899,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7183AC462C70F9DE00926A95 /* testNotification.apns in Resources */,
 				7183D2762BE3D23B000E45B4 /* Preview Assets.xcassets in Resources */,
 				7183D2732BE3D23B000E45B4 /* Assets.xcassets in Resources */,
 				719E75A52BECE4F200D40154 /* Localizable.xcstrings in Resources */,
@@ -927,6 +939,7 @@
 				719BB63C2BE4FACE00810D37 /* MainMeetingListViewModel.swift in Sources */,
 				71F6699F2C432DD90018073A /* SearchViewModel.swift in Sources */,
 				712FF5C82C14BBDF008CE2C0 /* LiveBarViewModel.swift in Sources */,
+				7183AC442C70F38500926A95 /* NotificationSettingsView.swift in Sources */,
 				710FE18E2BE838F400829ACB /* SpinnerView.swift in Sources */,
 				7186576C2C0161F800556C6F /* StartModel.swift in Sources */,
 				71F669982C432BC60018073A /* AthleteActions.swift in Sources */,
@@ -955,6 +968,7 @@
 				71B1F0702C6FB378007856AD /* MeetingLocationMapView.swift in Sources */,
 				71F864812C52888D00E51CDF /* StartListConfig.swift in Sources */,
 				71F8647F2C52881200E51CDF /* StartListEntryView.swift in Sources */,
+				7183AC492C70FDE000926A95 /* CustomAppDelegate.swift in Sources */,
 				71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */,
 				71D6A4DC2BF014E500862DF7 /* SettingsView.swift in Sources */,
 				713816C72BFA97A800E56214 /* LiveView.swift in Sources */,
@@ -1139,6 +1153,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Dark Shadowed";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SwimResults/SwimResults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
@@ -1174,6 +1189,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon Dark Shadowed";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = SwimResults/SwimResults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";

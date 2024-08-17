@@ -13,6 +13,9 @@ struct MainView: View {
     @AppStorage("CURRENT_THEME") private var currentTheme: Theme = .systemDefault
     @EnvironmentObject var currentMeeting: CurrentMeeting;
     
+    @State var activeView: Int = 0
+    @State var showNavigation: Bool = true
+    
     // TODO: increase interval
     let timer = Timer.publish(every: 45, on: .main, in: .common).autoconnect()
     
@@ -21,35 +24,35 @@ struct MainView: View {
             VStack {
                 TabView {
                     
-                    MainTabItemView(title: Text("Wettkampffolge"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                    MainTabItemView(title: Text("Wettkampffolge"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
                         EventScreenView()
                     }
                     .tabItem {
                         Label("Wettkämpfe", systemImage: "figure.pool.swim")
                     }
                     
-                    //MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                    //MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
                     //    UserScreenView()
                     //}
                     //.tabItem {
                     //    Label("Meins", systemImage: "person")
                     //}
                     
-                    MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                    MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
                         SearchScreenView()
                     }
                     .tabItem {
                         Label("Suche", systemImage: "magnifyingglass.circle.fill")
                     }
                     
-                    MainTabItemView(title: Text("Veranstaltung"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                    MainTabItemView(title: Text("Veranstaltung"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
                         MeetingScreenView()
                     }
                     .tabItem {
                         Label("Veranstaltung", systemImage: "calendar")
                     }
                     
-                    MainTabItemView(needsMeeting: false, title: Text("Einstellungen"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching) {
+                    MainTabItemView(needsMeeting: false, title: Text("Einstellungen"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
                         SettingsScreenView()
                     }
                     .tabItem {
