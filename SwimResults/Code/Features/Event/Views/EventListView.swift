@@ -27,6 +27,17 @@ struct EventListView: View {
                             ForEach(part.events, id: \.self) {meetingEvent in
                                 NavigationLink(destination: EventView(meetingId: meetingEvent.meeting, eventNumber: meetingEvent.number)) {
                                     HStack {
+                                        if (viewModel.heatInfo[meetingEvent.number] != nil) {
+                                            var heat = viewModel.heatInfo[meetingEvent.number]!.firstHeat
+                                            if (heat != nil) {
+                                                VStack {
+                                                    Text(heat!.getStartEstimationString() ?? "--:--")
+                                                    Text(heat!.getStartDelayEstimationString() ?? "--:--")
+                                                        .foregroundStyle(heat!.getDelayType().color)
+                                                }.frame(width: 36)
+                                                    .font(.caption)
+                                            }
+                                        }
                                         Text("\(meetingEvent.number)")
                                             .frame(width: 30, height: 30)
                                             .background(
@@ -62,7 +73,7 @@ struct EventListView: View {
                     await viewModel.fetchEventParts()
                     await viewModel.fetchHeatInfo()
                 }
-                .listStyle(.sidebar)
+                .listStyle(.grouped)
                 .overlay {
                     if viewModel.fetching && viewModel.parts == [] {
                         SpinnerView()
