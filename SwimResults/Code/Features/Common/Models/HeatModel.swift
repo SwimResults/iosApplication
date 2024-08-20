@@ -6,6 +6,27 @@
 //
 
 import Foundation
+import SwiftUI
+
+enum DelayType {
+    case delayed
+    case ahead
+    case onTime
+    case unknown
+    
+    var color: Color {
+        switch self {
+        case .unknown:
+            return .gray
+        case .onTime:
+            return .primary
+        case .delayed:
+            return .red
+        case .ahead:
+            return .green
+        }
+    }
+}
 
 struct HeatModel: Codable, Hashable {
     var _id: String
@@ -41,5 +62,44 @@ struct HeatModel: Codable, Hashable {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "HH:mm"
         return dateFormatter.string(from: date!)
+    }
+    
+    func getTimeWithNormalisedDate(_ date: Date) -> Date {
+        let calendar = Calendar.current
+        var component = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date)
+        component.year = 2023
+        component.month = 1
+        component.day = 1
+        return calendar.date(from: component)!
+    }
+    
+    func getDelay() -> Double? {
+        if (self.startEstimation == nil || self.startDelayEstimation == nil) {
+            return nil
+        }
+        
+        let estimation = getTimeWithNormalisedDate(self.startEstimation!)
+        let delayEstimation = getTimeWithNormalisedDate(self.startDelayEstimation!)
+        
+        return delayEstimation.timeIntervalSince1970 - estimation.timeIntervalSince1970
+    }
+    
+    func getDelayType() -> DelayType {
+        let delay = getDelay()
+        
+        if (delay == nil) {
+            return .unknown
+        }
+        if (delay! > 0) {
+            return .delayed
+        }
+        if (delay! == 0) {
+            return .onTime
+        }
+        if (delay! < 0) {
+            return .ahead
+        }
+        
+        return .unknown
     }
 }

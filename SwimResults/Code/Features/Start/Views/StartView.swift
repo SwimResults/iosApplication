@@ -78,7 +78,7 @@ struct StartView: View {
                                         VStack {
                                             Text(viewModel.start!.heat!.getStartEstimationString() ?? "-")
                                             Text(viewModel.start!.heat!.getStartDelayEstimationString() ?? "")
-                                                .foregroundStyle(.red)
+                                                .foregroundStyle(viewModel.start!.heat!.getDelayType().color)
                                         }
                                     }
                                 } label: {

@@ -26,9 +26,13 @@ struct EventView: View {
                         HStack {
                             Text("Lauf \(heatNumber)")
                             Spacer()
-                            Text(viewModel.heats![heatNumber]![0].heat?.getStartEstimationString() ?? "")
-                            Text(viewModel.heats![heatNumber]![0].heat?.getStartDelayEstimationString() ?? "")
-                                .foregroundStyle(.red)
+                            
+                            let heat = viewModel.heats![heatNumber]![0].heat
+                            if (heat != nil) {
+                                Text(heat!.getStartEstimationString() ?? "")
+                                Text(heat!.getStartDelayEstimationString() ?? "")
+                                    .foregroundStyle(heat!.getDelayType().color)
+                            }
                         }
                     }
                 }

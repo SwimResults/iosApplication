@@ -42,7 +42,7 @@ struct StartListEntryView: View {
                     VStack {
                         Text(start.heat!.getStartEstimationString() ?? "--:--")
                         Text(start.heat!.getStartDelayEstimationString() ?? "--:--")
-                            .foregroundStyle(.red)
+                            .foregroundStyle(start.heat!.getDelayType().color)
                     }.frame(width: 36)
                         .font(.caption)
                 }
