@@ -38,6 +38,15 @@ struct StartListEntryView: View {
     var body: some View {
         NavigationLink(destination: StartView(startId: start._id)) {
             HStack(alignment: .center) {
+                if (config.showTimes && start.heat != nil) {
+                    VStack {
+                        Text(start.heat!.getStartEstimationString() ?? "--:--")
+                        Text(start.heat!.getStartDelayEstimationString() ?? "--:--")
+                            .foregroundStyle(.red)
+                    }.frame(width: 36)
+                        .font(.caption)
+                }
+                
                 if (config.showIcon) {
                     ZStack {
                         if (config.laneAsIcon) {
@@ -98,6 +107,11 @@ struct StartListEntryView: View {
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
+                
+                if (config.showRegistrationTime) {
+                    Text(start.getResultString(ResultType.registration) ?? "")
+                        .foregroundStyle(.gray)
+                }
             }
         }
         .task {
@@ -153,7 +167,7 @@ struct StartListEntryView: View {
                     showStyle: false,
                     showHeat: true,
                     showLane: true,
-                    showTimes: false,
+                    showTimes: true,
                     showRegistrationTime: false,
                     showResults: false,
                     showResultTime: false,

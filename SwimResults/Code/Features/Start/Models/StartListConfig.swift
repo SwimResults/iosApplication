@@ -45,11 +45,11 @@ class StartListConfig {
     var showIcon: Bool = false;
     var laneAsIcon: Bool = false;
     var rankStylesIcon: Bool = false;
+    var showTimes: Bool = false;
+    var showRegistrationTime: Bool = false;
     
     
     // FROM WebApplication (https://github.com/SwimResults/WebApplication)
-    var showTimes: Bool = false;
-    var showRegistrationTime: Bool = false;
     var showResults: Bool = false;
     var showResultTime: Bool = false;
     var showLapTimes: Bool = false;

@@ -55,5 +55,9 @@ struct StartListView: View {
 }
 
 #Preview {
-    StartListView(starts: [], fetching: false)
+    
+    NavigationStack {
+        EventView(meetingId: "IESC23", eventNumber: 10)
+    }
+    //StartListView(starts: [], fetching: false)
 }

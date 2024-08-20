@@ -12,22 +12,30 @@ struct EventView: View {
     public var meetingId: String
     public var eventNumber: Int
     
-    var config: StartListConfig = StartListConfig(showAthlete: true, laneAsIcon: true, showIcon: true)
+    var config: StartListConfig = StartListConfig(showAthlete: true, showRegistrationTime: true, laneAsIcon: true, showIcon: true)
     
     var body: some View {
         List {
             if (viewModel.heats != nil) {
                 ForEach(Array(viewModel.heats!.keys).sorted(by: <), id: \.self) {heatNumber in
-                    Section("Lauf \(heatNumber)") {
+                    Section {
                         ForEach(viewModel.heats![heatNumber]!, id: \.self) {start in
                             StartListEntryView(start: start, config: config)
+                        }
+                    } header: {
+                        HStack {
+                            Text("Lauf \(heatNumber)")
+                            Spacer()
+                            Text(viewModel.heats![heatNumber]![0].heat?.getStartEstimationString() ?? "")
+                            Text(viewModel.heats![heatNumber]![0].heat?.getStartDelayEstimationString() ?? "")
+                                .foregroundStyle(.red)
                         }
                     }
                 }
             }
             
         }
-        .listStyle(.sidebar)
+        .listStyle(.grouped)
         .refreshable {
             await viewModel.fetchEvent()
             await viewModel.fetchStarts()

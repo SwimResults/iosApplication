@@ -72,6 +72,20 @@ struct StartView: View {
                                 }
                             }
                             
+                            if (viewModel.start!.heat != nil) {
+                                LabeledContent {
+                                    HStack {
+                                        VStack {
+                                            Text(viewModel.start!.heat!.getStartEstimationString() ?? "-")
+                                            Text(viewModel.start!.heat!.getStartDelayEstimationString() ?? "")
+                                                .foregroundStyle(.red)
+                                        }
+                                    }
+                                } label: {
+                                    Label("Zeit", systemImage: "clock.fill")
+                                }
+                            }
+                            
                         }
                         
                         Section(viewModel.meetingEvent?.relayDistance != nil ? "Mannschaft" : "Sportler") {

@@ -6,10 +6,8 @@
 //
 
 import SwiftUI
-import StoreKit
 
 struct SettingsView: View {
-    //@Environment(\.requestReview) var requestReview
     @State private var showingAlert: Bool = false
     
     var body: some View {
@@ -54,28 +52,6 @@ struct SettingsView: View {
                     Link(destination: URL(string: "https://swimresults.de/")!, label: {
                         Label("Webseite", systemImage: "globe")
                     }).buttonStyle(.plain)
-                }
-                
-                Section(header: Text("App")) {
-                    Button {
-                    showingAlert = true
-                    } label: {
-                        Label("Teilen", systemImage: "square.and.arrow.up")
-                    }.buttonStyle(.plain)
-                        .alert(Text("App Bewerten"),
-                        isPresented: $showingAlert,
-                        actions: {
-                            Button("Abbrechen", role: .cancel) {}
-                        }, message: {
-                            // TODO: remove
-                            Text("Die App ist momentan noch nicht im Store verfügbar.")
-                        })
-                    
-                    Button {
-                        //requestReview()
-                    } label: {
-                        Label("Bewerten", systemImage: "star")
-                    }.buttonStyle(.plain)
                 }
             }
             
