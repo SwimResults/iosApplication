@@ -28,7 +28,7 @@ struct EventListView: View {
                                 NavigationLink(destination: EventView(meetingId: meetingEvent.meeting, eventNumber: meetingEvent.number)) {
                                     HStack {
                                         if (viewModel.heatInfo[meetingEvent.number] != nil) {
-                                            var heat = viewModel.heatInfo[meetingEvent.number]!.firstHeat
+                                            let heat = viewModel.heatInfo[meetingEvent.number]!.firstHeat
                                             if (heat != nil) {
                                                 VStack {
                                                     Text(heat!.getStartEstimationString() ?? "--:--")

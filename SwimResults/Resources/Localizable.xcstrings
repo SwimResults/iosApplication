@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "de",
   "strings" : {
+    "" : {
+
+    },
     "%@ %@" : {
       "localizations" : {
         "de" : {
@@ -966,6 +969,9 @@
         }
       }
     },
+    "No" : {
+
+    },
     "Platz" : {
       "localizations" : {
         "en" : {
@@ -1048,6 +1054,9 @@
         }
       }
     },
+    "Super!" : {
+
+    },
     "Teilen" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1058,6 +1067,9 @@
           }
         }
       }
+    },
+    "Toggle" : {
+
     },
     "Veranstalter" : {
       "extractionState" : "stale",
@@ -1181,7 +1193,13 @@
         }
       }
     },
+    "Yes" : {
+
+    },
     "Zeit" : {
+
+    },
+    "Ziel" : {
 
     },
     "Zwischenzeit %lldm" : {

@@ -73,6 +73,7 @@
 		71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D32BEF879E00862DF7 /* Color.swift */; };
 		71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */; };
 		71D6A4DC2BF014E500862DF7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4DB2BF014E500862DF7 /* SettingsView.swift */; };
+		71E7626C2C74E66000074BDD /* MyMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E7626B2C74E66000074BDD /* MyMainView.swift */; };
 		71F669982C432BC60018073A /* AthleteActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F669972C432BC60018073A /* AthleteActions.swift */; };
 		71F6699A2C432BD30018073A /* AthleteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F669992C432BD30018073A /* AthleteModel.swift */; };
 		71F6699C2C432BD90018073A /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F6699B2C432BD90018073A /* TeamModel.swift */; };
@@ -170,6 +171,7 @@
 		71D6A4D32BEF879E00862DF7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		71D6A4D92BF014D900862DF7 /* SettingsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsScreenView.swift; sourceTree = "<group>"; };
 		71D6A4DB2BF014E500862DF7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		71E7626B2C74E66000074BDD /* MyMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMainView.swift; sourceTree = "<group>"; };
 		71F669962C4293110018073A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		71F669972C432BC60018073A /* AthleteActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteActions.swift; sourceTree = "<group>"; };
 		71F669992C432BD30018073A /* AthleteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AthleteModel.swift; sourceTree = "<group>"; };
@@ -484,6 +486,7 @@
 		719BB60E2BE4321F00810D37 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				71E762682C74E62D00074BDD /* Trash */,
 				7180182B2BF7BE9F005D817A /* Helpers */,
 				719BB62E2BE4F66D00810D37 /* ApiActions.swift */,
 				719E759E2BEB82AF00D40154 /* Services.swift */,
@@ -786,6 +789,14 @@
 			path = Screens;
 			sourceTree = "<group>";
 		};
+		71E762682C74E62D00074BDD /* Trash */ = {
+			isa = PBXGroup;
+			children = (
+				71E7626B2C74E66000074BDD /* MyMainView.swift */,
+			);
+			path = Trash;
+			sourceTree = "<group>";
+		};
 		71F6699D2C432DC40018073A /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -974,6 +985,7 @@
 				713816C72BFA97A800E56214 /* LiveView.swift in Sources */,
 				7133FA482C425C3100EF9403 /* UserScreenView.swift in Sources */,
 				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
+				71E7626C2C74E66000074BDD /* MyMainView.swift in Sources */,
 				71F6699C2C432BD90018073A /* TeamModel.swift in Sources */,
 				71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */,
 				719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */,
@@ -1174,7 +1186,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = de.logilutions.SwimResults;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1210,7 +1222,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = de.logilutions.SwimResults;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

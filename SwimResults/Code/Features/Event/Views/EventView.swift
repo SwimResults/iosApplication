@@ -12,47 +12,69 @@ struct EventView: View {
     public var meetingId: String
     public var eventNumber: Int
     
-    var config: StartListConfig = StartListConfig(showAthlete: true, showRegistrationTime: true, laneAsIcon: true, showIcon: true)
+    @State var config: StartListConfig = StartListConfig(showAthlete: true, showRegistrationTime: true, laneAsIcon: true, showIcon: true)
     
     var body: some View {
-        List {
-            if (viewModel.heats != nil) {
-                ForEach(Array(viewModel.heats!.keys).sorted(by: <), id: \.self) {heatNumber in
-                    Section {
-                        ForEach(viewModel.heats![heatNumber]!, id: \.self) {start in
-                            StartListEntryView(start: start, config: config)
+        VStack {
+            List {
+                Section {} header: {
+                    VStack {
+                        Picker("", selection: $viewModel.viewMode) {
+                            Text("Starts").tag(EventViewMode.starts)
+                            Text("Ziel").tag(EventViewMode.finish)
+                            Text("Ergebnis").tag(EventViewMode.results)
                         }
-                    } header: {
-                        HStack {
-                            Text("Lauf \(heatNumber)")
-                            Spacer()
-                            
-                            let heat = viewModel.heats![heatNumber]![0].heat
-                            if (heat != nil) {
-                                Text(heat!.getStartEstimationString() ?? "")
-                                Text(heat!.getStartDelayEstimationString() ?? "")
-                                    .foregroundStyle(heat!.getDelayType().color)
+                        .pickerStyle(.segmented)
+                        .onChange(of: viewModel.viewMode) {
+                            config.showMostSignificantTime = viewModel.viewMode == .finish
+                            config.showRegistrationTime = viewModel.viewMode == .starts
+                            //config.showDisqualification = viewModel.viewMode == .finish
+                            viewModel.refreshForViewMode()
+                        }
+                    }
+                    .textCase(nil)
+                }
+                
+                if (viewModel.viewMode == .starts || viewModel.viewMode == .finish) {
+                    if (viewModel.heats != nil) {
+                        ForEach(Array(viewModel.heats!.keys).sorted(by: <), id: \.self) {heatNumber in
+                            Section {
+                                ForEach(viewModel.heats![heatNumber]!, id: \.self) {start in
+                                    StartListEntryView(start: start, config: $config)
+                                }
+                            } header: {
+                                HStack {
+                                    Text("Lauf \(heatNumber)")
+                                    Spacer()
+                                    
+                                    let heat = viewModel.heats![heatNumber]![0].heat
+                                    if (heat != nil) {
+                                        Text(heat!.getStartEstimationString() ?? "")
+                                        Text(heat!.getStartDelayEstimationString() ?? "")
+                                            .foregroundStyle(heat!.getDelayType().color)
+                                    }
+                                }
                             }
                         }
                     }
                 }
+                
             }
-            
-        }
-        .listStyle(.grouped)
-        .refreshable {
-            await viewModel.fetchEvent()
-            await viewModel.fetchStarts()
-        }
-        .task {
-            viewModel.eventNumber = eventNumber
-            viewModel.meetingId = meetingId
-            await viewModel.fetchEvent()
-            await viewModel.fetchStarts()
-        }
-        .overlay {
-            if viewModel.fetchingStarts && ((viewModel.heats != nil && viewModel.heats!.count <= 0) || viewModel.heats == nil) {
-                SpinnerView()
+            .listStyle(.grouped)
+            .refreshable {
+                await viewModel.fetchEvent()
+                await viewModel.fetchStarts()
+            }
+            .task {
+                viewModel.eventNumber = eventNumber
+                viewModel.meetingId = meetingId
+                await viewModel.fetchEvent()
+                await viewModel.fetchStarts()
+            }
+            .overlay {
+                if viewModel.fetchingStarts && ((viewModel.heats != nil && viewModel.heats!.count <= 0) || viewModel.heats == nil) {
+                    SpinnerView()
+                }
             }
         }
         .navigationTitle(Text("Wettkampf \(eventNumber)"))

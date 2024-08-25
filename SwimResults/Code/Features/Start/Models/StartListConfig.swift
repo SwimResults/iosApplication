@@ -7,7 +7,7 @@
 
 import Foundation
 
-class StartListConfig {
+struct StartListConfig {
     
     public init() {}
     

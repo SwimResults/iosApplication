@@ -7,6 +7,13 @@
 
 import Foundation
 
+enum EventViewMode: String {
+    case starts = "Starts"
+    case finish = "Finish"
+    case results = "Results"
+}
+
+@MainActor
 final class EventViewModel: ObservableObject {
     @Published var fetching = false
     @Published var fetchingStarts = false
@@ -14,8 +21,54 @@ final class EventViewModel: ObservableObject {
     @Published var meetingEvent: EventModel?;
     @Published var heats: [Int: [StartModel]]?
     
+    @Published var viewMode: EventViewMode = .starts
+    
     public var eventNumber: Int?
     public var meetingId: String?
+    
+    func refreshForViewMode() {
+        print("refreshing event start list for view: " + viewMode.rawValue)
+        switch viewMode {
+        case .starts:
+            sortByLane()
+        case .finish:
+            sortByResult()
+        case .results:
+            return
+        }
+    }
+    
+    func sortByResult() {
+        if (heats == nil) {
+            return
+        }
+        for heat in heats! {
+            let heatSorted = heat.value.sorted {
+                if ($0.hasDisqualification()) {
+                    if (!$1.hasDisqualification()) {
+                        return false
+                    }
+                } else {
+                    if ($1.hasDisqualification()) {
+                        return true
+                    }
+                }
+                return $0.getResultTime()?.time ?? Int.max < $1.getResultTime()?.time ?? Int.max
+            }
+            heats![heat.key] = heatSorted
+        }
+    }
+    
+    func sortByLane() {
+        if (heats == nil) {
+            return
+        }
+        for heat in heats! {
+            heats![heat.key] = heat.value.sorted {
+                $0.lane ?? 0 < $1.lane ?? 0
+            }
+        }
+    }
     
     func fetchEvent() async {
         if (meetingId == nil || eventNumber == nil) {
@@ -54,7 +107,7 @@ final class EventViewModel: ObservableObject {
                     heats![start.heat!.number!] = [start]
                 }
             }
-            
+            refreshForViewMode()
             fetchingStarts = false
         } catch {
             print(error)

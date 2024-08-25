@@ -14,7 +14,7 @@ struct AthleteView: View {
     var athleteId: String;
     var athleteName: String;
     
-    var config: StartListConfig = StartListConfig(showEvent: true, showStyle: true, showHeat: true, showLane: true, showTimes: true, showIcon: true, rankStylesIcon: true)
+    @State var config: StartListConfig = StartListConfig(showEvent: true, showStyle: true, showHeat: true, showLane: true, showTimes: true, showIcon: true, rankStylesIcon: true)
     
     var body: some View {
         VStack {
@@ -56,7 +56,7 @@ struct AthleteView: View {
                     
                     Section {
                         ForEach(viewModel.starts, id: \.self) {start in
-                            StartListEntryView(start: start, config: config)
+                            StartListEntryView(start: start, config: $config)
                         }
                     } header: {
                         Text("Starts")

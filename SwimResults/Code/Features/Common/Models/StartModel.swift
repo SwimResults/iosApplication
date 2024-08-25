@@ -13,6 +13,21 @@ enum ResultType: String {
     case reaction = "reaction"
     case result_list = "result_list"
     case lap = "lap"
+    
+    var priority: Int {
+        return switch self {
+        case .registration:
+            1
+        case .livetiming:
+            4
+        case .reaction:
+            2
+        case .result_list:
+            5
+        case .lap:
+            3
+        }
+    }
 }
 
 struct StartModel: Codable, Hashable {
@@ -67,6 +82,68 @@ struct StartModel: Codable, Hashable {
             }
         }
         return false
+    }
+    
+    func getMostSignificantTime() -> ResultModel? {
+        var bestType: ResultType = .registration
+        var bestLap: Int = 0
+        var bestResult: ResultModel?
+        
+        /// should be limited to a single for loop, thats why no other methods are reused
+        for result in results {
+            if (result.resultType == nil) {
+                continue
+            }
+            
+            var resultType = ResultType(rawValue: result.resultType!)
+            if (resultType == nil) {
+                continue
+            }
+            
+            if (resultType!.priority > bestType.priority) {
+                bestType = resultType!
+                
+                if (resultType == .lap) {
+                    if (result.lapMeters == nil) {
+                        continue
+                    }
+                    if (result.lapMeters! > bestLap) {
+                        bestLap = result.lapMeters!
+                    } else {
+                        continue
+                    }
+                }
+                
+                bestResult = result
+            }
+        }
+        
+        return bestResult
+    }
+    
+    func getMostSignificantTimeString() -> String? {
+        let result = getMostSignificantTime()
+        return result?.getTimeString()
+    }
+    
+    func getResultTime() -> ResultModel? {
+        var time: ResultModel?
+        var latest: Date?
+        for result in results {
+            if ((result.resultType == ResultType.livetiming.rawValue || result.resultType == ResultType.result_list.rawValue) && result.addedAt != nil) {
+                if (latest == nil || latest! < result.addedAt!) {
+                    time = result
+                    latest = result.addedAt!
+                }
+            }
+        }
+        
+        return time
+    }
+    
+    func getResultTimeString() -> String? {
+        let result = getResultTime()
+        return result?.getTimeString()
     }
     
     func getLaps() -> [ResultModel] {

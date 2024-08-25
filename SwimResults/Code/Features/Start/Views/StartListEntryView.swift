@@ -9,7 +9,7 @@ import SwiftUI
 
 struct StartListEntryView: View {
     var start: StartModel
-    var config: StartListConfig = StartListConfig()
+    @Binding var config: StartListConfig
     
     @StateObject private var viewModel = StartListEntryViewModel()
     
@@ -112,18 +112,55 @@ struct StartListEntryView: View {
                     Text(start.getResultString(ResultType.registration) ?? "")
                         .foregroundStyle(.gray)
                 }
+                if (config.showMostSignificantTime) {
+                    Text(start.getMostSignificantTimeString() ?? "")
+                        .bold()
+                }
             }
         }
         .task {
             viewModel.config = config
             viewModel.start = start
-            await viewModel.fetchEventForStart(start)
+            if (config.showStyle) {
+                await viewModel.fetchEventForStart(start)
+            }
         }
     }
 }
 
 #Preview {
     NavigationStack {
+        @State var config: StartListConfig = StartListConfig(
+            // var showAthlete: Bool = false
+            // var showEvent: Bool = false;
+            // var showStyle: Bool = false;
+            // var showHeat: Bool = false;
+            // var showLane: Bool = false;
+            // var showIcon: Bool = false;
+            // var laneAsIcon: Bool = false;
+            // var rankStylesIcon: Bool = false;
+            
+            showAthlete: false,
+            showEvent: true,
+            showStyle: false,
+            showHeat: true,
+            showLane: true,
+            showTimes: true,
+            showRegistrationTime: false,
+            showResults: false,
+            showResultTime: false,
+            showLapTimes: false,
+            showLapTimesPopup: false,
+            showDisqualification: false,
+            showReactionTime: false,
+            showMostSignificantTime: false,
+            laneAsIcon: false,
+            showIcon: true,
+            flatStyle: false,
+            allLanes: false,
+            rankStylesIcon: false,
+            widgetSize: false
+        )
         List {
             StartListEntryView(
                 start: StartModel(
@@ -152,37 +189,7 @@ struct StartListEntryView: View {
                         _id: "0"
                     )
                 ),
-                config: StartListConfig(
-                    // var showAthlete: Bool = false
-                    // var showEvent: Bool = false;
-                    // var showStyle: Bool = false;
-                    // var showHeat: Bool = false;
-                    // var showLane: Bool = false;
-                    // var showIcon: Bool = false;
-                    // var laneAsIcon: Bool = false;
-                    // var rankStylesIcon: Bool = false;
-                    
-                    showAthlete: false,
-                    showEvent: true,
-                    showStyle: false,
-                    showHeat: true,
-                    showLane: true,
-                    showTimes: true,
-                    showRegistrationTime: false,
-                    showResults: false,
-                    showResultTime: false,
-                    showLapTimes: false,
-                    showLapTimesPopup: false,
-                    showDisqualification: false,
-                    showReactionTime: false,
-                    showMostSignificantTime: false,
-                    laneAsIcon: false,
-                    showIcon: true,
-                    flatStyle: false,
-                    allLanes: false,
-                    rankStylesIcon: false,
-                    widgetSize: false
-                )
+                config: $config
             )
         }
     }
