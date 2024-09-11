@@ -28,6 +28,7 @@ struct EventView: View {
                         .onChange(of: viewModel.viewMode) {
                             config.showMostSignificantTime = viewModel.viewMode == .finish
                             config.showRegistrationTime = viewModel.viewMode == .starts
+                            config.laneAsIcon = viewModel.viewMode == .starts
                             //config.showDisqualification = viewModel.viewMode == .finish
                             viewModel.refreshForViewMode()
                         }

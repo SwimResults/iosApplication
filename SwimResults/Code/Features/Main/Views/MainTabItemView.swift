@@ -50,28 +50,7 @@ struct MainTabItemView<Content: View>: View where Content : View {
                         
                     }
                 } else {
-                    if (currentMeeting.meeting?.state == "RUNNING") {
-                        content
-                            .safeAreaInset(edge: .bottom) {
-                                Button(action: {sheetMode = .live}) {
-                                    ZStack {
-                                        Color.clear
-                                            .background(Material.bar)
-                                        VStack {
-                                            Divider()
-                                            Spacer()
-                                            LiveBarView()
-                                            Spacer()
-                                        }
-                                    }
-                                    .frame(height: 60)
-                                }
-                            }
-                    } else {
-                        content
-                    }
-                        
-                        
+                    content
                 }
             }
             .navigationTitle(title)
@@ -85,7 +64,23 @@ struct MainTabItemView<Content: View>: View where Content : View {
             }
             .toolbarBackground(.visible, for: .tabBar)
         }
-        
+        .safeAreaInset(edge: .bottom) {
+            if (currentMeeting.meeting?.state == "RUNNING") {
+                Button(action: {sheetMode = .live}) {
+                    ZStack {
+                        Color.clear
+                            .background(Material.bar)
+                        VStack {
+                            Divider()
+                            Spacer()
+                            LiveBarView()
+                            Spacer()
+                        }
+                    }
+                    .frame(height: 60)
+                }
+            }
+        }
     }
 }
 

@@ -34,7 +34,8 @@ final class EventViewModel: ObservableObject {
         case .finish:
             sortByResult()
         case .results:
-            return
+            break
+            //await fetchResults()
         }
     }
     
@@ -43,7 +44,7 @@ final class EventViewModel: ObservableObject {
             return
         }
         for heat in heats! {
-            let heatSorted = heat.value.sorted {
+            var heatSorted = heat.value.sorted {
                 if ($0.hasDisqualification()) {
                     if (!$1.hasDisqualification()) {
                         return false
@@ -55,6 +56,16 @@ final class EventViewModel: ObservableObject {
                 }
                 return $0.getResultTime()?.time ?? Int.max < $1.getResultTime()?.time ?? Int.max
             }
+            
+            var rank = 0
+            for index in 0..<heatSorted.count {
+                if heatSorted[index].hasDisqualification() {
+                    continue
+                }
+                rank += 1
+                heatSorted[index].rank = rank
+            }
+            
             heats![heat.key] = heatSorted
         }
     }
@@ -100,6 +111,33 @@ final class EventViewModel: ObservableObject {
             heats = [Int: [StartModel]]()
             
             for start in starts {
+                if (start.heat == nil || start.heat!.number == nil) { continue }
+                if heats![start.heat!.number!] != nil {
+                    heats![start.heat!.number!]!.append(start)
+                } else {
+                    heats![start.heat!.number!] = [start]
+                }
+            }
+            refreshForViewMode()
+            fetchingStarts = false
+        } catch {
+            print(error)
+            fetchingStarts = false
+        }
+    }
+    
+    func fetchResults() async {
+        if (meetingId == nil || eventNumber == nil) {
+            return
+        }
+        
+        fetchingStarts = true
+        do {
+            let ages = try await getStartsByMeetingAndEventAsResults(meetingId!, eventNumber!)
+            
+            heats = [Int: [StartModel]]()
+            
+            for age in ages {
                 if (start.heat == nil || start.heat!.number == nil) { continue }
                 if heats![start.heat!.number!] != nil {
                     heats![start.heat!.number!]!.append(start)

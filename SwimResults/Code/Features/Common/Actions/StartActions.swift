@@ -36,3 +36,9 @@ func getStartsByMeetingAndEvent(_ meeting: String, _ eventNumber: Int) async thr
         return try await startService.get(path: "start/meet/" + meeting + "/event/\(eventNumber)")
     }
 }
+
+func getStartsByMeetingAndEventAsResults(_ meeting: String, _ eventNumber: Int) async throws -> [EventAgeResultModel] {
+    do {
+        return try await startService.get(path: "start/meet/" + meeting + "/event/\(eventNumber)/results")
+    }
+}

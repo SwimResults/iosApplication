@@ -25,7 +25,7 @@ struct StartListEntryView: View {
                 case 3:
                     return .brown
                 default:
-                    return .blue
+                    break
                 }
             }
         }

@@ -66,6 +66,8 @@
 		71B1F06B2C6F8EFB007856AD /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F06A2C6F8EFB007856AD /* LocationModel.swift */; };
 		71B1F06E2C6F9034007856AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B1F06D2C6F9034007856AD /* CoreLocation.framework */; };
 		71B1F0702C6FB378007856AD /* MeetingLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F06F2C6FB378007856AD /* MeetingLocationMapView.swift */; };
+		71B9721A2C90936A00E1E73C /* AgeGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B972192C90936A00E1E73C /* AgeGroupModel.swift */; };
+		71B9721C2C9094BD00E1E73C /* EventStartResultRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9721B2C9094BD00E1E73C /* EventStartResultRequestDto.swift */; };
 		71D6A4CC2BEF85B200862DF7 /* StartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CB2BEF85B200862DF7 /* StartListView.swift */; };
 		71D6A4CE2BEF85BB00862DF7 /* StartListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CD2BEF85BB00862DF7 /* StartListViewModel.swift */; };
 		71D6A4D02BEF865400862DF7 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CF2BEF865400862DF7 /* EventView.swift */; };
@@ -164,6 +166,8 @@
 		71B1F06A2C6F8EFB007856AD /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		71B1F06D2C6F9034007856AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		71B1F06F2C6FB378007856AD /* MeetingLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingLocationMapView.swift; sourceTree = "<group>"; };
+		71B972192C90936A00E1E73C /* AgeGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroupModel.swift; sourceTree = "<group>"; };
+		71B9721B2C9094BD00E1E73C /* EventStartResultRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStartResultRequestDto.swift; sourceTree = "<group>"; };
 		71D6A4CB2BEF85B200862DF7 /* StartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListView.swift; sourceTree = "<group>"; };
 		71D6A4CD2BEF85BB00862DF7 /* StartListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListViewModel.swift; sourceTree = "<group>"; };
 		71D6A4CF2BEF865400862DF7 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
@@ -260,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				71F864802C52888C00E51CDF /* StartListConfig.swift */,
+				71B9721B2C9094BD00E1E73C /* EventStartResultRequestDto.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -450,6 +455,7 @@
 				712044AA2C1B2CE700818D2B /* ResultModel.swift */,
 				712044AC2C1B2DD500818D2B /* DisqualificationModel.swift */,
 				71F669992C432BD30018073A /* AthleteModel.swift */,
+				71B972192C90936A00E1E73C /* AgeGroupModel.swift */,
 				71F6699B2C432BD90018073A /* TeamModel.swift */,
 				71B1F06A2C6F8EFB007856AD /* LocationModel.swift */,
 			);
@@ -996,7 +1002,9 @@
 				719E759B2BEB785100D40154 /* EventModel.swift in Sources */,
 				712FF5C52C14BA95008CE2C0 /* LiveBarView.swift in Sources */,
 				712044AB2C1B2CE700818D2B /* ResultModel.swift in Sources */,
+				71B9721A2C90936A00E1E73C /* AgeGroupModel.swift in Sources */,
 				7115AB752C43D0E800DE045E /* AthleteViewModel.swift in Sources */,
+				71B9721C2C9094BD00E1E73C /* EventStartResultRequestDto.swift in Sources */,
 				719BB6252BE44DCE00810D37 /* SearchScreenView.swift in Sources */,
 				71D6A4D22BEF865F00862DF7 /* EventViewModel.swift in Sources */,
 				71135CF22C4F0B5200D1DF29 /* StartActions.swift in Sources */,
