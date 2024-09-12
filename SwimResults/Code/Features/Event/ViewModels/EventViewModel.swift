@@ -20,12 +20,15 @@ final class EventViewModel: ObservableObject {
     
     @Published var meetingEvent: EventModel?;
     @Published var heats: [Int: [StartModel]]?
+    @Published var results: [EventAgeResultModel]?
     
     @Published var viewMode: EventViewMode = .starts
     
     public var eventNumber: Int?
     public var meetingId: String?
     
+    // refreshForViewMode is called from fetchStarts because they are sorted after evaluating the view mode
+    // fetchResults gets called by this function instead because it is not loaded onAppear and is sorting itself
     func refreshForViewMode() {
         print("refreshing event start list for view: " + viewMode.rawValue)
         switch viewMode {
@@ -34,8 +37,9 @@ final class EventViewModel: ObservableObject {
         case .finish:
             sortByResult()
         case .results:
-            break
-            //await fetchResults()
+            Task {
+                await fetchResults()
+            }
         }
     }
     
@@ -135,17 +139,24 @@ final class EventViewModel: ObservableObject {
         do {
             let ages = try await getStartsByMeetingAndEventAsResults(meetingId!, eventNumber!)
             
-            heats = [Int: [StartModel]]()
+            results = [EventAgeResultModel]()
             
             for age in ages {
-                if (start.heat == nil || start.heat!.number == nil) { continue }
-                if heats![start.heat!.number!] != nil {
-                    heats![start.heat!.number!]!.append(start)
-                } else {
-                    heats![start.heat!.number!] = [start]
+                var currentAge = age
+                currentAge.starts = currentAge.starts.sorted {
+                    if ($0.hasDisqualification()) {
+                        if (!$1.hasDisqualification()) {
+                            return false
+                        }
+                    } else {
+                        if ($1.hasDisqualification()) {
+                            return true
+                        }
+                    }
+                    return $0.getResultTime()?.time ?? Int.max < $1.getResultTime()?.time ?? Int.max
                 }
+                results?.append(currentAge)
             }
-            refreshForViewMode()
             fetchingStarts = false
         } catch {
             print(error)

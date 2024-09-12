@@ -26,10 +26,11 @@ struct EventView: View {
                         }
                         .pickerStyle(.segmented)
                         .onChange(of: viewModel.viewMode) {
-                            config.showMostSignificantTime = viewModel.viewMode == .finish
+                            config.showMostSignificantTime = viewModel.viewMode != .starts
                             config.showRegistrationTime = viewModel.viewMode == .starts
                             config.laneAsIcon = viewModel.viewMode == .starts
                             //config.showDisqualification = viewModel.viewMode == .finish
+                            config.rankStylesIcon = viewModel.viewMode == .results
                             viewModel.refreshForViewMode()
                         }
                     }
@@ -60,11 +61,29 @@ struct EventView: View {
                     }
                 }
                 
+                if (viewModel.viewMode == .results) {
+                    if (viewModel.results != nil) {
+                        ForEach(viewModel.results!, id: \.self) {ageResult in
+                            Section {
+                                ForEach(ageResult.starts, id: \.self) {start in
+                                    StartListEntryView(start: start, config: $config)
+                                }
+                            } header: {
+                                Text(ageResult.ageGroup?.name ?? "Jahrgang")
+                            }
+                        }
+                    }
+                }
+                
             }
             .listStyle(.grouped)
             .refreshable {
                 await viewModel.fetchEvent()
-                await viewModel.fetchStarts()
+                if (viewModel.viewMode == .results) {
+                    await viewModel.fetchResults()
+                } else {
+                    await viewModel.fetchStarts()
+                }
             }
             .task {
                 viewModel.eventNumber = eventNumber
