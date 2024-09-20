@@ -54,12 +54,20 @@ struct AthleteView: View {
                         }
                     }
                     
-                    Section {
-                        ForEach(viewModel.starts, id: \.self) {start in
-                            StartListEntryView(start: start, config: $config)
+                    if (viewModel.startsByDay != nil) {
+                        ForEach(Array(viewModel.startsByDay!.keys).sorted(by: { ($0.date)?.compare($1.date ?? Date()).rawValue ?? 0 < 0 }), id: \.self) {startDay in
+                            Section {
+                                ForEach(viewModel.startsByDay![startDay]!, id: \.self) {start in
+                                    StartListEntryView(start: start, config: $config)
+                                }
+                            } header: {
+                                HStack {
+                                    Text("Starts")
+                                    Spacer()
+                                    Text(startDay.getDateString())
+                                }
+                            }
                         }
-                    } header: {
-                        Text("Starts")
                     }
                 }
                 .listStyle(.grouped)
