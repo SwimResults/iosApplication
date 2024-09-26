@@ -447,6 +447,9 @@
         }
       }
     },
+    "Eigener Sportler" : {
+
+    },
     "Einstellungen" : {
       "localizations" : {
         "en" : {
@@ -548,7 +551,6 @@
       }
     },
     "Favoriten" : {
-      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -992,6 +994,9 @@
         }
       }
     },
+    "Register Notification User" : {
+
+    },
     "Request Notification Access" : {
 
     },
@@ -1102,6 +1107,9 @@
         }
       }
     },
+    "Veranstaltungen" : {
+
+    },
     "Verein" : {
       "localizations" : {
         "en" : {
@@ -1197,6 +1205,9 @@
 
     },
     "Zeit" : {
+
+    },
+    "Zeitplan" : {
 
     },
     "Ziel" : {

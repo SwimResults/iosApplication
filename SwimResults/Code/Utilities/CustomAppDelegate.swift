@@ -31,6 +31,10 @@ class CustomAppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
         // If you want to see a string version of your token, you can use the following code to print it out
         let stringifiedToken = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
         print("stringifiedToken:", stringifiedToken)
+        
+        Task {
+            try await registerNotificationUser(stringifiedToken)
+        }
     }
 }
 

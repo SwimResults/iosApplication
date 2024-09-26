@@ -18,6 +18,8 @@
 		711BD1DA2BF4DF81004FEA88 /* LogoShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 711BD1D92BF4DF81004FEA88 /* LogoShape.swift */; };
 		712044AB2C1B2CE700818D2B /* ResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712044AA2C1B2CE700818D2B /* ResultModel.swift */; };
 		712044AD2C1B2DD600818D2B /* DisqualificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712044AC2C1B2DD500818D2B /* DisqualificationModel.swift */; };
+		7127CCB52C9E31AA006732DF /* NotificationUserActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127CCB42C9E31AA006732DF /* NotificationUserActions.swift */; };
+		7127CCB72C9E32C3006732DF /* NotificationUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7127CCB62C9E32C3006732DF /* NotificationUserModel.swift */; };
 		712FF5C52C14BA95008CE2C0 /* LiveBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712FF5C42C14BA95008CE2C0 /* LiveBarView.swift */; };
 		712FF5C82C14BBDF008CE2C0 /* LiveBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712FF5C72C14BBDF008CE2C0 /* LiveBarViewModel.swift */; };
 		712FF5CA2C14BEDA008CE2C0 /* HeatActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 712FF5C92C14BEDA008CE2C0 /* HeatActions.swift */; };
@@ -114,6 +116,8 @@
 		711BD1D92BF4DF81004FEA88 /* LogoShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoShape.swift; sourceTree = "<group>"; };
 		712044AA2C1B2CE700818D2B /* ResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultModel.swift; sourceTree = "<group>"; };
 		712044AC2C1B2DD500818D2B /* DisqualificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisqualificationModel.swift; sourceTree = "<group>"; };
+		7127CCB42C9E31AA006732DF /* NotificationUserActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUserActions.swift; sourceTree = "<group>"; };
+		7127CCB62C9E32C3006732DF /* NotificationUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUserModel.swift; sourceTree = "<group>"; };
 		712FF5C42C14BA95008CE2C0 /* LiveBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBarView.swift; sourceTree = "<group>"; };
 		712FF5C72C14BBDF008CE2C0 /* LiveBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveBarViewModel.swift; sourceTree = "<group>"; };
 		712FF5C92C14BEDA008CE2C0 /* HeatActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeatActions.swift; sourceTree = "<group>"; };
@@ -458,6 +462,7 @@
 				71B972192C90936A00E1E73C /* AgeGroupModel.swift */,
 				71F6699B2C432BD90018073A /* TeamModel.swift */,
 				71B1F06A2C6F8EFB007856AD /* LocationModel.swift */,
+				7127CCB62C9E32C3006732DF /* NotificationUserModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -681,6 +686,7 @@
 				71F669972C432BC60018073A /* AthleteActions.swift */,
 				71135CF12C4F0B5200D1DF29 /* StartActions.swift */,
 				71B1F0682C6F8BAB007856AD /* TeamActions.swift */,
+				7127CCB42C9E31AA006732DF /* NotificationUserActions.swift */,
 			);
 			path = Actions;
 			sourceTree = "<group>";
@@ -983,6 +989,7 @@
 				7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
 				71B1F0702C6FB378007856AD /* MeetingLocationMapView.swift in Sources */,
+				7127CCB52C9E31AA006732DF /* NotificationUserActions.swift in Sources */,
 				71F864812C52888D00E51CDF /* StartListConfig.swift in Sources */,
 				71F8647F2C52881200E51CDF /* StartListEntryView.swift in Sources */,
 				7183AC492C70FDE000926A95 /* CustomAppDelegate.swift in Sources */,
@@ -992,6 +999,7 @@
 				7133FA482C425C3100EF9403 /* UserScreenView.swift in Sources */,
 				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
 				71E7626C2C74E66000074BDD /* MyMainView.swift in Sources */,
+				7127CCB72C9E32C3006732DF /* NotificationUserModel.swift in Sources */,
 				71F6699C2C432BD90018073A /* TeamModel.swift in Sources */,
 				71D6A4DA2BF014D900862DF7 /* SettingsScreenView.swift in Sources */,
 				719BB6282BE44EEB00810D37 /* SearchView.swift in Sources */,
@@ -1175,7 +1183,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SwimResults/SwimResults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
@@ -1194,7 +1202,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = de.logilutions.SwimResults;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1211,7 +1219,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SwimResults/SwimResults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
@@ -1230,7 +1238,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.6;
+				MARKETING_VERSION = 1.7;
 				PRODUCT_BUNDLE_IDENTIFIER = de.logilutions.SwimResults;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

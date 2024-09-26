@@ -6,9 +6,18 @@
 //
 
 import Foundation
+
 struct ApiActions {
     
     var url: String = ""
+    
+    var encoder: JSONEncoder = {
+        let encoder = JSONEncoder()
+        
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        
+        return encoder
+    }()
     
     var decoder: JSONDecoder = {
         let decoder = JSONDecoder()
@@ -79,6 +88,83 @@ struct ApiActions {
             throw ServiceError.invalidJSON
         }
     }
+    
+    func post<T:Codable, U:Codable>(path: String, params:[String:Any], data: U) async throws -> T {
+        guard let url = URL(string: url + path) else { throw ServiceError.invalidURL }
+        
+        print("POST: " + url.absoluteString)
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        
+        request.httpBody = try encoder.encode(data)
+        
+        
+        let (data, response) = try await URLSession.shared.data(for: request)
+        
+        guard let response = response as? HTTPURLResponse, response.statusCode >= 200, response.statusCode < 300 else {
+            throw ServiceError.invalidResponseCode
+        }
+        
+        do {
+            return try decoder.decode(T.self, from: data)
+        } catch let jsonError as NSError {
+            print("JSON decode failed: \(jsonError.localizedDescription)")
+            throw ServiceError.invalidJSON
+        }
+    }
+    
+//    func getPostString(params:[String:Any]) -> String
+//    {
+//        var data = [String]()
+//        for(key, value) in params
+//        {
+//            data.append(key + "=\(value)")
+//        }
+//        return data.map { String($0) }.joined(separator: "&")
+//    }
+//
+//    func callPost(url:URL, params:[String:Any], finish: @escaping ((message:String, data:Data?)) -> Void)
+//    {
+//        var request = URLRequest(url: url)
+//        request.httpMethod = "POST"
+//
+//        //let postString = self.getPostString(params: params)
+//        //request.httpBody = postString.data(using: .utf8)
+//
+//        var result:(message:String, data:Data?) = (message: "Fail", data: nil)
+//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+//
+//            if(error != nil)
+//            {
+//                result.message = "Fail Error not null : \(error.debugDescription)"
+//            }
+//            else
+//            {
+//                result.message = "Success"
+//                result.data = data
+//            }
+//
+//            finish(result)
+//        }
+//        task.resume()
+//    }
+//    
+//    func finishPost (message:String, data:Data?) -> Void
+//    {
+//        do
+//        {
+//            if let jsonData = data
+//            {
+//                let parsedData = try decoder<>.decode(from: jsonData)
+//                print(parsedData)
+//            }
+//        }
+//        catch
+//        {
+//            print("Parse Error: \(error)")
+//        }
+//    }
 }
 
 enum ServiceError: Error {

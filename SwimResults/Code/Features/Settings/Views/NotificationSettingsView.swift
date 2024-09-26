@@ -13,6 +13,14 @@ struct NotificationSettingsView: View {
 
     let notificationCenter = UNUserNotificationCenter.current()
     
+    func register(_ token: String) async {
+        do {
+            try await registerNotificationUser(token)
+        } catch {
+            print(error)
+        }
+    }
+    
     var body: some View {
         Form {
             
@@ -47,6 +55,12 @@ struct NotificationSettingsView: View {
                     } catch {
                         print("Request authorization error")
                     }
+                }
+            }
+            
+            Button("Register Notification User") {
+                Task {
+                    await register("abcdefghijkl12345")
                 }
             }
         }.navigationTitle("Benachrichtigungen")
