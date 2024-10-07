@@ -8,10 +8,30 @@
 import Foundation
 import SwiftUI
 import UserNotifications
+import AppAuthCore
 
-class CustomAppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
+class AppDelegate: UIResponder, UIApplicationDelegate, ObservableObject {
     // This gives us access to the methods from our main app code inside the app delegate
-    var app: SwimResultsApp?
+    //var app: SwimResultsApp?
+    
+    // property of the app's AppDelegate
+    var currentAuthorizationFlow: OIDExternalUserAgentSession?
+    
+    func application(_ app: UIApplication,
+                     open url: URL,
+                     options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+      // Sends the URL to the current authorization flow (if any) which will
+      // process it if it relates to an authorization response.
+      if let authorizationFlow = self.currentAuthorizationFlow,
+                                 authorizationFlow.resumeExternalUserAgentFlow(with: url) {
+        self.currentAuthorizationFlow = nil
+        return true
+      }
+
+      // Your additional URL handling (if any)
+
+      return false
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         // This is where we register this device to recieve push notifications from Apple
@@ -38,7 +58,7 @@ class CustomAppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
     }
 }
 
-extension CustomAppDelegate: UNUserNotificationCenterDelegate {
+extension AppDelegate: UNUserNotificationCenterDelegate {
     // This function lets us do something when the user interacts with a notification
     // like log that they clicked it, or navigate to a specific screen
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {

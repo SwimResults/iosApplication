@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct TestLoginView: View {
+    @EnvironmentObject var appDelegate: AppDelegate
+    @ObservedObject private var viewModel = TestLoginViewModel()
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            Button {
+                Task {
+                    viewModel.login()
+                }
+            } label: {
+                Text("Login")
+            }
+        }
+        .onAppear {
+            viewModel.appDelegate = appDelegate
+        }
     }
 }
 
