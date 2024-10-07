@@ -26,6 +26,9 @@
 		7133FA482C425C3100EF9403 /* UserScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7133FA472C425C3100EF9403 /* UserScreenView.swift */; };
 		7133FA4A2C425C3C00EF9403 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7133FA492C425C3C00EF9403 /* UserView.swift */; };
 		713816C72BFA97A800E56214 /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713816C62BFA97A800E56214 /* LiveView.swift */; };
+		713AF77D2CB3D805003483F9 /* TestLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713AF77C2CB3D805003483F9 /* TestLoginView.swift */; };
+		713AF7802CB3E0AC003483F9 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 713AF77F2CB3E0AC003483F9 /* AppAuth */; };
+		713AF7822CB3E0AC003483F9 /* AppAuthCore in Frameworks */ = {isa = PBXBuildFile; productRef = 713AF7812CB3E0AC003483F9 /* AppAuthCore */; };
 		7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */; };
 		7183AC442C70F38500926A95 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183AC432C70F38500926A95 /* NotificationSettingsView.swift */; };
 		7183AC462C70F9DE00926A95 /* testNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = 7183AC452C70F9DE00926A95 /* testNotification.apns */; };
@@ -124,6 +127,7 @@
 		7133FA472C425C3100EF9403 /* UserScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserScreenView.swift; sourceTree = "<group>"; };
 		7133FA492C425C3C00EF9403 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		713816C62BFA97A800E56214 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
+		713AF77C2CB3D805003483F9 /* TestLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginView.swift; sourceTree = "<group>"; };
 		7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHelper.swift; sourceTree = "<group>"; };
 		7183AC432C70F38500926A95 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
 		7183AC452C70F9DE00926A95 /* testNotification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = testNotification.apns; sourceTree = "<group>"; };
@@ -195,7 +199,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				713AF7802CB3E0AC003483F9 /* AppAuth in Frameworks */,
 				71B1F06E2C6F9034007856AD /* CoreLocation.framework in Frameworks */,
+				713AF7822CB3E0AC003483F9 /* AppAuthCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -782,6 +788,7 @@
 				71B1F05E2C6F4C75007856AD /* AppIconSettingsView.swift */,
 				71B1F0642C6F8169007856AD /* AppearanceSettingsView.swift */,
 				7183AC432C70F38500926A95 /* NotificationSettingsView.swift */,
+				713AF77C2CB3D805003483F9 /* TestLoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -833,6 +840,10 @@
 			dependencies = (
 			);
 			name = SwimResults;
+			packageProductDependencies = (
+				713AF77F2CB3E0AC003483F9 /* AppAuth */,
+				713AF7812CB3E0AC003483F9 /* AppAuthCore */,
+			);
 			productName = SwimResults;
 			productReference = 7183D26B2BE3D238000E45B4 /* SwimResults.app */;
 			productType = "com.apple.product-type.application";
@@ -906,6 +917,9 @@
 				de,
 			);
 			mainGroup = 7183D2622BE3D238000E45B4;
+			packageReferences = (
+				713AF77E2CB3E0AC003483F9 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
+			);
 			productRefGroup = 7183D26C2BE3D238000E45B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -998,6 +1012,7 @@
 				713816C72BFA97A800E56214 /* LiveView.swift in Sources */,
 				7133FA482C425C3100EF9403 /* UserScreenView.swift in Sources */,
 				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
+				713AF77D2CB3D805003483F9 /* TestLoginView.swift in Sources */,
 				71E7626C2C74E66000074BDD /* MyMainView.swift in Sources */,
 				7127CCB72C9E32C3006732DF /* NotificationUserModel.swift in Sources */,
 				71F6699C2C432BD90018073A /* TeamModel.swift in Sources */,
@@ -1363,6 +1378,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		713AF77E2CB3E0AC003483F9 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/openid/AppAuth-iOS";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 1.7.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		713AF77F2CB3E0AC003483F9 /* AppAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 713AF77E2CB3E0AC003483F9 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuth;
+		};
+		713AF7812CB3E0AC003483F9 /* AppAuthCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 713AF77E2CB3E0AC003483F9 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
+			productName = AppAuthCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7183D2632BE3D238000E45B4 /* Project object */;
 }
