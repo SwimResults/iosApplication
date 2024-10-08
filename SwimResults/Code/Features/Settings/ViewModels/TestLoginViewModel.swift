@@ -7,11 +7,14 @@
 
 import Foundation
 import AppAuth
+import JWTDecode
 
 @MainActor
 final class TestLoginViewModel: UIViewController, ObservableObject {
     // property of the containing class
     @Published var authState: OIDAuthState?
+    @Published var loggedIn: Bool?
+    @Published var name: String?
     var appDelegate: AppDelegate?
     
     // /realms/swimresults/protocol/openid-connect/auth?nonce=y8nIbqrEJN5c_D2cSY2LM5puuELAt6lms8Zss3YMl98&response_type=code&code_challenge_method=S256&scope=openid%20profile&code_challenge=nEEu7rRKZeqMYNUxuRg9lgSJ827rkK80lcWB92xGveo&redirect_uri=de.logilutions.SwimResults://oauth2redirect/keycloak-provider&client_id=ios-pkce-client&state=H7aF2BhEtThrrrPbqo0FkYpn-ItKqbLLq2iSGeQsQbU
@@ -19,7 +22,7 @@ final class TestLoginViewModel: UIViewController, ObservableObject {
     
     let clientId: String = "ios-pkce-client"
     let clientSecret: String = ""
-    let redirectURI: URL = URL(string: "de.logilutions.SwimResults://oauth2redirect/keycloak-provider")!
+    let redirectURI: URL = URL(string: "swimresults://oauth2redirect/keycloak-provider")!
     
     func setAuthState(state: OIDAuthState?) {
         self.authState = state
@@ -31,6 +34,8 @@ final class TestLoginViewModel: UIViewController, ObservableObject {
     }
     
     func login() {
+        
+        self.loggedIn = nil
         
         let issuer = URL(string: "https://auth.swimresults.de/realms/swimresults")!
         
@@ -65,12 +70,38 @@ final class TestLoginViewModel: UIViewController, ObservableObject {
                     self.setAuthState(state: authState)
                     print("Got authorization tokens. Access token: " +
                       "\(authState.lastTokenResponse?.accessToken ?? "nil")")
+                    self.loggedIn = true
+                    self.fetchUserName(authState: authState)
                 } else {
                     print("Authorization error: \(error?.localizedDescription ?? "Unknown error")")
                     self.setAuthState(state: nil)
+                    self.loggedIn = false
                 }
             }
         } // discoverConfiguration
+    }
+    
+    func fetchUserName(authState: OIDAuthState) {
+        authState.performAction() { (accessToken, idToken, error) in
+            
+            if error != nil  {
+                print("Error fetching fresh tokens: \(error?.localizedDescription ?? "Unknown error")")
+                return
+            }
+            guard let accessToken = accessToken else {
+                return
+            }
+            
+            do {
+                let jwt = try decode(jwt: accessToken)
+                self.name = jwt.claim(name: "name").string
+            } catch {
+               print("decoding jwt failed")
+               return
+            }
+            
+            
+        }
     }
 }
     

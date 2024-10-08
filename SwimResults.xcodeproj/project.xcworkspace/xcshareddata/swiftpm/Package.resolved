@@ -8,6 +8,15 @@
         "revision" : "c89ed571ae140f8eb1142735e6e23d7bb8c34cb2",
         "version" : "1.7.5"
       }
+    },
+    {
+      "identity" : "jwtdecode.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/auth0/JWTDecode.swift",
+      "state" : {
+        "revision" : "1e153ef009969543191970c66b7c60163c0b4a65",
+        "version" : "3.2.0"
+      }
     }
   ],
   "version" : 2

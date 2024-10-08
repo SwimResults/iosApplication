@@ -20,10 +20,22 @@ struct TestLoginView: View {
             } label: {
                 Text("Login")
             }
+            if (viewModel.loggedIn == nil) {
+                Text("-= NOT LOGGED IN =-")
+            } else if (viewModel.loggedIn == true) {
+                Text("LOGGED IN!!")
+            } else {
+                Text("LOGIN FAILED!!")
+            }
+            if (viewModel.name != nil) {
+                Text(viewModel.name!)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }
         }
         .onAppear {
             viewModel.appDelegate = appDelegate
         }
+        .navigationTitle(viewModel.name ?? "Test Login")
     }
 }
 

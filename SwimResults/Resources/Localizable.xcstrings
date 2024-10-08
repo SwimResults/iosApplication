@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "-= NOT LOGGED IN =-" : {
+
+    },
     "%@ %@" : {
       "localizations" : {
         "de" : {
@@ -750,7 +753,13 @@
         }
       }
     },
+    "LOGGED IN!!" : {
+
+    },
     "Login" : {
+
+    },
+    "LOGIN FAILED!!" : {
 
     },
     "Login Test" : {

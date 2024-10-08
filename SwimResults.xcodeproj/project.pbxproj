@@ -30,6 +30,7 @@
 		713AF7802CB3E0AC003483F9 /* AppAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 713AF77F2CB3E0AC003483F9 /* AppAuth */; };
 		713AF7822CB3E0AC003483F9 /* AppAuthCore in Frameworks */ = {isa = PBXBuildFile; productRef = 713AF7812CB3E0AC003483F9 /* AppAuthCore */; };
 		713AF7842CB3F488003483F9 /* TestLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713AF7832CB3F488003483F9 /* TestLoginViewModel.swift */; };
+		713AF7892CB4962F003483F9 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 713AF7882CB4962F003483F9 /* JWTDecode */; };
 		7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */; };
 		7183AC442C70F38500926A95 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183AC432C70F38500926A95 /* NotificationSettingsView.swift */; };
 		7183AC462C70F9DE00926A95 /* testNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = 7183AC452C70F9DE00926A95 /* testNotification.apns */; };
@@ -203,6 +204,7 @@
 			files = (
 				713AF7802CB3E0AC003483F9 /* AppAuth in Frameworks */,
 				71B1F06E2C6F9034007856AD /* CoreLocation.framework in Frameworks */,
+				713AF7892CB4962F003483F9 /* JWTDecode in Frameworks */,
 				713AF7822CB3E0AC003483F9 /* AppAuthCore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -846,6 +848,7 @@
 			packageProductDependencies = (
 				713AF77F2CB3E0AC003483F9 /* AppAuth */,
 				713AF7812CB3E0AC003483F9 /* AppAuthCore */,
+				713AF7882CB4962F003483F9 /* JWTDecode */,
 			);
 			productName = SwimResults;
 			productReference = 7183D26B2BE3D238000E45B4 /* SwimResults.app */;
@@ -922,6 +925,7 @@
 			mainGroup = 7183D2622BE3D238000E45B4;
 			packageReferences = (
 				713AF77E2CB3E0AC003483F9 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */,
+				713AF7872CB4962F003483F9 /* XCRemoteSwiftPackageReference "JWTDecode" */,
 			);
 			productRefGroup = 7183D26C2BE3D238000E45B4 /* Products */;
 			projectDirPath = "";
@@ -1202,7 +1206,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SwimResults/SwimResults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
@@ -1238,7 +1242,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = SwimResults/SwimResults.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"SwimResults/Preview Content\"";
 				DEVELOPMENT_TEAM = LZS9NKKU7K;
 				ENABLE_PREVIEWS = YES;
@@ -1392,6 +1396,14 @@
 				minimumVersion = 1.7.5;
 			};
 		};
+		713AF7872CB4962F003483F9 /* XCRemoteSwiftPackageReference "JWTDecode" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 3.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1404,6 +1416,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 713AF77E2CB3E0AC003483F9 /* XCRemoteSwiftPackageReference "AppAuth-iOS" */;
 			productName = AppAuthCore;
+		};
+		713AF7882CB4962F003483F9 /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 713AF7872CB4962F003483F9 /* XCRemoteSwiftPackageReference "JWTDecode" */;
+			productName = JWTDecode;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
