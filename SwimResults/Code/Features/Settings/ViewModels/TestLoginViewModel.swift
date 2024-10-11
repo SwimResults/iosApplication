@@ -17,9 +17,6 @@ final class TestLoginViewModel: UIViewController, ObservableObject {
     @Published var name: String?
     var appDelegate: AppDelegate?
     
-    // /realms/swimresults/protocol/openid-connect/auth?nonce=y8nIbqrEJN5c_D2cSY2LM5puuELAt6lms8Zss3YMl98&response_type=code&code_challenge_method=S256&scope=openid%20profile&code_challenge=nEEu7rRKZeqMYNUxuRg9lgSJ827rkK80lcWB92xGveo&redirect_uri=de.logilutions.SwimResults://oauth2redirect/keycloak-provider&client_id=ios-pkce-client&state=H7aF2BhEtThrrrPbqo0FkYpn-ItKqbLLq2iSGeQsQbU
-    // /realms/swimresults/protocol/openid-connect/auth?response_type=code&client_id=swimresults-pkce-client&state=MjBSTHdxTW5uMlVCRFouNGt-bmhhTUVYSkxfTTJXbUdJMlV2RTVid2dBcGlJ%3B%252F&redirect_uri=https%3A%2F%2Fapp.swimresults.dev%2Fauth&scope=openid%20profile%20offline_access&code_challenge=4iajP5mQip1a7B85m-B7xJGNdY4iUd7nGKpryvqPpDQ&code_challenge_method=S256&nonce=MjBSTHdxTW5uMlVCRFouNGt-bmhhTUVYSkxfTTJXbUdJMlV2RTVid2dBcGlJ
-    
     let clientId: String = "ios-pkce-client"
     let clientSecret: String = ""
     let redirectURI: URL = URL(string: "swimresults://oauth2redirect/keycloak-provider")!

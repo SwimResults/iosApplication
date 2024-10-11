@@ -17,6 +17,7 @@ struct MainView: View {
     @State var showNavigation: Bool = true
     
     // TODO: increase interval
+    // Timer to update current meeting in the background
     let timer = Timer.publish(every: 45, on: .main, in: .common).autoconnect()
     
     var body: some View {
@@ -31,12 +32,12 @@ struct MainView: View {
                         Label("Wettkämpfe", systemImage: "figure.pool.swim")
                     }
                     
-                    //MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
-                    //    UserScreenView()
-                    //}
-                    //.tabItem {
-                    //    Label("Meins", systemImage: "person")
-                    //}
+                    MainTabItemView(title: Text("Meine Seite"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
+                        UserScreenView()
+                    }
+                    .tabItem {
+                        Label("Meins", systemImage: "person")
+                    }
                     
                     MainTabItemView(title: Text("Suche"), sheetMode: $viewModel.sheetMode, fetching: $viewModel.fetching, showNavigation: $showNavigation) {
                         SearchScreenView()

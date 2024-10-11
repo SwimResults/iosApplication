@@ -8,8 +8,28 @@
 import SwiftUI
 
 struct UserView: View {
+    @EnvironmentObject var authState: AuthState
+    @State var showLoginSheet: Bool = false
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            if (authState.loggedIn) {
+                Text("Willkommen zurück!")
+            } else {
+                VStack {
+                    Text("Nicht angemeldet!")
+                    Button {
+                        showLoginSheet = true
+                    } label: {
+                        Text("Bei SwimResults anmelden")
+                    }
+                }
+            }
+        }
+        .sheet(isPresented: $showLoginSheet) {
+            LoginView(showSheet: $showLoginSheet)
+                .presentationDetents([.medium])
+        }
     }
 }
 

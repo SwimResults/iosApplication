@@ -92,6 +92,9 @@
         }
       }
     },
+    "Anmelden" : {
+
+    },
     "App" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -153,6 +156,9 @@
           }
         }
       }
+    },
+    "Bei SwimResults anmelden" : {
+
     },
     "Benachrichtigungen" : {
 
@@ -956,6 +962,15 @@
         }
       }
     },
+    "Meine Seite" : {
+
+    },
+    "Meins" : {
+
+    },
+    "Melde dich mit deinem SwimResults Account an, um personalisierte Informationen sehen zu können." : {
+
+    },
     "Meldezeit" : {
       "localizations" : {
         "en" : {
@@ -985,6 +1000,9 @@
           }
         }
       }
+    },
+    "Nicht angemeldet!" : {
+
     },
     "No" : {
 
@@ -1205,6 +1223,9 @@
           }
         }
       }
+    },
+    "Willkommen zurück!" : {
+
     },
     "Wk %@" : {
       "localizations" : {

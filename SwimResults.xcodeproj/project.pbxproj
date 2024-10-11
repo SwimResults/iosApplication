@@ -31,6 +31,7 @@
 		713AF7822CB3E0AC003483F9 /* AppAuthCore in Frameworks */ = {isa = PBXBuildFile; productRef = 713AF7812CB3E0AC003483F9 /* AppAuthCore */; };
 		713AF7842CB3F488003483F9 /* TestLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 713AF7832CB3F488003483F9 /* TestLoginViewModel.swift */; };
 		713AF7892CB4962F003483F9 /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = 713AF7882CB4962F003483F9 /* JWTDecode */; };
+		714A7E242CB8E9B200925732 /* LiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714A7E232CB8E9B200925732 /* LiveViewModel.swift */; };
 		7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */; };
 		7183AC442C70F38500926A95 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7183AC432C70F38500926A95 /* NotificationSettingsView.swift */; };
 		7183AC462C70F9DE00926A95 /* testNotification.apns in Resources */ = {isa = PBXBuildFile; fileRef = 7183AC452C70F9DE00926A95 /* testNotification.apns */; };
@@ -73,6 +74,10 @@
 		71B1F06B2C6F8EFB007856AD /* LocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F06A2C6F8EFB007856AD /* LocationModel.swift */; };
 		71B1F06E2C6F9034007856AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71B1F06D2C6F9034007856AD /* CoreLocation.framework */; };
 		71B1F0702C6FB378007856AD /* MeetingLocationMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B1F06F2C6FB378007856AD /* MeetingLocationMapView.swift */; };
+		71B5301F2CB5EEEC007AAF99 /* AuthState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B5301E2CB5EEEC007AAF99 /* AuthState.swift */; };
+		71B530212CB5EF98007AAF99 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B530202CB5EF98007AAF99 /* UserViewModel.swift */; };
+		71B530252CB60010007AAF99 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B530242CB60010007AAF99 /* LoginView.swift */; };
+		71B530272CB6001B007AAF99 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B530262CB6001B007AAF99 /* LoginViewModel.swift */; };
 		71B9721A2C90936A00E1E73C /* AgeGroupModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B972192C90936A00E1E73C /* AgeGroupModel.swift */; };
 		71B9721C2C9094BD00E1E73C /* EventStartResultRequestDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71B9721B2C9094BD00E1E73C /* EventStartResultRequestDto.swift */; };
 		71D6A4CC2BEF85B200862DF7 /* StartListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D6A4CB2BEF85B200862DF7 /* StartListView.swift */; };
@@ -131,6 +136,7 @@
 		713816C62BFA97A800E56214 /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
 		713AF77C2CB3D805003483F9 /* TestLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginView.swift; sourceTree = "<group>"; };
 		713AF7832CB3F488003483F9 /* TestLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestLoginViewModel.swift; sourceTree = "<group>"; };
+		714A7E232CB8E9B200925732 /* LiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveViewModel.swift; sourceTree = "<group>"; };
 		7180182C2BF7BEB7005D817A /* BottomSheetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetHelper.swift; sourceTree = "<group>"; };
 		7183AC432C70F38500926A95 /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
 		7183AC452C70F9DE00926A95 /* testNotification.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = testNotification.apns; sourceTree = "<group>"; };
@@ -177,6 +183,10 @@
 		71B1F06A2C6F8EFB007856AD /* LocationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationModel.swift; sourceTree = "<group>"; };
 		71B1F06D2C6F9034007856AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		71B1F06F2C6FB378007856AD /* MeetingLocationMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingLocationMapView.swift; sourceTree = "<group>"; };
+		71B5301E2CB5EEEC007AAF99 /* AuthState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthState.swift; sourceTree = "<group>"; };
+		71B530202CB5EF98007AAF99 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		71B530242CB60010007AAF99 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		71B530262CB6001B007AAF99 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		71B972192C90936A00E1E73C /* AgeGroupModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgeGroupModel.swift; sourceTree = "<group>"; };
 		71B9721B2C9094BD00E1E73C /* EventStartResultRequestDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventStartResultRequestDto.swift; sourceTree = "<group>"; };
 		71D6A4CB2BEF85B200862DF7 /* StartListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartListView.swift; sourceTree = "<group>"; };
@@ -342,6 +352,7 @@
 		712FF5C62C14BBCE008CE2C0 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				714A7E232CB8E9B200925732 /* LiveViewModel.swift */,
 				712FF5C72C14BBDF008CE2C0 /* LiveBarViewModel.swift */,
 			);
 			path = ViewModels;
@@ -372,6 +383,7 @@
 		7133FA452C425BE800EF9403 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				71B530202CB5EF98007AAF99 /* UserViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -480,6 +492,7 @@
 		719BB60C2BE4320D00810D37 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				71B5301C2CB5EED6007AAF99 /* Auth */,
 				7115AB6C2C43D04A00DE045E /* Athlete */,
 				719BB61D2BE44AB500810D37 /* Common */,
 				71D6A4D52BF014A900862DF7 /* Settings */,
@@ -767,6 +780,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		71B5301C2CB5EED6007AAF99 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				71B5301D2CB5EEDE007AAF99 /* Models */,
+				71B530232CB5FFFB007AAF99 /* ViewModels */,
+				71B530222CB5FFDD007AAF99 /* Views */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		71B5301D2CB5EEDE007AAF99 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71B5301E2CB5EEEC007AAF99 /* AuthState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		71B530222CB5FFDD007AAF99 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71B530242CB60010007AAF99 /* LoginView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71B530232CB5FFFB007AAF99 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				71B530262CB6001B007AAF99 /* LoginViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		71D6A4CA2BEF859D00862DF7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -1005,8 +1052,10 @@
 				71F6699A2C432BD30018073A /* AthleteModel.swift in Sources */,
 				719BB6222BE44AEA00810D37 /* MainTabItemView.swift in Sources */,
 				71F864832C559F1D00E51CDF /* EventListInfoModel.swift in Sources */,
+				714A7E242CB8E9B200925732 /* LiveViewModel.swift in Sources */,
 				719BB6372BE4F77B00810D37 /* MainScreenView.swift in Sources */,
 				7115AB732C43D09100DE045E /* AthleteView.swift in Sources */,
+				71B530272CB6001B007AAF99 /* LoginViewModel.swift in Sources */,
 				7180182D2BF7BEB7005D817A /* BottomSheetHelper.swift in Sources */,
 				7183D26F2BE3D238000E45B4 /* SwimResultsApp.swift in Sources */,
 				71B1F0702C6FB378007856AD /* MeetingLocationMapView.swift in Sources */,
@@ -1016,6 +1065,7 @@
 				7183AC492C70FDE000926A95 /* AppDelegate.swift in Sources */,
 				71D6A4D42BEF879E00862DF7 /* Color.swift in Sources */,
 				71D6A4DC2BF014E500862DF7 /* SettingsView.swift in Sources */,
+				71B5301F2CB5EEEC007AAF99 /* AuthState.swift in Sources */,
 				713816C72BFA97A800E56214 /* LiveView.swift in Sources */,
 				7133FA482C425C3100EF9403 /* UserScreenView.swift in Sources */,
 				719BB62F2BE4F66D00810D37 /* ApiActions.swift in Sources */,
@@ -1033,8 +1083,10 @@
 				719E759B2BEB785100D40154 /* EventModel.swift in Sources */,
 				712FF5C52C14BA95008CE2C0 /* LiveBarView.swift in Sources */,
 				712044AB2C1B2CE700818D2B /* ResultModel.swift in Sources */,
+				71B530252CB60010007AAF99 /* LoginView.swift in Sources */,
 				71B9721A2C90936A00E1E73C /* AgeGroupModel.swift in Sources */,
 				7115AB752C43D0E800DE045E /* AthleteViewModel.swift in Sources */,
+				71B530212CB5EF98007AAF99 /* UserViewModel.swift in Sources */,
 				71B9721C2C9094BD00E1E73C /* EventStartResultRequestDto.swift in Sources */,
 				719BB6252BE44DCE00810D37 /* SearchScreenView.swift in Sources */,
 				71D6A4D22BEF865F00862DF7 /* EventViewModel.swift in Sources */,

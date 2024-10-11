@@ -6,13 +6,16 @@
 //
 
 import SwiftUI
+import AppAuthCore
 
 struct MainScreenView: View {
     @StateObject var currentMeeting: CurrentMeeting = CurrentMeeting();
+    @StateObject var authState: AuthState = AuthState()
     
     var body: some View {
         MainView()
             .environmentObject(currentMeeting)
+            .environment(authState)
     }
 }
 
