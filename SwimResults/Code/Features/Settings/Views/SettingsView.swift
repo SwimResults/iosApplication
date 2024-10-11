@@ -38,6 +38,12 @@ struct SettingsView: View {
                     } label: {
                         Label("Erweiterte Einstellungen", systemImage: "gear")
                     }
+                    
+                    NavigationLink {
+                        TestLoginView()
+                    } label: {
+                        Label("Login Test", systemImage: "person")
+                    }
                 }
                 
                 Section(header: Text("Entwickler")) {

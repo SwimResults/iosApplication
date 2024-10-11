@@ -4,6 +4,9 @@
     "" : {
 
     },
+    "-= NOT LOGGED IN =-" : {
+
+    },
     "%@ %@" : {
       "localizations" : {
         "de" : {
@@ -89,6 +92,9 @@
         }
       }
     },
+    "Anmelden" : {
+
+    },
     "App" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -153,6 +159,9 @@
           }
         }
       }
+    },
+    "Bei SwimResults anmelden" : {
+
     },
     "Benachrichtigungen" : {
 
@@ -753,6 +762,18 @@
         }
       }
     },
+    "LOGGED IN!!" : {
+
+    },
+    "Login" : {
+
+    },
+    "LOGIN FAILED!!" : {
+
+    },
+    "Login Test" : {
+
+    },
     "Mannschaft" : {
       "localizations" : {
         "en" : {
@@ -944,6 +965,15 @@
         }
       }
     },
+    "Meine Seite" : {
+
+    },
+    "Meins" : {
+
+    },
+    "Melde dich mit deinem SwimResults Account an, um personalisierte Informationen sehen zu können." : {
+
+    },
     "Meldezeit" : {
       "localizations" : {
         "en" : {
@@ -973,6 +1003,9 @@
           }
         }
       }
+    },
+    "Nicht angemeldet!" : {
+
     },
     "No" : {
 
@@ -1193,6 +1226,9 @@
           }
         }
       }
+    },
+    "Willkommen zurück!" : {
+
     },
     "Wk %@" : {
       "localizations" : {
