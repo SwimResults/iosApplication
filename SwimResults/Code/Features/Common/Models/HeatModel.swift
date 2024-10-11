@@ -102,4 +102,8 @@ struct HeatModel: Codable, Hashable {
         
         return .unknown
     }
+    
+    func isFinished() -> Bool {
+        return finishedAt != nil ? finishedAt!.timeIntervalSince1970 > 1000 : false
+    }
 }

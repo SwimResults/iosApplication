@@ -88,7 +88,7 @@ struct StartListEntryView: View {
                             
                     }
                     
-                    if (config.showAthlete) {
+                    if (config.showAthlete && (start.athleteName != nil || start.athleteTeamName != nil || start.athleteYear != nil)) {
                         HStack {
                             Text(start.athleteName ?? "")
                                 .bold()
@@ -104,6 +104,12 @@ struct StartListEntryView: View {
                             }
                             .font(.caption)
                         }
+                    }
+                    
+                    if (config.allLanes && start.athleteName == nil) {
+                        Text("Bahn \(start.lane ?? 0) bleibt frei")
+                            .font(.caption)
+                            .foregroundStyle(.gray)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -140,8 +146,8 @@ struct StartListEntryView: View {
             // var laneAsIcon: Bool = false;
             // var rankStylesIcon: Bool = false;
             
-            showAthlete: false,
-            showEvent: true,
+            showAthlete: true,
+            showEvent: false,
             showStyle: false,
             showHeat: true,
             showLane: true,
@@ -157,7 +163,7 @@ struct StartListEntryView: View {
             laneAsIcon: false,
             showIcon: true,
             flatStyle: false,
-            allLanes: false,
+            allLanes: true,
             rankStylesIcon: false,
             widgetSize: false
         )
@@ -188,6 +194,14 @@ struct StartListEntryView: View {
                     disqualification: DisqualificationModel(
                         _id: "0"
                     )
+                ),
+                config: $config
+            )
+            StartListEntryView(
+                start: StartModel(
+                    _id: "65719d4071d6e4857d2a8cb7",
+                    meeting: "IESC23",
+                    results: []
                 ),
                 config: $config
             )

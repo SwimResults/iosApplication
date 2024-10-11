@@ -34,6 +34,7 @@ struct StartModel: Codable, Hashable {
     var _id: String
     var meeting: String
     var event: Int?
+    var heatNumber: Int?
     var heat: HeatModel?
     var lane: Int?
     var isRelay: Bool? // TODO: Check if bool values can be non-undefined (omit ?)
@@ -50,6 +51,8 @@ struct StartModel: Codable, Hashable {
     var disqualification: DisqualificationModel?
     var addedAt: Date?
     var updatedAt: Date?
+    
+    var emptyLane: Bool? = false // for livetiming to display empty lanes
     
     func hasDisqualification() -> Bool {
         return (disqualification != nil && Int(disqualification!._id) != 0)
@@ -73,6 +76,15 @@ struct StartModel: Codable, Hashable {
     func getResultString(_ resType: ResultType) -> String? {
         let result = getResult(resType)
         return result?.getTimeString()
+    }
+    
+    func hasResult() -> Bool {
+        for result in results {
+            if (result.resultType == ResultType.livetiming.rawValue || result.resultType == ResultType.result_list.rawValue) {
+                return true
+            }
+        }
+        return false
     }
     
     func hasResultType(_ resType: ResultType) -> Bool {

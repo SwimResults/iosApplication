@@ -141,6 +141,9 @@
         }
       }
     },
+    "Bahn %lld bleibt frei" : {
+
+    },
     "Bahn: %lld" : {
       "localizations" : {
         "en" : {

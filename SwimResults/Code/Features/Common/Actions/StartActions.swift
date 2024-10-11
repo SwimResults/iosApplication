@@ -37,8 +37,20 @@ func getStartsByMeetingAndEvent(_ meeting: String, _ eventNumber: Int) async thr
     }
 }
 
+func getStartsByMeetingAndEventAndHeat(_ meeting: String, _ eventNumber: Int, _ heatNumber: Int) async throws -> [StartModel] {
+    do {
+        return try await startService.get(path: "start/meet/" + meeting + "/event/\(eventNumber)/heat/\(heatNumber)")
+    }
+}
+
 func getStartsByMeetingAndEventAsResults(_ meeting: String, _ eventNumber: Int) async throws -> [EventAgeResultModel] {
     do {
         return try await startService.get(path: "start/meet/" + meeting + "/event/\(eventNumber)/results")
+    }
+}
+
+func getCurrentStartsByMeetingId(_ meeting: String) async throws -> [StartModel] {
+    do {
+        return try await startService.get(path: "start/meet/" + meeting + "/current")
     }
 }
