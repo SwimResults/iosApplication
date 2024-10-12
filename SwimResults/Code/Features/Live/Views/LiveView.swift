@@ -13,16 +13,14 @@ struct LiveView: View {
     
     var body: some View {
         VStack {
+            if (viewModel.event != nil) {
+                Text("WK \(viewModel.event!.number) - \(viewModel.event!.getEventName())")
+                    .font(.title.weight(.bold))
+            }
             List {
                 Section {
                     ForEach(viewModel.starts, id: \.self) {start in
                         StartListEntryView(start: start, config: $viewModel.config)
-                    }
-                } header: {
-                    if (viewModel.event != nil) {
-                        Text("WK \(viewModel.event!.number) \(viewModel.event!.getEventName())")
-                            .font(.title)
-                            .textCase(nil)
                     }
                 }
                 Section {
@@ -39,16 +37,7 @@ struct LiveView: View {
                 }
             }
         }
-        .toolbar {
-            if (viewModel.event != nil) {
-                ToolbarItem(placement: .principal) {
-                    VStack {
-                        Text(viewModel.event!.getEventName())
-                            .font(.headline)
-                    }
-                }
-            }
-        }
+        .navigationBarTitle(Text(""), displayMode: .inline)
         .onAppear {
             viewModel.setup(currentMeeting)
         }
