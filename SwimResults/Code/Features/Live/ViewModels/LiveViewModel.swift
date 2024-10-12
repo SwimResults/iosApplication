@@ -143,6 +143,20 @@ final class LiveViewModel: ObservableObject {
     }
     
     func fetchEvent() async {
+        guard let meetId = currentMeeting?.meetingId else { return }
+        guard let eventId = heat?.event else { return }
+        
+        fetchingEvent = true
+        do {
+            let event = try await getEventByMeetingAndNumber(meetId, eventId)
+            
+            self.event = event
+            
+            fetchingEvent = false
+        } catch {
+            print(error)
+            fetchingEvent = false
+        }
     }
     
     func fetchHeatAmount() async {

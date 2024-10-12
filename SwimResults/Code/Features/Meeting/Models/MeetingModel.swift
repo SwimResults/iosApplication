@@ -17,6 +17,13 @@ class CurrentMeeting: ObservableObject {
         currentMeeting.meetingId = "IESC23"
         return currentMeeting
     }
+    
+    static func exampleWithId(_ id: String) -> CurrentMeeting {
+        let currentMeeting = CurrentMeeting()
+        currentMeeting.meeting = MeetingModel(meetId: id, dateStart: Date(), dateEnd: Date(), iteration: 143, state: "RUNNING", series: MeetingSeriesModel(nameFull: "Internationaler Erzgebirgsschwimmcup", nameMedium: "IESC", nameShort: "IESC"))
+        currentMeeting.meetingId = id
+        return currentMeeting
+    }
 }
 
 struct MeetingModel: Codable, Hashable {

@@ -106,7 +106,7 @@ struct StartListEntryView: View {
                         }
                     }
                     
-                    if (config.allLanes && start.athleteName == nil) {
+                    if (config.allLanes && start.event == nil) {
                         Text("Bahn \(start.lane ?? 0) bleibt frei")
                             .font(.caption)
                             .foregroundStyle(.gray)
@@ -131,6 +131,7 @@ struct StartListEntryView: View {
                 await viewModel.fetchEventForStart(start)
             }
         }
+        .disabled(config.allLanes && start.event == nil)
     }
 }
 

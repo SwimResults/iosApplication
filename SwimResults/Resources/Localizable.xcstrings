@@ -439,6 +439,9 @@
         }
       }
     },
+    "Die Live-Aktivität zeigt aktuelle Informationen auf dem Sperrbildschirm an." : {
+
+    },
     "Die Starts konnten nicht geladen werden." : {
       "localizations" : {
         "en" : {
@@ -761,6 +764,12 @@
           }
         }
       }
+    },
+    "Live-Aktivität starten" : {
+
+    },
+    "Live-Update" : {
+
     },
     "LOGGED IN!!" : {
 
@@ -1236,6 +1245,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ev %@"
+          }
+        }
+      }
+    },
+    "WK %lld %@" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "WK %1$lld %2$@"
           }
         }
       }

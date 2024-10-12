@@ -19,9 +19,32 @@ struct LiveView: View {
                         StartListEntryView(start: start, config: $viewModel.config)
                     }
                 } header: {
-                    Spacer()
+                    if (viewModel.event != nil) {
+                        Text("WK \(viewModel.event!.number) \(viewModel.event!.getEventName())")
+                            .font(.title)
+                            .textCase(nil)
+                    }
+                }
+                Section {
                     Toggle(isOn: $viewModel.isLive) {
-                        Text("Live")
+                        Text("Live-Update")
+                    }
+                    Button("Live-Aktivität starten") {
+                        print("test")
+                    }
+                } header: {
+                    Text("Einstellungen")
+                } footer: {
+                    Text("Die Live-Aktivität zeigt aktuelle Informationen auf dem Sperrbildschirm an.")
+                }
+            }
+        }
+        .toolbar {
+            if (viewModel.event != nil) {
+                ToolbarItem(placement: .principal) {
+                    VStack {
+                        Text(viewModel.event!.getEventName())
+                            .font(.headline)
                     }
                 }
             }
@@ -44,4 +67,5 @@ struct LiveView: View {
 
 #Preview {
     LiveView()
+        .environmentObject(CurrentMeeting.exampleWithId("IESC22"))
 }
